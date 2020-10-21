@@ -1,28 +1,60 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div id="App">
+        <epp></epp>
+        <epp-table
+          ref="multipleTable"
+          :column="tableData.column"
+          :data="tableData.data"
+        >
+        </epp-table>
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  data(){
+    return{
+            tableData: {
+        column: [
+          {
+            prop: "date",
+            label: "日期"
+          },
+          {
+            prop: "name",
+            label: "姓名"
+          },
+          {
+            prop: "address",
+            label: "地址12312"
+          }
+        ],
+        data: [
+          {
+            date: "2016-05-02",
+            name: "王小虎1123123",
+            address: "上海市普陀区金沙江路 1518 弄"
+          },
+          {
+            date: "2016-05-02",
+            name: "王小虎2",
+            address: "上海市普陀区金沙江路 1518 弄"
+          },
+          {
+            date: "2016-05-02",
+            name: "王小虎3",
+            address: "上海市普陀区金沙江路 1518 弄"
+          }
+        ]
+      },
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.app-main{
+    width: 100%;
+    height: 100%;
 }
 </style>
