@@ -1,6 +1,6 @@
 ---
-
-## sidebar: auto
+sidebar: auto
+---
 
 # 使用示例
 

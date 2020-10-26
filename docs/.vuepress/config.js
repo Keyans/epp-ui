@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-10-22 17:47:42
- * @LastEditTime: 2020-10-26 10:04:10
+ * @LastEditTime: 2020-10-26 19:38:33
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /npm_epp_ui/Users/abbotwu/project/epp-ui/docs/.vuepress/config.js
@@ -9,7 +9,7 @@
 module.exports = ctx => ({
   title: "epp-ui",
   description: "一款基于管理后台的运用",
-  base:ctx.isPro ? "./":"./dev",
+  base:ctx.isPro ? "./":"/",
   head: [
     [
       "link",
