@@ -1,8 +1,8 @@
 {
-  "name": "@tencent/epp-ui",
-  "version": "1.0.0",
+  "name": "@tencent/epp-ui-test",
+  "version": "1.0.2",
   "private": false,
-  "main": "lib/epp-ui.min.js",
+  "main": "lib/epp-ui.umd.min.js",
   "author": "abbotwu",
   "license": "MIT",
   "description": "A Component Library for Epp Design",
@@ -22,21 +22,28 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "lib": "vue-cli-service build --target lib --name epp-ui --dest lib ./src/index.js",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "dependencies": {
+    "core-js": "^2.6.11",
+    "element-ui": "^2.13.2"
   },
   "devDependencies": {
-    "@tencent/epp-ui": "^1.0.0",
+    "@tencent/epp-ui": "^1.0.2",
     "@tencent/nb-design": "^0.1.1",
-    "element-ui": "^2.13.2",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "vue": "^2.6.11",
     "vue-template-compiler": "^2.6.11",
-    "core-js": "^3.6.5",
-    "vue": "^2.6.11"
+    "vuepress": "^1.7.1",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^10.0.2"
   },
   "eslintConfig": {
     "root": true,

@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-09-16 16:43:19
- * @LastEditTime: 2020-10-21 18:13:03
+ * @LastEditTime: 2020-10-23 22:10:34
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @Filepppath: /qun/src/components/epp-table/epp-column.vue
@@ -66,7 +66,7 @@
 import eppRender from './epp-render'
 import forced from './forced.js'
 export default {
-  name: 'epppColumn',
+  name: 'eppColumn',
   props: {
     column: Object,
     headerAlign: String,

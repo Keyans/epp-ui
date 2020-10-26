@@ -1,10 +1,14 @@
 <template>
     <div id="App">
-        <epp></epp>
         <epp-table
           ref="multipleTable"
+          pagination
+          :total="10"
           :column="tableData.column"
           :data="tableData.data"
+          @selection-change="handleSelectionChange"
+          @size-change="handleSizeChange"
+          @p-current-change="handleCurrentChange"
         >
         </epp-table>
     </div>
@@ -14,8 +18,11 @@
 export default {
   data(){
     return{
-            tableData: {
+      tableData: {
         column: [
+          {
+            type:"selection"
+          },
           {
             prop: "date",
             label: "日期"
@@ -48,23 +55,24 @@ export default {
         ]
       },
     }
+  },
+  methods: {
+    handleSelectionChange(selection){
+      console.log(selection)
+    },
+    handleSizeChange(val){
+      console.log(val)
+      // this.currentPage = 1;
+      // this.pageSize = val;
+      // this.createData();
+    }
   }
 }
 </script>
 
 <style>
-<<<<<<< HEAD
 .app-main{
     width: 100%;
     height: 100%;
-=======
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
->>>>>>> d544d156f98afab2c21973632d74421164c6207e
 }
 </style>
