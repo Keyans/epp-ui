@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-10-22 17:47:42
- * @LastEditTime: 2020-10-27 21:11:58
+ * @LastEditTime: 2020-10-27 23:04:49
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /npm_epp_ui/Users/abbotwu/project/epp-ui/docs/.vuepress/config.js
@@ -60,7 +60,7 @@ module.exports = (ctx) => ({
               path: "",
             },
             {
-              title: "部署",
+              title: "部署1231",
               collapsable: false,
               path: "step",
             },
