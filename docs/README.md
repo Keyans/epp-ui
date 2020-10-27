@@ -1,6 +1,6 @@
 ---
 home: true
-actionText: 快速上手 →
+actionText: 快速上手5555 →
 actionLink: /pages/
 features:
   - title: 简洁至上
