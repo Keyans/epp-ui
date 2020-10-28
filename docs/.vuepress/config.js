@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-10-22 17:47:42
- * @LastEditTime: 2020-10-28 14:47:58
+ * @LastEditTime: 2020-10-28 14:53:11
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /npm_epp_ui/Users/abbotwu/project/epp-ui/docs/.vuepress/config.js
@@ -9,7 +9,7 @@
 module.exports = (ctx) => ({
   title: "epp-ui",
   description: "一款基于管理后台的运用",
-  base: "/epp-ui",
+  base: "/epp-ui/",
   head: [
     [
       "link",
@@ -55,17 +55,17 @@ module.exports = (ctx) => ({
           collapsable: false,
           children: [
             {
-              title: "快速入门555",
+              title: "快速入门",
               collapsable: false,
               path: "",
             },
             {
-              title: "部署33",
+              title: "部署",
               collapsable: false,
               path: "step",
             },
             {
-              title: "B端常用网站44",
+              title: "B端常用网站",
               collapsable: false,
               path: "collect",
             },
