@@ -1,23 +1,39 @@
 <template>
     <div id="App">
+        <epp-form :formConfig="formConfig"></epp-form>
         <epp-table
           ref="multipleTable"
-          pagination
-          :total="10"
           :column="tableData.column"
           :data="tableData.data"
-          @selection-change="handleSelectionChange"
-          @size-change="handleSizeChange"
-          @p-current-change="handleCurrentChange"
         >
         </epp-table>
     </div>
 </template>
 
 <script>
+import eppForm from "./packages/epp-form/epp-form"
 export default {
+  components:{eppForm},
   data(){
     return{
+      formConfig:{
+        formData:{
+            number:"",
+            id:""
+        },
+        formItemList:[
+          {
+            label:"违规单号",
+            key:"number",
+            type:"nb-input"
+          },
+          {
+            label:"店铺id",
+            key:"id",
+            type:"nb-slider"
+          }
+        ]
+      },
       tableData: {
         column: [
           {
@@ -57,15 +73,6 @@ export default {
     }
   },
   methods: {
-    handleSelectionChange(selection){
-      console.log(selection)
-    },
-    handleSizeChange(val){
-      console.log(val)
-      // this.currentPage = 1;
-      // this.pageSize = val;
-      // this.createData();
-    }
   }
 }
 </script>

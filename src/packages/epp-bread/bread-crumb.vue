@@ -1,11 +1,4 @@
-<!--
- * @Author: your name
- * @Date: 2020-10-22 11:14:15
- * @LastEditTime: 2020-10-22 16:34:14
- * @LastEditors: your name
- * @Description: In User Settings Edit
- * @FilePath: /npm_epp_ui/Users/abbotwu/project/epp-ui/src/packages/epp-bread/bread-crumb.vue
--->
+
 <template>
   <div class="flex-center micro-mr20 micro-mb20">
     <span class="pointer-color" @click="handBack" v-show="isHome">
@@ -31,6 +24,7 @@
 <script>
 
 export default {
+  name:"eppBreadcrumb",
   data() {
     return {
       isHome: true,
