@@ -21,15 +21,15 @@ export default {
             number:"",
             id:""
         },
-        formItemList:[
+        formItem:[
           {
             label:"违规单号",
-            key:"number",
+            model:"number",
             type:"nb-input"
           },
           {
             label:"店铺id",
-            key:"id",
+            model:"id",
             type:"nb-slider"
           }
         ]
