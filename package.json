@@ -1,33 +1,16 @@
 {
-  "name": "@tencent/epp-ui-test",
-  "version": "1.0.2",
-  "private": false,
-  "main": "lib/epp-ui.umd.min.js",
-  "author": "abbotwu",
-  "license": "MIT",
-  "description": "A Component Library for Epp Design",
-  "keywords": [
-    "epp-ui",
-    "vue"
-  ],
-  "files": [
-    "README.md",
-    "lib/*",
-    "package.json"
-  ],
   "repository": {
     "type": "git",
     "url": "http://git.code.oa.com/demeter_web/npm_epp_ui.git"
   },
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "lib": "vue-cli-service build --target lib --name epp-ui --dest lib ./src/index.js",
+    "bootstrap": "lerna bootstrap",
     "lint": "vue-cli-service lint",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
   },
   "dependencies": {
-    "core-js": "^2.6.5"
+    "core-js": "^2.6.11"
   },
   "devDependencies": {
     "@tencent/epp-ui": "^1.0.2",
@@ -38,11 +21,12 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "lerna": "^3.22.1",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^10.0.2",
     "vue": "^2.6.11",
     "vue-template-compiler": "^2.6.11",
-    "vuepress": "^1.7.1",
-    "node-sass": "^4.14.1",
-    "sass-loader": "^10.0.2"
+    "vuepress": "^1.7.1"
   },
   "eslintConfig": {
     "root": true,
