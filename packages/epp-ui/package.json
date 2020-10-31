@@ -1,11 +1,11 @@
 {
-  "name":"epp-ui-test",
-  "version": "1.0.5",
+  "name":"@tencent/epp-ui-test",
+  "version": "1.0.6",
   "private": false,
   "main": "lib/epp-ui.umd.min.js",
   "author": "abbotwu",
   "license": "MIT",
-  "description": "A Component Library for Epp Design",
+  "description": "test测试",
   "keywords": [
     "epp-ui",
     "vue"
