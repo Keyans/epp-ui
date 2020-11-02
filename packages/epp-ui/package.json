@@ -1,6 +1,6 @@
 {
-  "name":"@tencent/epp-ui-test",
-  "version": "1.0.6",
+  "name":"epp-ui-test",
+  "version": "1.1.4",
   "private": false,
   "main": "lib/epp-ui.umd.min.js",
   "author": "abbotwu",
@@ -12,9 +12,12 @@
   ],
   "files": [
     "README.md",
-    "lib/*",
-    "package.json"
+    "lib/*"
   ],
+  "repository": {
+    "type": "git",
+    "url": "http://git.code.oa.com/demeter_web/npm_epp_ui.git"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "lib": "vue-cli-service build --target lib --name epp-ui --dest lib ./index.js",
