@@ -1,5 +1,5 @@
 {
-  "name":"epp-ui-test",
+  "name": "epp-ui-test",
   "version": "1.1.4",
   "private": false,
   "main": "lib/epp-ui.umd.min.js",
@@ -19,7 +19,7 @@
     "url": "http://git.code.oa.com/demeter_web/npm_epp_ui.git"
   },
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "vue-cli-service serve ./main.js",
     "lib": "vue-cli-service build --target lib --name epp-ui --dest lib ./index.js",
     "lint": "vue-cli-service lint"
   },
