@@ -9,7 +9,7 @@
   :picker-options="componentConfig.pickerOptions"
   :align="componentConfig.right"
   :placeholder="componentConfig.placeholder">
-    <component 
+    <component
       v-for="(op, index) in componentConfig.children"
       :label="op.label"
       :value="op.value"
@@ -56,7 +56,3 @@
     }
   }
 </script>
-
-<style lang="less" scoped>
-
-</style>

@@ -7,7 +7,7 @@
  * @FilePath: /npm_epp_ui/Users/abbotwu/project/epp-ui/README.md
 -->
 
-# epp-ui123123
+# epp-ui
 
 ## Project setup
 

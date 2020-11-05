@@ -7,9 +7,11 @@
  * @FilePath: /npm_epp_ui/Users/abbotwu/project/npmTest/src/index.js
  */
 import eppTable from './epp-table/index.js';
+import eppFrom from './epp-form/index.js';
 
 const components = [
-  eppTable
+  eppTable,
+  eppFrom
 ]
 
 const install = function(Vue){
@@ -24,7 +26,8 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default{
-  version:'1.5.0',
+  version:'1.6.0',
   install,
-  eppTable
+  eppTable,
+  eppFrom
 }
