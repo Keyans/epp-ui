@@ -1,6 +1,6 @@
 <template>
     <div id="App">
-        <epp-form 
+        <epp-form
           ref="eppForm"
           :formConfig="formConfig"
         ></epp-form>
@@ -8,9 +8,7 @@
 </template>
 
 <script>
-import eppForm from "./epp-form/epp-form"
 export default {
-  components:{eppForm},
   data(){
     return{
       formConfig:{
