@@ -9,10 +9,12 @@
 import Vue from 'vue'
 import App from './App.vue'
 import NbDesign from "@tencent/nb-design";
+import less from 'less'
 import "@tencent/nb-design/lib/theme-chalk/index.css";
 
 import eppUi from "@tencent/epp-ui";
 
+Vue.use(less)
 Vue.use(NbDesign);
 Vue.use(eppUi);
 

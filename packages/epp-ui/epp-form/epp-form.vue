@@ -11,12 +11,14 @@
         v-for="(item, index) in config.formItem"
         :key="index"
         :label="item.label"
-        :prop="item.key"
+        :prop="item.model"
       >
-        <components
-          :is="item.type"
-          v-model="config.formData[item.key]"
-        ></components>
+        <eppFormComponent 
+        :value="config.formData[item.model]"
+        :componentConfig="item" 
+        @update="handleUpdateFormComponent">
+        </eppFormComponent>
+        
       </nb-form-item>
       <nb-form-item v-if="!!config.btn.length">
         <nb-button
@@ -24,6 +26,7 @@
           :key="index"
           :type="button.type"
           :size="button.size"
+          @click="(button.click || (() => null))"
           >{{ button.name }}</nb-button
         >
       </nb-form-item>
@@ -32,6 +35,7 @@
 </template>
 
 <script>
+import eppFormComponent from './epp-form-component'
 export default {
   name: "eppForm",
   props: {
@@ -41,6 +45,7 @@ export default {
       default: () => {},
     },
   },
+  components: { eppFormComponent },
   data() {
     return {
       defaultConfig: {
@@ -59,13 +64,19 @@ export default {
     },
   },
   mounted() {
-    console.log(this.config);
+    
   },
   methods: {
+    handleUpdateFormComponent({ key, value }) {
+      this.formConfig.formData[key] = value
+    },
+    getFormData() {
+      return this.$props.formConfig.formData || {}
+    },
     resetForm() {
       const { ref } = this.config;
       this.$refs[ref].resetFields();
-      Object.assign(this[ref], this.$options.data()[ref]);
+      return this.config.formData
     },
   },
 };

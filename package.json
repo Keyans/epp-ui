@@ -10,7 +10,8 @@
     "docs:build": "vuepress build docs"
   },
   "dependencies": {
-    "core-js": "^2.6.11"
+    "core-js": "^2.6.11",
+    "less": "^3.12.2"
   },
   "devDependencies": {
     "@tencent/epp-ui": "^1.0.2",

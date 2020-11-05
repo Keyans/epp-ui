@@ -1,12 +1,9 @@
 <template>
     <div id="App">
-        <epp-form :formConfig="formConfig"></epp-form>
-        <epp-table
-          ref="multipleTable"
-          :column="tableData.column"
-          :data="tableData.data"
-        >
-        </epp-table>
+        <epp-form 
+          ref="eppForm"
+          :formConfig="formConfig"
+        ></epp-form>
     </div>
 </template>
 
@@ -17,62 +14,68 @@ export default {
   data(){
     return{
       formConfig:{
-        formData:{
-            number:"",
-            id:""
+        rules: {
+          number: [{ required: true, message: '请输入', trigger: 'blur' }]
         },
+        formData:{
+          number:"",
+          id: "",
+          date: '',
+          switchValue: false
+        },
+        btn: [{
+          type: 'primary',
+          name: '提交',
+          click: () => {
+            console.log(this.$refs.eppForm.getFormData());
+          }
+        },
+        {
+          type: '',
+          name: '重置',
+          click: () => {
+            this.$refs.eppForm.resetForm()
+          }
+        }],
         formItem:[
+          {
+            label:"switch",
+            model:"switchValue",
+            type:"nb-switch"
+          },
           {
             label:"违规单号",
             model:"number",
             type:"nb-input"
           },
           {
+            label:"时间",
+            model:"date",
+            type:"nb-date-picker",
+            placeholder: "选择时间"
+          },
+          {
             label:"店铺id",
             model:"id",
-            type:"nb-slider"
-          }
-        ]
-      },
-      tableData: {
-        column: [
-          {
-            type:"selection"
-          },
-          {
-            prop: "date",
-            label: "日期"
-          },
-          {
-            prop: "name",
-            label: "姓名"
-          },
-          {
-            prop: "address",
-            label: "地址12312"
-          }
-        ],
-        data: [
-          {
-            date: "2016-05-02",
-            name: "王小虎1123123",
-            address: "上海市普陀区金沙江路 1518 弄"
-          },
-          {
-            date: "2016-05-02",
-            name: "王小虎2",
-            address: "上海市普陀区金沙江路 1518 弄"
-          },
-          {
-            date: "2016-05-02",
-            name: "王小虎3",
-            address: "上海市普陀区金沙江路 1518 弄"
+            type:"nb-select",
+            children: [{
+              type:"nb-option",
+              label: "区域一",
+              value: 'shanghai'
+            },{
+              type:"nb-option",
+              label: "区域二",
+              value: 'beijing'
+            }]
           }
         ]
       },
     }
   },
   methods: {
+    getEppFormData() {
+      console.log(this.$refs.eppForm.getFormData())
+    }
   }
 }
 </script>
