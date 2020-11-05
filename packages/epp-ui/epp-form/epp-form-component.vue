@@ -1,13 +1,19 @@
 <template>
   <component 
-  :is="componentConfig.type" 
+  :is="componentType(componentConfig.type)" 
   v-model="controlModel" 
+  :type="componentConfig.currentType"
+  :range-separator="componentConfig.rangeSeparator"
+  :start-placeholder="componentConfig.startPlaceholder"
+  :end-placeholder="componentConfig.endPlaceholder"
+  :picker-options="componentConfig.pickerOptions"
+  :align="componentConfig.right"
   :placeholder="componentConfig.placeholder">
     <component 
       v-for="(op, index) in componentConfig.children"
       :label="op.label"
       :value="op.value"
-      :is="op.type"
+      :is="componentType(op.type)"
       :key="index"
     ></component>
   </component>
@@ -41,6 +47,11 @@
     computed: {
       formData(){
         console.log(this.$parent.$props)
+      }
+    },
+    methods: {
+      componentType(type) {
+        return `nb-${type}`
       }
     }
   }

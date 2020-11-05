@@ -41,29 +41,33 @@ export default {
           {
             label:"switch",
             model:"switchValue",
-            type:"nb-switch"
+            type:"switch"
           },
           {
             label:"违规单号",
             model:"number",
-            type:"nb-input"
+            type:"input"
           },
           {
             label:"时间",
             model:"date",
-            type:"nb-date-picker",
+            type:"date-picker",
+            currentType: 'datetimerange',
+            rangeSeparator: "至",
+            startPlaceholder: "开始日期",
+            endPlaceholder: "结束日期",
             placeholder: "选择时间"
           },
           {
             label:"店铺id",
             model:"id",
-            type:"nb-select",
+            type:"select",
             children: [{
-              type:"nb-option",
+              type:"option",
               label: "区域一",
               value: 'shanghai'
             },{
-              type:"nb-option",
+              type:"option",
               label: "区域二",
               value: 'beijing'
             }]
