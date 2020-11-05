@@ -1,9 +1,9 @@
 <template>
-  <component 
-  :is="componentConfig.type" 
-  v-model="controlModel" 
+  <component
+  :is="componentConfig.type"
+  v-model="controlModel"
   :placeholder="componentConfig.placeholder">
-    <component 
+    <component
       v-for="(op, index) in componentConfig.children"
       :label="op.label"
       :value="op.value"
@@ -45,7 +45,3 @@
     }
   }
 </script>
-
-<style lang="less" scoped>
-
-</style>
