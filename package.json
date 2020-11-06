@@ -5,6 +5,7 @@
   },
   "scripts": {
     "bootstrap": "lerna bootstrap",
+    "publish": "lerna publish --registry http://r.tnpm.oa.com/",
     "lint": "vue-cli-service lint",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
