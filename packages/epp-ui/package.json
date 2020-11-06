@@ -1,6 +1,6 @@
 {
   "name": "@tencent/epp-ui",
-  "version": "1.2.1",
+  "version": "1.2.3",
   "private": false,
   "main": "lib/epp-ui.umd.min.js",
   "author": "abbotwu",
@@ -24,8 +24,8 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "core-js": "^3.6.5",
-    "@tencent/epp-ui": "^1.1.5"
+    "@tencent/epp-ui": "^1.2.3",
+    "core-js": "^3.6.5"
   },
   "devDependencies": {
     "@tencent/nb-design": "^0.1.1",
