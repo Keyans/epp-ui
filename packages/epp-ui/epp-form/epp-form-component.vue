@@ -2,12 +2,20 @@
   <component 
   :is="componentType(componentConfig.type)" 
   v-model="controlModel" 
-  :type="componentConfig.currentType"
+  :type="componentConfig.targetType"
   :range-separator="componentConfig.rangeSeparator"
   :start-placeholder="componentConfig.startPlaceholder"
   :end-placeholder="componentConfig.endPlaceholder"
   :picker-options="componentConfig.pickerOptions"
   :align="componentConfig.right"
+  :minlength="componentConfig.minlength"
+  :maxlength="componentConfig.maxlength"
+  :clearable="componentConfig.clearable"
+  :disabled="componentConfig.disabled"
+  :max="componentConfig.max"
+  :min="componentConfig.min"
+  :step="componentConfig.step"
+  :show-word-limit="componentConfig.showWordLimit"
   :placeholder="componentConfig.placeholder">
     <component
       v-for="(op, index) in componentConfig.children"

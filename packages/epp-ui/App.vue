@@ -50,7 +50,7 @@ export default {
             label:"时间",
             model:"date",
             type:"date-picker",
-            currentType: 'datetimerange',
+            targetType: 'datetimerange',
             rangeSeparator: "至",
             startPlaceholder: "开始日期",
             endPlaceholder: "结束日期",
