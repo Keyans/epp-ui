@@ -8,10 +8,11 @@
  */
 import eppTable from './epp-table/index.js';
 import eppFrom from './epp-form/index.js';
-
+import eppSteps from './epp-steps/index.js';
 const components = [
   eppTable,
-  eppFrom
+  eppFrom,
+  eppSteps
 ]
 
 const install = function(Vue){
@@ -29,5 +30,6 @@ export default{
   version:'1.6.0',
   install,
   eppTable,
-  eppFrom
+  eppFrom,
+  eppSteps
 }

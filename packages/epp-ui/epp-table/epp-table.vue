@@ -20,6 +20,7 @@
       v-on="$listeners"
       :layout="layout"
       :pager-count="pagerCount"
+      :page-count="pageCount"
       :page-sizes="pageSizes"
       @current-change="paginationCurrentChange"
       :style="{ 'margin-top': paginationTop, 'text-align': paginationAlign }">
@@ -38,6 +39,10 @@ export default {
     pagination: {
       type: Boolean,
       default: false
+    },
+    pageCount:{
+      type:Number,
+      default:1
     },
     pagerCount:{
       type:Number,

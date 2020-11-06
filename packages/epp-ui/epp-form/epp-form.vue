@@ -13,12 +13,12 @@
         :label="item.label"
         :prop="item.model"
       >
-        <eppFormComponent 
+        <eppFormComponent
         :value="config.formData[item.model]"
-        :componentConfig="item" 
+        :componentConfig="item"
         @update="handleUpdateFormComponent">
         </eppFormComponent>
-        
+
       </nb-form-item>
       <nb-form-item v-if="!!config.btn.length">
         <nb-button
@@ -64,7 +64,7 @@ export default {
     },
   },
   mounted() {
-    
+
   },
   methods: {
     handleUpdateFormComponent({ key, value }) {

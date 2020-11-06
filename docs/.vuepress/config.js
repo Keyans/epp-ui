@@ -25,8 +25,8 @@ module.exports = (ctx) => ({
     logo:
       "https://mvp-web-1300522992.image.myqcloud.com/img/coco_toc/favicon.ico",
     nav: [
-      { text: "指南", link: "/guide/" },
-      { text: "组件", link: "/pages/" },
+      { text: "指南", link: "/guide/step" },
+      { text: "组件", link: "/pages/table" },
       {
         text: "Github",
         link: "http://git.code.oa.com/demeter_web/npm_epp_ui.git",
@@ -35,16 +35,28 @@ module.exports = (ctx) => ({
     sidebar: {
       "/pages/": [
         {
-          title: "table组件",
-          collapsable: true,
+          title: "组件",
+          collapsable: false,
           children: [
             {
-              title: "起步",
-              path: "",
+              title: "table表格",
+              collapsable: false,
+              path: "table",
             },
             {
-              title: "table组件",
-              path: "table",
+              title: "form表单",
+              collapsable: false,
+              path: "form",
+            },
+            {
+              title: "steps步骤条",
+              collapsable: false,
+              path: "steps",
+            },
+            {
+              title: "breadcrumb面包屑",
+              collapsable: false,
+              path: "bread",
             },
           ],
         },
@@ -54,11 +66,6 @@ module.exports = (ctx) => ({
           title: "起步",
           collapsable: false,
           children: [
-            {
-              title: "快速入门",
-              collapsable: false,
-              path: "",
-            },
             {
               title: "部署",
               collapsable: false,

@@ -113,26 +113,26 @@ export default {
     this.removeScrollHandler();
   },
   created() {
-    const highlight = this.$slots.highlight;
-    if (highlight && highlight[0]) {
-      let code = "";
-      let cur = highlight[0];
-      if (cur.tag === "pre" && cur.children && cur.children[0]) {
-        cur = cur.children[0];
-        if (cur.tag === "code") {
-          code = cur.children[0].text;
-        }
-      }
-    }
+    // const highlight = this.$slots.highlight;
+    // if (highlight && highlight[0]) {
+    //   let code = "";
+    //   let cur = highlight[0];
+    //   if (cur.tag === "pre" && cur.children && cur.children[0]) {
+    //     cur = cur.children[0];
+    //     if (cur.tag === "code") {
+    //       code = cur.children[0].text;
+    //     }
+    //   }
+    // }
   },
   mounted() {
-    this.$nextTick(() => {
-      let highlight = this.$el.getElementsByClassName("highlight")[0];
-      if (this.$el.getElementsByClassName("description").length === 0) {
-        highlight.style.width = "100%";
-        highlight.borderRight = "none";
-      }
-    });
+    // this.$nextTick(() => {
+    //   let highlight = this.$el.getElementsByClassName("highlight")[0];
+    //   if (this.$el.getElementsByClassName("description").length === 0) {
+    //     highlight.style.width = "100%";
+    //     highlight.borderRight = "none";
+    //   }
+    // });
   },
 };
 </script>
