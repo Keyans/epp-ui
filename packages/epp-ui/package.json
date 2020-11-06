@@ -1,7 +1,7 @@
 {
   "name": "@tencent/epp-ui",
   "version": "1.2.3",
-  "private": false,
+  "private": true,
   "main": "lib/epp-ui.umd.min.js",
   "author": "abbotwu",
   "license": "MIT",
@@ -40,5 +40,6 @@
     "sass-loader": "^10.0.2",
     "vue": "^2.6.11",
     "vue-template-compiler": "^2.6.11"
-  }
+  },
+  "gitHead": "6326005f0a1597cba81a6d02fb15d9b00bb5c8f5"
 }

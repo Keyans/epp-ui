@@ -3,5 +3,6 @@
     "packages/*"
   ],
   "version": "1.2.3",
-  "npmClient": "tnpm"
+  "npmClient": "tnpm",
+  "repository":"http://r.tnpm.oa.com/"
 }
