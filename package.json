@@ -5,6 +5,8 @@
   },
   "scripts": {
     "bootstrap": "lerna bootstrap",
+    "publish": "lerna publish --registry http://r.tnpm.oa.com/",
+    "build":"vue-cli-service build --target lib --name epp-ui --dest lib ./packages/epp-ui/index.js",
     "lint": "vue-cli-service lint",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
@@ -14,7 +16,7 @@
     "less": "^3.12.2"
   },
   "devDependencies": {
-    "@tencent/epp-ui": "^1.0.2",
+    "@tencent/epp-ui": "^1.2.1",
     "@tencent/nb-design": "^0.1.1",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
