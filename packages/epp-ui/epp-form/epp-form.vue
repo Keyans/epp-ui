@@ -4,6 +4,7 @@
       :model="config.formData"
       :ref="config.ref"
       :label-width="config.labelWidth"
+      :label-position="config.labelPosition"
       :inline="config.inline"
       :rules="config.rules"
     >
@@ -50,6 +51,7 @@ export default {
     return {
       defaultConfig: {
         ref: "eppForm",
+        labelPosition:"right",//默认为右对齐
         inline: true, //默认为横向展示
         labelWidth: "80px", //默认label为80
         buttonShow: true, //设置查询按钮默认存在
