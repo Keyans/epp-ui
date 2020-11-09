@@ -73,6 +73,9 @@ export default {
     getFormData() {
       return this.$props.formConfig.formData || {}
     },
+    validate(callback) {
+      this.$refs[ref].validate(callback)
+    },
     resetForm() {
       const { ref } = this.config;
       this.$refs[ref].resetFields();
