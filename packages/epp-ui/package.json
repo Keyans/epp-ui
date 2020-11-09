@@ -1,6 +1,6 @@
 {
   "name": "@tencent/epp-ui",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "private": false,
   "main": "lib/epp-ui.umd.min.js",
   "author": "abbotwu",
@@ -41,5 +41,5 @@
     "vue": "^2.6.11",
     "vue-template-compiler": "^2.6.11"
   },
-  "gitHead": "6326005f0a1597cba81a6d02fb15d9b00bb5c8f5"
+  "gitHead": "ab38fa5802e86fbfd9897ef0934adf4ae7cf19a6"
 }

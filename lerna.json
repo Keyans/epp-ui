@@ -3,5 +3,9 @@
     "packages/*"
   ],
   "version": "1.2.6",
-  "npmClient": "tnpm"
+  "npmClient": "tnpm",
+  "publishConfig": {
+    "access": "public",
+    "registry": "http://r.tnpm.oa.com/"
+  }
 }
