@@ -14,7 +14,7 @@ import "@tencent/nb-design/lib/theme-chalk/index.css";
 import eppUi from "@tencent/epp-ui";
 
 Vue.use(NbDesign);
-Vue.use(eppUi);
+// Vue.use(eppUi);
 
 Vue.config.productionTip = false
 

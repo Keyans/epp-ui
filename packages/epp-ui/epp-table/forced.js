@@ -9,7 +9,6 @@
 export default {
   selection: {
     renderHeader: (h, { store }) => {
-      console.log(store)
       return (
         <nb-checkbox
           disabled={store.states.data && store.states.data.length === 0}
