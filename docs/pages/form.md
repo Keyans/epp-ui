@@ -12,20 +12,4 @@
   <<< @/docs/.vuepress/components/example/form/base-form.vue
 </demo-block>
 
-## 测试表单
-
-基础的表单展示用法。
-
-<demo-block>
-  <example-form-base-form slot="source"></example-form-base-form>
-  <<< @/docs/.vuepress/components/example/form/base-form.vue
-</demo-block>
-
-## 横向表单
-
-基础的表单展示用法。
-
-<demo-block>
-  <example-form-base-form slot="source"></example-form-base-form>
-  <<< @/docs/.vuepress/components/example/form/base-form.vue
-</demo-block>
+## Options

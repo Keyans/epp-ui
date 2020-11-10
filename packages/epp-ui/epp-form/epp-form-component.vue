@@ -1,7 +1,7 @@
 <template>
-  <component 
-  :is="componentType(componentConfig.type)" 
-  v-model="controlModel" 
+  <component
+  :is="componentType(componentConfig.type)"
+  v-model="controlModel"
   :type="componentConfig.targetType"
   :range-separator="componentConfig.rangeSeparator"
   :start-placeholder="componentConfig.startPlaceholder"
