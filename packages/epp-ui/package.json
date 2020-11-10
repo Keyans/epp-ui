@@ -12,19 +12,18 @@
   ],
   "files": [
     "README.md",
-    "lib/*"
+    "lib/*",
+    "package.json"
   ],
   "repository": {
     "type": "git",
     "url": "http://git.code.oa.com/demeter_web/npm_epp_ui.git"
   },
   "scripts": {
-    "serve": "vue-cli-service serve ./main.js",
     "lib": "vue-cli-service build --target lib --name epp-ui --dest lib ./index.js",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@tencent/epp-ui": "^1.2.7",
     "core-js": "^3.6.5"
   },
   "devDependencies": {
@@ -35,7 +34,6 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
-    "lerna": "^3.22.1",
     "node-sass": "^4.14.1",
     "sass-loader": "^10.0.2",
     "vue": "^2.6.11",

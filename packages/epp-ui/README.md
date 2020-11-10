@@ -9,30 +9,31 @@
 
 # epp-ui
 
-## Project setup
+## 注册一个tnpm账号
 
 ```
-tnpm install
+tnpm adduser
 ```
 
-### Compiles and hot-reloads for development
+### 登陆注册好的tnpm账号
 
 ```
-tnpm run docs:dev
+tnpm login
 ```
 
-### Compiles and minifies for production
+### 打包对应的lib文件夹
 
 ```
-npm run build
+npm run lib
 ```
 
-### Lints and fixes files
+### 发布到对应的tnpm上
 
 ```
-npm run lint
+tnpm publish
 ```
 
-### Customize configuration
+### 参考文档
 
-See [Configuration Reference](https://cli.vuejs.org/config/).
+See [Configuration Reference](http://tnpm.oa.com/).
+See [Configuration Reference](https://iwiki.woa.com/pages/viewpage.action?pageId=427900648).

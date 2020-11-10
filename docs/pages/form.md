@@ -13,3 +13,8 @@
 </demo-block>
 
 ## Options
+
+<demo-block>
+  <example-form-form-props slot="source"></example-form-form-props>
+  <<< @/docs/.vuepress/components/example/form/form-props.vue
+</demo-block>

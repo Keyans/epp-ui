@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import eppForm from "./epp-form/epp-form.vue"
-import eppTable from "./epp-table/epp-table.vue"
+import eppForm from "../epp-ui/epp-form/epp-form.vue"
+import eppTable from "../epp-ui/epp-table/epp-table.vue"
 export default {
   components:{eppForm,eppTable},
   data() {
@@ -68,7 +68,7 @@ export default {
             type: "",
             name: "重置",
             click: () => {
-              // this.$refs.eppForm.validate();
+              this.$refs.eppForm.validate();
             },
           },
         ],
