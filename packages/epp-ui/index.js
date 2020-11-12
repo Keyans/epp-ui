@@ -1,19 +1,22 @@
-/*
- * @Author: your name
- * @Date: 2020-10-21 14:45:39
- * @LastEditTime: 2020-10-21 21:23:09
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: /npm_epp_ui/Users/abbotwu/project/npmTest/src/index.js
- */
-import eppTable from "./epp-table/index.js";
-import eppFrom from "./epp-form/index.js";
-import eppSteps from "./epp-steps/index.js";
-const components = [eppTable, eppFrom, eppSteps];
+//配置自动化注入,根据src文件夹下的index进行注入
+const modulesFiles = require.context("./src", true, /\.js$/);
+//获取对应的componets
+const components = modulesFiles.keys().reduce((modules, modulePath) => {
+  const moduleName = modulePath.replace(/^\.\/(.*)\.\w+$/, "$1");
+  const index = moduleName.lastIndexOf("/");
+  const subName = moduleName.substring(index + 1, moduleName.length);
+  const value = modulesFiles(modulePath);
+  if (subName === "index") { //判断是否为index文件
+    if(value.default.name){
+      modules[value.default.name] = value.default;
+    }
+  }
+  return modules;
+}, {});
 
 const install = function(Vue) {
-  components.forEach((component) => {
-    Vue.component(component.name, component);
+  Object.keys(components).forEach((item) => {
+    Vue.component(component[item].name, component[item]);
   });
 };
 
@@ -22,10 +25,4 @@ if (typeof window !== "undefined" && window.Vue) {
   install(window.Vue);
 }
 
-export default {
-  version: "1.6.0",
-  install,
-  eppTable,
-  eppFrom,
-  eppSteps,
-};
+export default Object.assign(components, { install, version: "1.0.0" });
