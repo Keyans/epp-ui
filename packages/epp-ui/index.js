@@ -6,17 +6,19 @@ const components = modulesFiles.keys().reduce((modules, modulePath) => {
   const index = moduleName.lastIndexOf("/");
   const subName = moduleName.substring(index + 1, moduleName.length);
   const value = modulesFiles(modulePath);
-  if (subName === "index") { //判断是否为index文件
-    if(value.default.name){
+  if (subName === "index") {
+    //判断是否为index文件
+    if (value.default.name) {
       modules[value.default.name] = value.default;
     }
   }
   return modules;
 }, {});
-
 const install = function(Vue) {
   Object.keys(components).forEach((item) => {
-    Vue.component(component[item].name, component[item]);
+    if (components[item].name) { //如果存在name则进行组件注册
+      Vue.component(components[item].name, components[item]);
+    }
   });
 };
 
