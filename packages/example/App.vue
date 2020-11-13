@@ -21,12 +21,10 @@
 </template>
 
 <script>
-import { export as eppFrom } from "@tencent/epp-ui";
-
-// import eppForm from "../epp-ui/epp-form/epp-form.vue";
-// import eppTable from "../epp-ui/epp-table/epp-table.vue";
+import eppForm from "../epp-ui/src/epp-form/epp-form.vue";
+import eppTable from "../epp-ui/src/epp-table/epp-table.vue";
 export default {
-  components: { eppFrom },
+  components: { eppForm, eppTable },
   data() {
     return {
       loading: false,

@@ -4,6 +4,7 @@
   },
   "dependencies": {
     "@tencent/epp-ui": "^1.2.9",
+    "@tencent/epp-ui-test": "^1.3.5",
     "core-js": "^3.6.5"
   },
   "devDependencies": {
