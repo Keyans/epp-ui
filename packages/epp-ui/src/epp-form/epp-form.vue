@@ -27,7 +27,7 @@
           :key="index"
           :type="button.type"
           :size="button.size"
-          @click="button.click || (() => null)"
+          @click="handleClick(button)"
           >{{ button.name }}</nb-button
         >
       </nb-form-item>
@@ -67,6 +67,9 @@ export default {
   },
   mounted() {},
   methods: {
+    handleClick(btn) {
+      btn.click && btn.click()
+    },
     handleUpdateFormComponent({ key, value }) {
       this.formConfig.formData[key] = value;
     },
