@@ -1,6 +1,6 @@
 {
-  "name": "@tencent/epp-ui",
-  "version": "1.3.2",
+  "name": "@tencent/epp-ui-test",
+  "version": "1.5.0",
   "private": false,
   "main": "lib/epp-ui.umd.min.js",
   "author": "abbotwu",
@@ -23,8 +23,7 @@
   "scripts": {
     "lib": "vue-cli-service build --target lib --name epp-ui --dest lib ./index.js",
     "lint": "vue-cli-service lint",
-    "build": "vue-cli-service build",
-    "publish": "npm run lib && tnpm publish"
+    "build": "vue-cli-service build"
   },
   "dependencies": {
     "core-js": "^3.6.5"
