@@ -1,20 +1,25 @@
 <template>
   <div class="epp-table">
-    <nb-table ref="elTable"
+    <nb-table
+      ref="elTable"
       v-bind="$attrs"
       v-on="$listeners"
       :data="data"
-      :span-method="this.merge ? this.mergeMethod : this.spanMethod">
-      <epp-column v-bind="$attrs"
+      :span-method="this.merge ? this.mergeMethod : this.spanMethod"
+    >
+      <epp-column
+        v-bind="$attrs"
         v-for="(item, index) in column"
         :key="index"
-        :column="item">
+        :column="item"
+      >
       </epp-column>
       <template v-slot:empty>
         <slot name="empty"></slot>
       </template>
     </nb-table>
-    <nb-pagination class="epp-table-pagination"
+    <nb-pagination
+      class="epp-table-pagination"
       v-if="pagination"
       v-bind="$attrs"
       v-on="$listeners"
@@ -23,139 +28,162 @@
       :page-count="pageCount"
       :page-sizes="pageSizes"
       @current-change="paginationCurrentChange"
-      :style="{ 'margin-top': paginationTop, 'text-align': paginationAlign }">
+      :style="{ 'margin-top': paginationTop, 'text-align': paginationAlign }"
+    >
     </nb-pagination>
   </div>
 </template>
 
 <script>
-import eppColumn from './epp-column'
+import eppColumn from "./epp-column";
+import Sortable from "sortablejs";
+
 export default {
-  name:"eppTable",
+  name: "eppTable",
   props: {
+    sortable: {
+      type: Boolean,
+      default: false,
+    },
+    sortOptions: {
+      type: Object,
+      required: false,
+      default: () => {
+        return {};
+      },
+    },
     column: Array,
     data: Array,
     spanMethod: Function,
     pagination: {
       type: Boolean,
-      default: false
+      default: false,
     },
-    pageCount:{
-      type:Number,
-      default:1
+    pageCount: {
+      type: Number,
+      default: 1,
     },
-    pagerCount:{
-      type:Number,
-      default:5
+    pagerCount: {
+      type: Number,
+      default: 5,
     },
-    pageSizes:{
-      type:Array,
-      default:()=>[5, 10, 20, 30]
+    pageSizes: {
+      type: Array,
+      default: () => [5, 10, 20, 30],
     },
-    layout:{
-      type:String,
-      default:'total, sizes, prev, pager, next, jumper'
+    layout: {
+      type: String,
+      default: "total, sizes, prev, pager, next, jumper",
     },
     paginationTop: {
       type: String,
-      default: '15px'
+      default: "15px",
     },
     paginationAlign: {
       type: String,
-      default: 'right'
+      default: "right",
     },
-    merge: Array
+    merge: Array,
   },
   components: {
-    eppColumn
+    eppColumn,
   },
-  data () {
+  data() {
     return {
       mergeLine: {},
-      mergeIndex: {}
-    }
+      mergeIndex: {},
+    };
   },
-  created () {
-    this.getMergeArr(this.data, this.merge)
+  created() {
+    this.getMergeArr(this.data, this.merge);
   },
   computed: {
-    dataLength () {
-      return this.data.length
-    }
+    dataLength() {
+      return this.data.length;
+    },
+    sortableOptions() {
+      return Object.assign(this.sortOptions, this.defaultSortOptions);
+    },
+  },
+  mounted() {
+    if (this.sortable) this.initSort();
   },
   methods: {
-    clearSelection () {
-      this.$refs.elTable.clearSelection()
+    initSort() {
+      const tbody = document.querySelector(".nb-table__body-wrapper tbody");
+      new Sortable(tbody, this.sortableOptions);
     },
-    toggleRowSelection (row, selected) {
-      this.$refs.elTable.toggleRowSelection(row, selected)
+    clearSelection() {
+      this.$refs.elTable.clearSelection();
     },
-    toggleAllSelection () {
-      this.$refs.elTable.toggleAllSelection()
+    toggleRowSelection(row, selected) {
+      this.$refs.elTable.toggleRowSelection(row, selected);
     },
-    toggleRowExpansion (row, expanded) {
-      this.$refs.elTable.toggleRowExpansion(row, expanded)
+    toggleAllSelection() {
+      this.$refs.elTable.toggleAllSelection();
     },
-    setCurrentRow (row) {
-      this.$refs.elTable.setCurrentRow(row)
+    toggleRowExpansion(row, expanded) {
+      this.$refs.elTable.toggleRowExpansion(row, expanded);
     },
-    clearSort () {
-      this.$refs.elTable.clearSort()
+    setCurrentRow(row) {
+      this.$refs.elTable.setCurrentRow(row);
     },
-    clearFilter (columnKey) {
-      this.$refs.elTable.clearFilter(columnKey)
+    clearSort() {
+      this.$refs.elTable.clearSort();
     },
-    doLayout () {
-      this.$refs.elTable.doLayout()
+    clearFilter(columnKey) {
+      this.$refs.elTable.clearFilter(columnKey);
     },
-    sort (prop, order) {
-      this.$refs.elTable.sort(prop, order)
+    doLayout() {
+      this.$refs.elTable.doLayout();
     },
-    paginationCurrentChange (val) {
-      this.$emit('p-current-change', val)
+    sort(prop, order) {
+      this.$refs.elTable.sort(prop, order);
     },
-    getMergeArr (tableData, merge) {
-      if (!merge) return
-      this.mergeLine = {}
-      this.mergeIndex = {}
+    paginationCurrentChange(val) {
+      this.$emit("p-current-change", val);
+    },
+    getMergeArr(tableData, merge) {
+      if (!merge) return;
+      this.mergeLine = {};
+      this.mergeIndex = {};
       merge.forEach((item, k) => {
         tableData.forEach((data, i) => {
           if (i === 0) {
-            this.mergeIndex[item] = this.mergeIndex[item] || []
-            this.mergeIndex[item].push(1)
-            this.mergeLine[item] = 0
+            this.mergeIndex[item] = this.mergeIndex[item] || [];
+            this.mergeIndex[item].push(1);
+            this.mergeLine[item] = 0;
           } else {
             if (data[item] === tableData[i - 1][item]) {
-              this.mergeIndex[item][this.mergeLine[item]] += 1
-              this.mergeIndex[item].push(0)
+              this.mergeIndex[item][this.mergeLine[item]] += 1;
+              this.mergeIndex[item].push(0);
             } else {
-              this.mergeIndex[item].push(1)
-              this.mergeLine[item] = i
+              this.mergeIndex[item].push(1);
+              this.mergeLine[item] = i;
             }
           }
-        })
-      })
+        });
+      });
     },
-    mergeMethod ({ row, column, rowIndex, columnIndex }) {
-      const index = this.merge.indexOf(column.property)
+    mergeMethod({ row, column, rowIndex, columnIndex }) {
+      const index = this.merge.indexOf(column.property);
       if (index > -1) {
-        const _row = this.mergeIndex[this.merge[index]][rowIndex]
-        const _col = _row > 0 ? 1 : 0
+        const _row = this.mergeIndex[this.merge[index]][rowIndex];
+        const _col = _row > 0 ? 1 : 0;
         return {
           rowspan: _row,
-          colspan: _col
-        }
+          colspan: _col,
+        };
       }
-    }
+    },
   },
   watch: {
-    merge () {
-      this.getMergeArr(this.data, this.merge)
+    merge() {
+      this.getMergeArr(this.data, this.merge);
     },
-    dataLength () {
-      this.getMergeArr(this.data, this.merge)
-    }
-  }
-}
-
+    dataLength() {
+      this.getMergeArr(this.data, this.merge);
+    },
+  },
+};
 </script>

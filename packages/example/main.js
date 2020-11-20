@@ -12,7 +12,9 @@ import NbDesign from "@tencent/nb-design";
 import "@tencent/nb-design/lib/theme-chalk/index.css";
 
 import eppUi from "@tencent/epp-ui";
-// import eppUiTest from "@tencent/epp-ui-test";
+import eppUiTest from "@tencent/epp-ui-test";
+console.log(eppUiTest,5152);
+
 Vue.use(NbDesign);
 // Vue.use(eppUiTest);
 
