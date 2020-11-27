@@ -1,7 +1,7 @@
 import NbDesign from "@tencent/nb-design";
-import eppTable from "../../packages/epp-ui/epp-table/epp-table.vue";
-import eppForm from "../../packages/epp-ui/epp-form/epp-form.vue";
-import eppSteps from "../../packages/epp-ui/epp-steps/epp-steps.vue";
+import eppTable from "../../packages/epp-ui/src/epp-table/epp-table.vue";
+import eppForm from "../../packages/epp-ui/src/epp-form/epp-form.vue";
+import eppSteps from "../../packages/epp-ui/src/epp-steps/epp-steps.vue";
 import DemoBlock from "./components/demo-block/demo-block.vue";
 import "@tencent/nb-design/lib/theme-chalk/index.css";
 
