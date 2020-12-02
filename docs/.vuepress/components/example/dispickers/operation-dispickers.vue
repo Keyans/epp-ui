@@ -2,7 +2,6 @@
   <div>
     <!-- v-if="districts" -->
     <epp-dispickers
-      v-model="aread"
       :districts="districts"
       :province="province"
       :city="city"
@@ -26,7 +25,6 @@ export default {
   },
   data() {
     return {
-      aread: "",
       districts: null,
       errorHint: false
     };
