@@ -1,7 +1,6 @@
 <template>
   <div :class="wrapper">
     <template v-if="type !== 'mobile'">
-      <label>
         <nb-select
           v-model="currentProvince"
           :disabled="disabled || provinceDisabled"
@@ -16,9 +15,7 @@
           >
           </nb-option>
         </nb-select>
-      </label>
       <template v-if="!onlyProvince">
-        <label>
           <nb-select
             v-model="currentCity"
             :disabled="disabled || cityDisabled"
@@ -33,8 +30,6 @@
             >
             </nb-option>
           </nb-select>
-        </label>
-        <label>
           <nb-select
             v-if="!hideArea"
             v-model="currentArea"
@@ -49,7 +44,6 @@
             >
             </nb-option>
           </nb-select>
-        </label>
       </template>
     </template>
     <template v-else>
