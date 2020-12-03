@@ -11,6 +11,7 @@
       :total="100"
       :page-size="pageSize"
       pagination
+      :sortable="true"
       row-key="id"
       layout="total, sizes, prev, pager, next, jumper"
       @size-change="handleSizeChange"
@@ -21,10 +22,10 @@
 </template>
 
 <script>
-import eppForm from "../epp-ui/src/epp-form/epp-form.vue";
-import eppTable from "../epp-ui/src/epp-table/epp-table.vue";
+// import eppForm from "../epp-ui/src/epp-form/epp-form.vue";
+// import eppTable from "../epp-ui/src/epp-table/epp-table.vue";
 export default {
-  components: { eppForm, eppTable },
+  // components: { eppForm, eppTable },
   data() {
     return {
       loading: false,
@@ -61,31 +62,31 @@ export default {
         {
           id: 2,
           date: "2016-05-02",
-          name: `王小虎-1`,
+          name: `王小虎-2`,
           address: "上海市普陀区金沙江路1",
         },
         {
           id: 3,
           date: "2016-05-02",
-          name: `王小虎-1`,
+          name: `王小虎-3`,
           address: "上海市普陀区金沙江路1",
         },
         {
           id: 4,
           date: "2016-05-02",
-          name: `王小虎-1`,
+          name: `王小虎-4`,
           address: "上海市普陀区金沙江路1",
         },
         {
           id: 5,
           date: "2016-05-02",
-          name: `王小虎-1`,
+          name: `王小虎-5`,
           address: "上海市普陀区金沙江路1",
         },
         {
           id: 6,
           date: "2016-05-03",
-          name: `王小虎-1`,
+          name: `王小虎-6`,
           address: "上海市普陀区金沙江路1",
         },
         {

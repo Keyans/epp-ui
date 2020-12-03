@@ -95,9 +95,9 @@ export default {
       defaultSortOptions: {
         //设置表格可拖拽
         sort: true, // boolean 定义是否列表单元是否可以在列表容器内进行拖拽排序
-        delay: 0, // number 定义鼠标选中列表单元可以开始拖动的延迟时间；
+        delay: 100, // number 定义鼠标选中列表单元可以开始拖动的延迟时间；
         animation: 150, // ms, number 单位：ms，定义排序动画的时间
-        draggable: ".item", // 允许拖拽的项目类名
+        draggable: ".nb-table__row", // 允许拖拽的项目类名
         // 开始拖拽的时候
         onStart: function(/**Event*/ evt) {
           evt.oldIndex; // element index within parent

@@ -13,6 +13,19 @@
   <<< @/docs/.vuepress/components/example/table/basis-table.vue
 </demo-block>
 
+
+## 拖拽表格
+
+数据复杂的情况，建议通过弹窗形式进行数据编辑的操作
+
+<demo-block>
+  <example-table-drag-table slot="source"></example-table-drag-table>
+    必须通过指定 Table 组件的 `row-key` 属性来为 Table 增加拖拽属性,`sortable`设置为`true`,可传入`sortOptions`的配置来修改默认的拖动配置。
+
+  <<< @/docs/.vuepress/components/example/table/drag-table.vue
+</demo-block>
+
+
 ## 表格对齐
 
 表格头部及内容的对齐方式。
@@ -285,3 +298,4 @@
 
 <<< @/docs/.vuepress/components/example/table/edit-dialog-table.vue
 </demo-block>
+
