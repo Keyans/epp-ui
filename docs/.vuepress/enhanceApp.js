@@ -6,8 +6,6 @@ import eppDispickers from "../../packages/epp-ui/src/epp-dispickers/epp-dispicke
 import DemoBlock from "./components/demo-block/demo-block.vue";
 import "@tencent/nb-design/lib/theme-chalk/index.css";
 
-console.log(eppDispickers.name, 789879)
-console.log(eppTable,4132456)
 export default ({
   Vue, // VuePress 正在使用的 Vue 构造函数
 }) => {

@@ -90,6 +90,7 @@ export default {
   },
   data() {
     return {
+      tableKey: new Date().getTime(),
       mergeLine: {},
       mergeIndex: {},
       defaultSortOptions: {
@@ -181,9 +182,11 @@ export default {
   },
   methods: {
     initSort() {
-      const tbody = document.querySelector(".nb-table__body-wrapper tbody");
+      const tbody = this.$refs.elTable.$el.children[2].firstElementChild
+        .children[1]; //获取element-table中的tbody
       new Sortable(tbody, this.sortableOptions);
     },
+
     clearSelection() {
       this.$refs.elTable.clearSelection();
     },

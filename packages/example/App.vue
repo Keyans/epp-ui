@@ -2,6 +2,7 @@
   <div id="App">
     <epp-form ref="eppForm" :formConfig="formConfig"></epp-form>
     <epp-table
+      :key="1"
       v-loading="loading"
       ref="multipleTable"
       :column="tableData.column"
@@ -18,19 +19,84 @@
       @p-current-change="handleCurrentChange"
     >
     </epp-table>
+    <epp-table
+      :key="2"
+      :column="tableData2.column"
+      :data="tableData2.data"
+      :sortable="true"
+      row-key="cc"
+    >
+    </epp-table>
   </div>
 </template>
 
 <script>
-// import eppForm from "../epp-ui/src/epp-form/epp-form.vue";
-// import eppTable from "../epp-ui/src/epp-table/epp-table.vue";
+import eppForm from "../epp-ui/src/epp-form/epp-form.vue";
+import eppTable from "../epp-ui/src/epp-table/epp-table.vue";
 export default {
-  // components: { eppForm, eppTable },
+  components: { eppForm, eppTable },
   data() {
     return {
       loading: false,
       pageSize: 5,
       currentPage: 1,
+      tableData2: {
+        column: [
+          {
+            type: "index",
+          },
+          {
+            prop: "date",
+            label: "日期",
+          },
+          {
+            prop: "name",
+            label: "姓名",
+          },
+          {
+            prop: "address",
+            label: "地址",
+          },
+        ],
+        data: [
+          {
+            cc: 1,
+            date: "2016-05-02",
+            name: "王小虎1",
+            address: "上海市普陀区金沙江路 1518 弄",
+          },
+          {
+            cc: 2,
+            date: "2016-05-02",
+            name: "王小虎2",
+            address: "上海市普陀区金沙江路 1518 弄",
+          },
+          {
+            cc: 3,
+            date: "2016-05-02",
+            name: "王小虎3",
+            address: "上海市普陀区金沙江路 1518 弄",
+          },
+          {
+            cc: 4,
+            date: "2016-05-02",
+            name: "王小虎3",
+            address: "上海市普陀区金沙江路 1518 弄",
+          },
+          {
+            cc: 5,
+            date: "2016-05-02",
+            name: "王小虎3",
+            address: "上海市普陀区金沙江路 1518 弄",
+          },
+          {
+            cc: 6,
+            date: "2016-05-02",
+            name: "王小虎3",
+            address: "上海市普陀区金沙江路 1518 弄",
+          },
+        ],
+      },
       tableData: {
         column: [
           {

@@ -10,11 +10,11 @@ import Vue from "vue";
 import App from "./App.vue";
 import NbDesign from "@tencent/nb-design";
 import "@tencent/nb-design/lib/theme-chalk/index.css";
-import eppUi from "../epp-ui/lib/epp-ui.umd";
-// import eppUi from "@tencent/epp-ui";
+// import eppUi from "../epp-ui/lib/epp-ui.umd";
+import eppUi from "@tencent/epp-ui";
 // import eppUiTest from "@tencent/epp-ui-test";
 Vue.use(NbDesign);
-Vue.use(eppUi);
+// Vue.use(eppUi);
 
 Vue.config.productionTip = false;
 

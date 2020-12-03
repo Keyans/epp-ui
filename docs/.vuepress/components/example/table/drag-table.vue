@@ -15,6 +15,9 @@ export default {
       tableData: {
         column: [
           {
+            type: "index",
+          },
+          {
             prop: "date",
             label: "日期",
           },
@@ -42,6 +45,24 @@ export default {
           },
           {
             id: 3,
+            date: "2016-05-02",
+            name: "王小虎3",
+            address: "上海市普陀区金沙江路 1518 弄",
+          },
+          {
+            id: 4,
+            date: "2016-05-02",
+            name: "王小虎3",
+            address: "上海市普陀区金沙江路 1518 弄",
+          },
+          {
+            id: 5,
+            date: "2016-05-02",
+            name: "王小虎3",
+            address: "上海市普陀区金沙江路 1518 弄",
+          },
+          {
+            id: 6,
             date: "2016-05-02",
             name: "王小虎3",
             address: "上海市普陀区金沙江路 1518 弄",
