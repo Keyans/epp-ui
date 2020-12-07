@@ -1,6 +1,6 @@
 {
   "name": "@tencent/epp-ui",
-  "version": "1.5.9",
+  "version": "1.6.0",
   "private": false,
   "main": "lib/epp-ui.umd.min.js",
   "author": "abbotwu",
@@ -26,9 +26,10 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@tencent/nb-design": "^0.1.1",
     "core-js": "^3.6.5",
-    "sortablejs": "^1.12.0",
-    "@tencent/nb-design": "^0.1.1"
+    "lodash": "^4.17.20",
+    "sortablejs": "^1.12.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

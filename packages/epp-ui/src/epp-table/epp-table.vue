@@ -4,7 +4,7 @@
       ref="elTable"
       v-bind="$attrs"
       v-on="$listeners"
-      :data="data"
+      :data="tableData"
       :span-method="this.merge ? this.mergeMethod : this.spanMethod"
     >
       <epp-column
@@ -37,7 +37,7 @@
 <script>
 import eppColumn from "./epp-column";
 import Sortable from "sortablejs";
-
+import { clonedeep } from "lodash";
 export default {
   name: "eppTable",
   props: {
@@ -111,14 +111,11 @@ export default {
           // same properties as onEnd
         },
         // 结束拖拽
-        onEnd: function(/**Event*/ evt) {
-          var itemEl = evt.item; // dragged HTMLElement
-          evt.to; // target list
-          evt.from; // previous list
-          evt.oldIndex; // element's old index within old parent
-          evt.newIndex; // element's new index within new parent
-          evt.clone; // the clone element
-          evt.pullMode; // when item is in another sortable: `"clone"` if cloning, `true` if moving
+        onEnd: (/**Event*/ evt) => {
+          let data = JSON.parse(JSON.stringify(this.tableData));
+          const currRow = data.splice(evt.oldIndex, 1)[0];
+          data.splice(evt.newIndex, 0, currRow);
+          this.$emit("update:data", data);
         },
         // 元素从一个列表拖拽到另一个列表
         onAdd: function(/**Event*/ evt) {
@@ -175,6 +172,9 @@ export default {
     },
     sortableOptions() {
       return Object.assign(this.sortOptions, this.defaultSortOptions);
+    },
+    tableData() {
+      return this.data;
     },
   },
   mounted() {

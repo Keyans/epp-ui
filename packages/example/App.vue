@@ -1,7 +1,7 @@
 <template>
   <div id="App">
     <epp-form ref="eppForm" :formConfig="formConfig"></epp-form>
-    <epp-table
+    <!-- <epp-table
       :key="1"
       v-loading="loading"
       ref="multipleTable"
@@ -18,13 +18,14 @@
       @size-change="handleSizeChange"
       @p-current-change="handleCurrentChange"
     >
-    </epp-table>
+    </epp-table> -->
     <epp-table
       :key="2"
       :column="tableData2.column"
-      :data="tableData2.data"
+      :data.sync="tableData2.data"
       :sortable="true"
       row-key="cc"
+      ref="test"
     >
     </epp-table>
   </div>
@@ -42,9 +43,6 @@ export default {
       currentPage: 1,
       tableData2: {
         column: [
-          {
-            type: "index",
-          },
           {
             prop: "date",
             label: "日期",
@@ -80,19 +78,19 @@ export default {
           {
             cc: 4,
             date: "2016-05-02",
-            name: "王小虎3",
+            name: "王小虎4",
             address: "上海市普陀区金沙江路 1518 弄",
           },
           {
             cc: 5,
             date: "2016-05-02",
-            name: "王小虎3",
+            name: "王小虎5",
             address: "上海市普陀区金沙江路 1518 弄",
           },
           {
             cc: 6,
             date: "2016-05-02",
-            name: "王小虎3",
+            name: "王小虎6",
             address: "上海市普陀区金沙江路 1518 弄",
           },
         ],
@@ -225,7 +223,7 @@ export default {
             type: "primary",
             name: "提交",
             click: () => {
-              console.log(this.$refs.eppForm.getFormData());
+              this.clickButton();
             },
           },
           {
@@ -272,6 +270,9 @@ export default {
     this.createData();
   },
   methods: {
+    clickButton() {
+      console.log(this.$refs.test.data);
+    },
     createData(length) {
       this.loading = true;
       console.log(this.currentPage);

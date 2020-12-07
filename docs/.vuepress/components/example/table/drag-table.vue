@@ -1,7 +1,7 @@
 <template>
   <epp-table
     :column="tableData.column"
-    :data="tableData.data"
+    :data.sync="tableData.data"
     :sortable="true"
     row-key="id"
   >
