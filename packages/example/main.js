@@ -12,6 +12,14 @@ import NbDesign from "@tencent/nb-design";
 import "@tencent/nb-design/lib/theme-chalk/index.css";
 // import eppUi from "../epp-ui/lib/epp-ui.umd";
 import eppUi from "@tencent/epp-ui";
+import { Button, Link } from "lerna-demo-test-ui";
+// import { eppTable } from "../epp-ui/lib/epp-table/index.js";
+
+// console.log(eppTable, 12312);
+// console.log(template, 1273891273);
+// Vue.use(Button);
+// Vue.use(Link).use(Button);
+
 // import eppUiTest from "@tencent/epp-ui-test";
 Vue.use(NbDesign);
 // Vue.use(eppUi);

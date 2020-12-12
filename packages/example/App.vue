@@ -20,27 +20,40 @@
     >
     </epp-table> -->
     <epp-table
-      :key="2"
       :column="tableData2.column"
       :data.sync="tableData2.data"
-      :sortable="true"
+      :sortable="edit"
       row-key="cc"
       ref="test"
     >
     </epp-table>
+    <div @click="handleEdit(true)">
+      <MyButton></MyButton>
+    </div>
+    <div @click="handleEdit(false)">
+      <MyLink></MyLink>
+    </div>
   </div>
 </template>
 
 <script>
+import { Button, Link } from "lerna-demo-test-ui";
+
 import eppForm from "../epp-ui/src/epp-form/epp-form.vue";
 import eppTable from "../epp-ui/src/epp-table/epp-table.vue";
 export default {
-  components: { eppForm, eppTable },
+  components: { eppForm, eppTable, MyButton: Button, MyLink: Link },
+  provide() {
+    return {
+      provideSortable: this.edit,
+    };
+  },
   data() {
     return {
       loading: false,
       pageSize: 5,
       currentPage: 1,
+      edit: true,
       tableData2: {
         column: [
           {
@@ -270,12 +283,14 @@ export default {
     this.createData();
   },
   methods: {
+    handleEdit(bol) {
+      this.edit = bol;
+    },
     clickButton() {
       console.log(this.$refs.test.data);
     },
     createData(length) {
       this.loading = true;
-      console.log(this.currentPage);
       if (this.currentPage === 1) {
         setTimeout(() => {
           this.tableData.data = this.newData.slice(0, 5);

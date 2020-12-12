@@ -41,10 +41,7 @@ import { clonedeep } from "lodash";
 export default {
   name: "eppTable",
   props: {
-    sortable: {
-      type: Boolean,
-      default: false,
-    },
+    sortable: Boolean,
     sortOptions: {
       type: Object,
       required: false,
@@ -90,6 +87,7 @@ export default {
   },
   data() {
     return {
+      isSortablejs: null, //判断是否有sortablejs
       tableKey: new Date().getTime(),
       mergeLine: {},
       mergeIndex: {},
@@ -181,10 +179,10 @@ export default {
     if (this.sortable) this.initSort();
   },
   methods: {
-    initSort() {
+    initSort(type, val) {
       const tbody = this.$refs.elTable.$el.children[2].firstElementChild
         .children[1]; //获取element-table中的tbody
-      new Sortable(tbody, this.sortableOptions);
+      this.isSortablejs = new Sortable(tbody, this.sortableOptions);
     },
 
     clearSelection() {
@@ -257,6 +255,17 @@ export default {
     },
     dataLength() {
       this.getMergeArr(this.data, this.merge);
+    },
+    sortable: {
+      handler(val) {
+        if (val && this.isSortablejs === null) {
+          this.initSort();
+        }
+        //根据传入的sortable判断是否启用
+        if (this.isSortablejs) {
+          this.isSortablejs.option("disabled", !val);
+        }
+      },
     },
   },
 };
