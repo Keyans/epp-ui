@@ -63,6 +63,11 @@ module.exports = (ctx) => ({
               title: "dispickers省市区三级联动组件",
               collapsable: false,
               path: "dispickers"
+            },
+            {
+              title: "标签组件",
+              collapsable: false,
+              path: "tags"
             }
           ],
         },
