@@ -65,7 +65,7 @@ module.exports = (ctx) => ({
               path: "dispickers"
             },
             {
-              title: "标签组件",
+              title: "tags标签",
               collapsable: false,
               path: "tags"
             }
