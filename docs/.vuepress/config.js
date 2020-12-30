@@ -68,6 +68,11 @@ module.exports = (ctx) => ({
               title: "tags标签",
               collapsable: false,
               path: "tags"
+            },
+            {
+              title: "switch组件",
+              collapsable: false,
+              path: "switch"
             }
           ],
         },
