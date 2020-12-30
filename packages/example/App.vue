@@ -1,7 +1,8 @@
 <template>
   <div id="App">
     <epp-form ref="eppForm" :formConfig="formConfig"></epp-form>
-    <epp-table
+    <!-- <epp-table
+      :key="1"
       v-loading="loading"
       ref="multipleTable"
       :column="tableData.column"
@@ -17,20 +18,96 @@
       @size-change="handleSizeChange"
       @p-current-change="handleCurrentChange"
     >
+    </epp-table> -->
+    <epp-table
+      :column="tableData2.column"
+      :data.sync="tableData2.data"
+      :sortable="edit"
+      row-key="cc"
+      ref="test"
+    >
     </epp-table>
+    <div @click="handleEdit(true)">
+      <MyButton></MyButton>
+    </div>
+    <div @click="handleEdit(false)">
+      <MyLink></MyLink>
+    </div>
   </div>
 </template>
 
 <script>
-// import eppForm from "../epp-ui/src/epp-form/epp-form.vue";
-// import eppTable from "../epp-ui/src/epp-table/epp-table.vue";
+import { Button, Link } from "lerna-demo-test-ui";
+
+import eppForm from "../epp-ui/src/epp-form/epp-form.vue";
+import eppTable from "../epp-ui/src/epp-table/epp-table.vue";
 export default {
-  // components: { eppForm, eppTable },
+  components: { eppForm, eppTable, MyButton: Button, MyLink: Link },
+  provide() {
+    return {
+      provideSortable: this.edit,
+    };
+  },
   data() {
     return {
       loading: false,
       pageSize: 5,
       currentPage: 1,
+      edit: true,
+      tableData2: {
+        column: [
+          {
+            prop: "date",
+            label: "日期",
+          },
+          {
+            prop: "name",
+            label: "姓名",
+          },
+          {
+            prop: "address",
+            label: "地址",
+          },
+        ],
+        data: [
+          {
+            cc: 1,
+            date: "2016-05-02",
+            name: "王小虎1",
+            address: "上海市普陀区金沙江路 1518 弄",
+          },
+          {
+            cc: 2,
+            date: "2016-05-02",
+            name: "王小虎2",
+            address: "上海市普陀区金沙江路 1518 弄",
+          },
+          {
+            cc: 3,
+            date: "2016-05-02",
+            name: "王小虎3",
+            address: "上海市普陀区金沙江路 1518 弄",
+          },
+          {
+            cc: 4,
+            date: "2016-05-02",
+            name: "王小虎4",
+            address: "上海市普陀区金沙江路 1518 弄",
+          },
+          {
+            cc: 5,
+            date: "2016-05-02",
+            name: "王小虎5",
+            address: "上海市普陀区金沙江路 1518 弄",
+          },
+          {
+            cc: 6,
+            date: "2016-05-02",
+            name: "王小虎6",
+            address: "上海市普陀区金沙江路 1518 弄",
+          },
+        ],
+      },
       tableData: {
         column: [
           {
@@ -159,7 +236,7 @@ export default {
             type: "primary",
             name: "提交",
             click: () => {
-              console.log(this.$refs.eppForm.getFormData());
+              this.clickButton();
             },
           },
           {
@@ -206,9 +283,14 @@ export default {
     this.createData();
   },
   methods: {
+    handleEdit(bol) {
+      this.edit = bol;
+    },
+    clickButton() {
+      console.log(this.$refs.test.data);
+    },
     createData(length) {
       this.loading = true;
-      console.log(this.currentPage);
       if (this.currentPage === 1) {
         setTimeout(() => {
           this.tableData.data = this.newData.slice(0, 5);

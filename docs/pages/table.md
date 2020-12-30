@@ -16,11 +16,11 @@
 
 ## 拖拽表格
 
-数据复杂的情况，建议通过弹窗形式进行数据编辑的操作
+拖拽表格展示用法。
 
 <demo-block>
   <example-table-drag-table slot="source"></example-table-drag-table>
-    必须通过指定 Table 组件的 `row-key` 属性来为 Table 增加拖拽属性,`sortable`设置为`true`,可传入`sortOptions`的配置来修改默认的拖动配置。
+  必须通过指定 Table 组件的 `row-key` 属性来为 Table 增加拖拽属性,`sortable`设置为`true`,可传入`sortOptions`的配置来修改默认的拖动配置。
 
   <<< @/docs/.vuepress/components/example/table/drag-table.vue
 </demo-block>

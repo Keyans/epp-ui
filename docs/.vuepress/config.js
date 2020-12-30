@@ -27,6 +27,7 @@ module.exports = (ctx) => ({
     nav: [
       { text: "指南", link: "/guide/step" },
       { text: "组件", link: "/pages/table" },
+      { text: "工具库", link: "https://ares.nb.qq.com/jsdocs/index.html" },
       {
         text: "Github",
         link: "http://git.code.oa.com/demeter_web/npm_epp_ui.git",
@@ -62,6 +63,11 @@ module.exports = (ctx) => ({
               title: "dispickers省市区三级联动组件",
               collapsable: false,
               path: "dispickers"
+            },
+            {
+              title: "tags标签",
+              collapsable: false,
+              path: "tags"
             }
           ],
         },
