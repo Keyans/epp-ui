@@ -57,6 +57,10 @@ export default {
       background: rgba(250, 144, 24, 0.12);
       color: #fe8800;
     }
+    &.epp-tags-status__disabled {
+      background: #f2f2f2;
+      color: rgba(0, 0, 0, 0.24);
+    }
     .epp-tags-poin {
       display: inline-block;
       width: 6px;
@@ -74,6 +78,9 @@ export default {
       }
       &.epp-tags-poin__warning {
         background: #fe8800;
+      }
+      &.epp-tags-poin__disabled {
+        background: rgba(0, 0, 0, 0.24);
       }
     }
   }

@@ -4,5 +4,6 @@
     <epp-tags text="审核通过" type="success"></epp-tags>
     <epp-tags text="待补齐资料" type="warning"></epp-tags>
     <epp-tags text="审核拒绝" type="danger"></epp-tags>
+    <epp-tags text="已失效" type="disabled"></epp-tags>
   </div>
 </template>
