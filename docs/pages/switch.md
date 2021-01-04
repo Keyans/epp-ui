@@ -18,3 +18,10 @@
   <example-switch-base-switch slot="source"></example-switch-base-switch>
   <<< @/docs/.vuepress/components/example/switch/base-switch.vue
 </demo-block>
+
+## 支持自定义数量的文字
+
+<demo-block>
+  <example-switch-more-text-switch slot="source"></example-switch-more-text-switch>
+  <<< @/docs/.vuepress/components/example/switch/more-text-switch.vue
+</demo-block>
