@@ -1,5 +1,5 @@
 <template>
-  <epp-form ref="eppForm" :formConfig="formConfig" @getFormData="getFormData"></epp-form>
+  <epp-form ref="eppForm" :formConfig="formConfig"></epp-form>
 </template>
 
 <script>
@@ -7,12 +7,18 @@ export default {
   data() {
     return {
       formConfig: {
+        inline:true,
+        col:4,
+        onUpdateData: ({ key, value }) => {
+          this.handleInput(key,value)
+        },
         formData: {
           number: "",
           id: "",
           date: "",
           switchValue: "",
         },
+        btn: false,
         formItem: [
           {
             label: "测试",
@@ -58,8 +64,9 @@ export default {
     };
   },
   methods: {
-    getFormData(data) {
-      console.log(data);
+    //对当前的值进行更改
+    handleInput(key,value) {
+      console.log(key,value);
     },
   },
 };

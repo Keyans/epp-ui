@@ -1,5 +1,9 @@
 <template>
-  <epp-form ref="eppForm" :formConfig="formConfig" @getFormData="getFormData"></epp-form>
+  <epp-form
+    ref="eppForm"
+    :formConfig="formConfig"
+    @getFormData="getFormData"
+  ></epp-form>
 </template>
 
 <script>
@@ -18,11 +22,15 @@ export default {
             label: "测试",
             model: "switchValue",
             componentType: "input",
+            MaxLength: 5,
+            valueType: "Number",
           },
           {
             label: "违规单号",
             model: "number",
             componentType: "input",
+            valueType: "Number",
+            input: (val) => val.replace(/[\W]/g, ""),
           },
           {
             label: "时间",
