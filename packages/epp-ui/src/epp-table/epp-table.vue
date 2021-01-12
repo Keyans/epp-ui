@@ -14,8 +14,13 @@
         :column="item"
       >
       </epp-column>
+      <!-- 如果为empty则处理默认为空的情况 -->
       <template v-slot:empty>
         <slot name="empty"></slot>
+      </template>
+      <!-- 在最后一行插入默认slot -->
+      <template v-if="$slots.default">
+        <slot></slot>
       </template>
     </nb-table>
     <nb-pagination
