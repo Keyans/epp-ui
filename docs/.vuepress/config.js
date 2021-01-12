@@ -36,9 +36,14 @@ module.exports = (ctx) => ({
     sidebar: {
       "/pages/": [
         {
-          title: "组件",
+          title: "UI组件",
           collapsable: false,
           children: [
+            {
+              title: "button按钮",
+              collapsable: false,
+              path: "button",
+            },
             {
               title: "table表格",
               collapsable: false,
@@ -63,6 +68,32 @@ module.exports = (ctx) => ({
               title: "dispickers省市区三级联动组件",
               collapsable: false,
               path: "dispickers"
+            },
+            {
+              title: "tags标签",
+              collapsable: false,
+              path: "tags"
+            },
+            {
+              title: "switch组件",
+              collapsable: false,
+              path: "switch"
+            },
+          ],
+        },
+        {
+          title: "业务组件",
+          collapsable: false,
+          children: [
+            {
+              title: "img-upload 图片上传组件",
+              collapsable: false,
+              path: "img-upload"
+            },
+            {
+              title: "search-bank 选择银行/支行组件",
+              collapsable: false,
+              path: "search-bank"
             }
           ],
         },
