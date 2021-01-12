@@ -22,7 +22,7 @@ export default {
             label: "测试",
             model: "switchValue",
             componentType: "input",
-            MaxLength: 5,
+            maxlength: 5,
             valueType: "Number",
           },
           {
