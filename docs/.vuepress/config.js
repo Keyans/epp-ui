@@ -36,7 +36,7 @@ module.exports = (ctx) => ({
     sidebar: {
       "/pages/": [
         {
-          title: "UI组件",
+          title: "基础组件",
           collapsable: false,
           children: [
             {
@@ -60,11 +60,6 @@ module.exports = (ctx) => ({
               path: "steps",
             },
             {
-              title: "breadcrumb面包屑",
-              collapsable: false,
-              path: "bread",
-            },
-            {
               title: "dispickers省市区三级联动组件",
               collapsable: false,
               path: "dispickers"
@@ -85,6 +80,11 @@ module.exports = (ctx) => ({
           title: "业务组件",
           collapsable: false,
           children: [
+            {
+              title: "breadcrumb面包屑",
+              collapsable: false,
+              path: "bread",
+            },
             {
               title: "img-upload 图片上传组件",
               collapsable: false,
