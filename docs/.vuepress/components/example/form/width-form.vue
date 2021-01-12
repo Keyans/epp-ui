@@ -1,5 +1,9 @@
 <template>
-  <epp-form ref="eppForm" :formConfig="formConfig" @getFormData="getFormData"></epp-form>
+  <epp-form
+    ref="eppForm"
+    :formConfig="formConfig"
+    @getFormData="getFormData"
+  ></epp-form>
 </template>
 
 <script>
@@ -18,11 +22,19 @@ export default {
             label: "测试",
             model: "switchValue",
             componentType: "input",
+            styleObject: {
+              //设置自定义的样式
+              width: "100px",
+            },
           },
           {
             label: "违规单号",
             model: "number",
             componentType: "input",
+            styleObject: {
+              //设置自定义的样式
+              width: "50px",
+            },
           },
           {
             label: "时间",

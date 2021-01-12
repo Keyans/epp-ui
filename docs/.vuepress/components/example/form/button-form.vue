@@ -1,5 +1,5 @@
 <template>
-  <epp-form ref="eppForm" :formConfig="formConfig" @getFormData="getFormData"></epp-form>
+  <epp-form ref="eppForm" :formConfig="formConfig"></epp-form>
 </template>
 
 <script>
@@ -7,12 +7,30 @@ export default {
   data() {
     return {
       formConfig: {
+        inline:true,
+        col:2,
         formData: {
           number: "",
           id: "",
           date: "",
           switchValue: "",
         },
+        btn: [
+          {
+            type: "primary",
+            name: "提交",
+            click: () => {
+              this.submit();
+            },
+          },
+          {
+            type: "",
+            name: "重置",
+            click: () => {
+              this.$refs.eppForm.resetForm();
+            },
+          },
+        ],
         formItem: [
           {
             label: "测试",
@@ -58,8 +76,8 @@ export default {
     };
   },
   methods: {
-    getFormData(data) {
-      console.log(data);
+    submit() {
+     console.log(this.$refs.eppForm.getFormData())
     },
   },
 };
