@@ -5,6 +5,7 @@
 ## 使用说明
 适用项目：商家系统  
 文件地址：/src/components/epp-img-upload.vue  
+GIT地址：[https://git.code.oa.com/demeter_web/coco_tob_cms/blob/master/src/components/epp-img-upload.vue](https://git.code.oa.com/demeter_web/coco_tob_cms/blob/master/src/components/epp-img-upload.vue)  
 引用代码：  
 ```javascript
 import EppImgUpload from '@/components/epp-img-upload.vue';

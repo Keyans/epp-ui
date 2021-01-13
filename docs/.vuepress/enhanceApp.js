@@ -5,6 +5,7 @@ import eppSteps from "../../packages/epp-ui/src/epp-steps/epp-steps.vue";
 import eppDispickers from "../../packages/epp-ui/src/epp-dispickers/epp-dispickers.vue";
 import eppTags from "../../packages/epp-ui/src/epp-tags/epp-tags.vue";
 import eppSwitch from "../../packages/epp-ui/src/epp-switch/epp-switch.vue";
+import EppButton from "../../packages/epp-ui/src/epp-button/epp-button.vue";
 import DemoBlock from "./components/demo-block/demo-block.vue";
 import "@tencent/nb-design/lib/theme-chalk/index.css";
 
@@ -19,5 +20,6 @@ export default ({
   Vue.component(eppDispickers.name, eppDispickers);
   Vue.component(eppTags.name, eppTags);
   Vue.component(eppSwitch.name, eppSwitch);
+  Vue.component(EppButton.name, EppButton);
   Vue.component("demo-block", DemoBlock);
 };

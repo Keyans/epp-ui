@@ -86,6 +86,11 @@ module.exports = (ctx) => ({
           collapsable: false,
           children: [
             {
+              title: "特别说明",
+              collapsable: false,
+              path: "business-component-description"
+            },
+            {
               title: "img-upload 图片上传组件",
               collapsable: false,
               path: "img-upload"
