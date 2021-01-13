@@ -25,15 +25,15 @@ export default {
 
 <code>初始状态</code>  
 
-![](https://mvp-web-1300522992.cos.ap-chengdu.myqcloud.com/img/coco_tob/epp_ui_demo/epp-search-bank/bankname1.png)
+<img src="../.vuepress/public/img/bankname1.png">
   
 <code>打开搜索弹层状态</code>  
 
-![](https://mvp-web-1300522992.cos.ap-chengdu.myqcloud.com/img/coco_tob/epp_ui_demo/epp-search-bank/bankname3.png)
+<img src="../.vuepress/public/img/bankname3.png">
   
 <code>已选状态</code>  
   
-![](https://mvp-web-1300522992.cos.ap-chengdu.myqcloud.com/img/coco_tob/epp_ui_demo/epp-search-bank/bankname2.png)  
+<img src="../.vuepress/public/img/bankname2.png">
 
 
 ```vue
@@ -74,16 +74,17 @@ export default {
 
 <code>初始状态</code>  
 
-![](https://mvp-web-1300522992.cos.ap-chengdu.myqcloud.com/img/coco_tob/epp_ui_demo/epp-search-bank/bankbranch1.png)
+<img src="../.vuepress/public/img/bankbranch1.png">
+
   
 <code>打开搜索弹层状态</code>  
 
-![](https://mvp-web-1300522992.cos.ap-chengdu.myqcloud.com/img/coco_tob/epp_ui_demo/epp-search-bank/bankbranch3.png)
+<img src="../.vuepress/public/img/bankbranch3.png">
+
   
 <code>已选状态</code>  
-  
-![](https://mvp-web-1300522992.cos.ap-chengdu.myqcloud.com/img/coco_tob/epp_ui_demo/epp-search-bank/bankbranch2.png)  
 
+<img src="../.vuepress/public/img/bankbranch2.png"> 
 
 
 ```vue
