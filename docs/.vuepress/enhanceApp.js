@@ -21,6 +21,10 @@ export default ({
   Vue.component(eppDispickers.name, eppDispickers);
   Vue.component(eppTags.name, eppTags);
   Vue.component(eppSwitch.name, eppSwitch);
-  Vue.component(eppBreadcrumb.name, eppBreadcrumb);
   Vue.component("demo-block", DemoBlock);
+  Vue.mixin({
+    mounted(){
+      Vue.component(eppBreadcrumb.name, eppBreadcrumb);
+    }
+  })
 };
