@@ -99,6 +99,11 @@ module.exports = (ctx) => ({
               title: "search-bank 选择银行/支行组件",
               collapsable: false,
               path: "search-bank"
+            },
+            {
+              title: "category 选择类目组件",
+              collapsable: false,
+              path: "category"
             }
           ],
         },
