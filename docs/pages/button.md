@@ -7,19 +7,19 @@
   <epp-button type="primary">主按钮</epp-button>
   <epp-button type="secondary">次按钮</epp-button>
   <epp-button>辅按钮</epp-button>
-</div>
+</div><br />
 
 <div class="demo">
   <epp-button :disabled="true" type="primary">主按钮</epp-button>
   <epp-button :disabled="true" type="secondary">次按钮</epp-button>
   <epp-button :disabled="true">辅按钮</epp-button>
-</div>
+</div><br />
 
 <div class="demo">
   <epp-button :loading="true" type="primary">主按钮</epp-button>
   <epp-button :loading="true" type="secondary">次按钮</epp-button>
   <epp-button :loading="true">辅按钮</epp-button>
-</div>
+</div><br />
 
 ```vue
 <epp-button type="primary">主按钮</epp-button>
@@ -61,19 +61,19 @@
   <epp-button type="primary" size="mini">主按钮</epp-button>
   <epp-button type="secondary" size="mini">次按钮</epp-button>
   <epp-button size="mini">辅按钮</epp-button>
-</div>
+</div><br />
 
 <div class="demo">
   <epp-button :disabled="true" type="primary" size="mini">主按钮</epp-button>
   <epp-button :disabled="true" type="secondary" size="mini">次按钮</epp-button>
   <epp-button :disabled="true" size="mini">辅按钮</epp-button>
-</div>
+</div><br />
 
 <div class="demo">
   <epp-button :loading="true" type="primary" size="mini">主按钮</epp-button>
   <epp-button :loading="true" type="secondary" size="mini">次按钮</epp-button>
   <epp-button :loading="true" size="mini">辅按钮</epp-button>
-</div>
+</div><br />
 
 ```vue
 <epp-button type="primary" size="mini">主按钮</epp-button>
