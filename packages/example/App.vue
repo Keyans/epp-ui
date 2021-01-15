@@ -1,48 +1,16 @@
 <template>
   <div id="App">
-    <epp-form ref="eppForm" :formConfig="formConfig"></epp-form>
-    <!-- <epp-table
-      :key="1"
-      v-loading="loading"
-      ref="multipleTable"
-      :column="tableData.column"
-      :data="tableData.data"
-      :current-page.sync="currentPage"
-      :page-sizes="[5, 10, 20, 30]"
-      :total="100"
-      :page-size="pageSize"
-      pagination
-      :sortable="true"
-      row-key="id"
-      layout="total, sizes, prev, pager, next, jumper"
-      @size-change="handleSizeChange"
-      @p-current-change="handleCurrentChange"
-    >
-    </epp-table> -->
-    <epp-table
-      :column="tableData2.column"
-      :data.sync="tableData2.data"
-      :sortable="edit"
-      row-key="cc"
-      ref="test"
-    >
-    </epp-table>
-    <div @click="handleEdit(true)">
-      <MyButton></MyButton>
-    </div>
-    <div @click="handleEdit(false)">
-      <MyLink></MyLink>
-    </div>
+    <epp-template></epp-template>
+    <epp-examplate></epp-examplate>
   </div>
 </template>
 
 <script>
-import { Button, Link } from "lerna-demo-test-ui";
+import EppTemplate from "../epp-ui/src/epp-template/epp-template.vue";
+import EppExamplate from "../epp-ui/src/epp-examplate/epp-examplate.vue";
 
-import eppForm from "../epp-ui/src/epp-form/epp-form.vue";
-import eppTable from "../epp-ui/src/epp-table/epp-table.vue";
 export default {
-  components: { eppForm, eppTable, MyButton: Button, MyLink: Link },
+  components: { EppTemplate, EppExamplate },
   provide() {
     return {
       provideSortable: this.edit,
@@ -222,58 +190,33 @@ export default {
         },
       ],
       formConfig: {
-        rules: {
-          number: [{ required: true, message: "请输入", trigger: "blur" }],
-        },
         formData: {
           number: "",
           id: "",
           date: "",
-          switchValue: false,
         },
-        btn: [
-          {
-            type: "primary",
-            name: "提交",
-            click: () => {
-              this.clickButton();
-            },
-          },
-          {
-            type: "",
-            name: "重置",
-            click: () => {
-              this.$refs.eppForm.validate();
-            },
-          },
-        ],
         formItem: [
-          {
-            label: "switch",
-            model: "switchValue",
-            type: "switch",
-          },
           {
             label: "违规单号",
             model: "number",
-            type: "input",
+            componentType: "input",
           },
           {
             label: "店铺id",
             model: "id",
-            type: "select",
-            children: [
-              {
-                type: "option",
-                label: "区域一",
-                value: "shanghai",
-              },
-              {
-                type: "option",
-                label: "区域二",
-                value: "beijing",
-              },
-            ],
+            componentType: "select",
+            children: {
+              options: [
+                {
+                  label: "区域一",
+                  value: "shanghai",
+                },
+                {
+                  label: "区域二",
+                  value: "beijing",
+                },
+              ],
+            },
           },
         ],
       },

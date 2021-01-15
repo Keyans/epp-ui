@@ -56,10 +56,10 @@ export default {
   methods: {
     getBreadcrumb() {
       this.isHome = this.$route.meta.menu || false;
-      this.breadList = JSON.parse(sessionStorage.getItem("breadList"));
+      this.breadList = JSON.parse(window.sessionStorage.getItem("breadList"));
     },
     handBack() {
-      let list = JSON.parse(sessionStorage.getItem("breadList"));
+      let list = JSON.parse(window.sessionStorage.getItem("breadList"));
       if(!list) return;
       list.pop(); //第一次删除面包屑的最后一个
       let obj = list.pop(); //第二次拿到最后的obj对象用来返回上一级

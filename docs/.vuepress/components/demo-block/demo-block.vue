@@ -37,12 +37,21 @@ import compoLang from "./i18n.json";
 
 export default {
   name: "demo-block",
+  props: {
+    isDefaultExpanded : {
+      type: Boolean,
+      default: false
+    }
+  },
   data() {
     return {
       hovering: false,
       fixedControl: false,
       isExpanded: false,
     };
+  },
+  created() {
+    this.isExpanded = this.isDefaultExpanded;
   },
   computed: {
     lang() {
