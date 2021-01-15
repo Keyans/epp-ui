@@ -81,6 +81,11 @@ module.exports = (ctx) => ({
           collapsable: false,
           children: [
             {
+              title: "特别说明",
+              collapsable: false,
+              path: "business-component-description"
+            },
+            {
               title: "breadcrumb面包屑",
               collapsable: false,
               path: "bread",
@@ -94,6 +99,11 @@ module.exports = (ctx) => ({
               title: "search-bank 选择银行/支行组件",
               collapsable: false,
               path: "search-bank"
+            },
+            {
+              title: "category 选择类目组件",
+              collapsable: false,
+              path: "category"
             }
           ],
         },

@@ -1,12 +1,12 @@
 import NbDesign from "@tencent/nb-design";
-import eppTable from "../../packages/epp-ui/src/epp-table/epp-table.vue";
-import eppForm from "../../packages/epp-ui/src/epp-form/epp-form.vue";
-import eppSteps from "../../packages/epp-ui/src/epp-steps/epp-steps.vue";
-import eppDispickers from "../../packages/epp-ui/src/epp-dispickers/epp-dispickers.vue";
-import eppTags from "../../packages/epp-ui/src/epp-tags/epp-tags.vue";
-import eppSwitch from "../../packages/epp-ui/src/epp-switch/epp-switch.vue";
-import eppBreadcrumb from "../../packages/epp-ui/src/epp-breadcrumb/epp-breadcrumb.vue";
-
+import EppTable from "../../packages/epp-ui/src/epp-table/epp-table.vue";
+import EppForm from "../../packages/epp-ui/src/epp-form/epp-form.vue";
+import EppSteps from "../../packages/epp-ui/src/epp-steps/epp-steps.vue";
+import EppDispickers from "../../packages/epp-ui/src/epp-dispickers/epp-dispickers.vue";
+import EppTags from "../../packages/epp-ui/src/epp-tags/epp-tags.vue";
+import EppSwitch from "../../packages/epp-ui/src/epp-switch/epp-switch.vue";
+import EppBreadcrumb from "../../packages/epp-ui/src/epp-breadcrumb/epp-breadcrumb.vue";
+import EppButton from "../../packages/epp-ui/src/epp-button/epp-button.vue";
 import DemoBlock from "./components/demo-block/demo-block.vue";
 import "@tencent/nb-design/lib/theme-chalk/index.css";
 
@@ -15,16 +15,17 @@ export default ({
 }) => {
   // ...做一些其他的应用级别的优化
   Vue.use(NbDesign);
-  Vue.component(eppTable.name, eppTable);
-  Vue.component(eppForm.name, eppForm);
-  Vue.component(eppSteps.name, eppSteps);
-  Vue.component(eppDispickers.name, eppDispickers);
-  Vue.component(eppTags.name, eppTags);
-  Vue.component(eppSwitch.name, eppSwitch);
+  Vue.component(EppTable.name, EppTable);
+  Vue.component(EppForm.name, EppForm);
+  Vue.component(EppSteps.name, EppSteps);
+  Vue.component(EppDispickers.name, EppDispickers);
+  Vue.component(EppTags.name, EppTags);
+  Vue.component(EppSwitch.name, EppSwitch);
+  Vue.component(EppButton.name, EppButton);
   Vue.component("demo-block", DemoBlock);
   Vue.mixin({
     mounted(){
-      Vue.component(eppBreadcrumb.name, eppBreadcrumb);
+      Vue.component(EppBreadcrumb.name, EppBreadcrumb);
     }
   })
 };
