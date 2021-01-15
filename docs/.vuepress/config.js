@@ -109,6 +109,11 @@ module.exports = (ctx) => ({
               path: "step",
             },
             {
+              title: "组件开发流程",
+              collapsable: false,
+              path: "dev-process",
+            },
+            {
               title: "B端常用网站",
               collapsable: false,
               path: "collect",
