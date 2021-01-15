@@ -52,7 +52,6 @@ export default {
   },
   created() {
     this.isExpanded = this.isDefaultExpanded;
-    console.log('this.isDefaultExpanded: ', this.isDefaultExpanded);
   },
   computed: {
     lang() {
