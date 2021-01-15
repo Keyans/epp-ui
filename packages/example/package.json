@@ -7,7 +7,8 @@
     "@tencent/epp-ui-test": "^1.5.3",
     "core-js": "^3.6.5",
     "lerna-demo-test-ui": "^1.0.2",
-    "lerna-ui-test": "^0.1.0"
+    "lerna-ui-test": "^0.1.0",
+    "vue-router": "^3.4.9"
   },
   "devDependencies": {
     "@tencent/nb-design": "^0.1.1",
