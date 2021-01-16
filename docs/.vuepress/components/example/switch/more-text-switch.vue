@@ -1,6 +1,6 @@
 <template>
   <div>
-    <epp-switch :status.sync="switchStatus" @change="getstatus" activeText="测试打开超长的文字" inactiveText="关闭超长的文字啊啊啊啊"></epp-switch>
+    <epp-switch :status.sync="switchStatus" @change="getstatus" activeText="测试打开超长的文字" inactiveText="超长的文字关闭的效果"></epp-switch>
   </div>
 </template>
 

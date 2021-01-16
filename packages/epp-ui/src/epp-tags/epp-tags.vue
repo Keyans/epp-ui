@@ -1,8 +1,8 @@
 <template>
-  <div class="epp-tags-warper">
+  <div class="epp-tags">
     <div class="epp-tags-status" :class="[`epp-tags-status__${type}`]">
       <span class="epp-tags-poin" :class="[`epp-tags-poin__${type}`]"></span>
-      <span>{{ text }}</span>
+      <span class="epp-tags-text">{{ text }}</span>
     </div>
   </div>
 </template>
@@ -13,21 +13,19 @@ export default {
   props: {
     text: {
       type: String,
-      default: ""
+      default: "",
     },
     type: {
       type: String,
-      default: "primary" // primary、success、danger、warning
-    }
-  }
+      default: "primary", // primary、success、danger、warning、disabled
+    },
+  },
 };
 </script>
 
 
 <style lang="scss">
-.epp-tags-warper {
-  font-family: PingFangSC-Regular;
-  font-size: 14px;
+.epp-tags {
   color: #000000;
   line-height: 28px;
   display: inline-block;
@@ -37,10 +35,11 @@ export default {
     justify-content: center;
     align-items: center;
     padding: 0px 14px;
-    font-family: PingFangSC-Regular;
-    font-size: 14px;
     line-height: 28px;
     text-align: center;
+    .epp-tags-text {
+      white-space: nowrap;
+    }
     &.epp-tags-status__primary {
       background: #e0eafb;
       color: #0050e1;
