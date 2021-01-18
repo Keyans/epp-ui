@@ -10,12 +10,12 @@ import Vue from "vue";
 import App from "./App.vue";
 import NbDesign from "@tencent/nb-design";
 import "@tencent/nb-design/lib/theme-chalk/index.css";
-// import eppUi from "../epp-ui/lib/epp-ui.umd";
-import eppUi from "@tencent/epp-ui";
+import eppUi from "../epp-ui/lib/epp-ui.umd";
+// import eppUi from "@tencent/epp-ui";
 import { Button, Link } from "lerna-demo-test-ui";
 // import { examplate } from "../epp-ui/lib/epp-examplate/index.js";
 
-// console.log(template, 1273891273);
+console.log(eppUi, 1273891273);
 // Vue.use(Button);
 // Vue.use(Link).use(Button);
 
