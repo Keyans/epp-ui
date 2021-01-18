@@ -5,6 +5,7 @@
   },
   "scripts": {
     "bootstrap": "lerna bootstrap",
+    "lib":"vue-cli-service build --target lib --name epp-ui --dest lib ./packages/epp-ui/index.js",
     "publish": "lerna publish --registry http://r.tnpm.oa.com/",
     "serve": "vue-cli-service serve ./packages/example/main.js",
     "build": "vue-cli-service build --target lib --name epp-ui --dest lib ./packages/epp-ui/index.js",
