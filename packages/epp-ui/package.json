@@ -1,11 +1,11 @@
 {
   "name": "@tencent/epp-ui",
-  "version": "1.6.1",
+  "version": "1.6.3",
   "private": false,
   "main": "lib/epp-ui.umd.min.js",
   "author": "abbotwu",
   "license": "MIT",
-  "description": "test测试",
+  "description": "epp-ui组件库",
   "keywords": [
     "epp-ui",
     "vue"
