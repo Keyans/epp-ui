@@ -1,5 +1,5 @@
 <template>
-  <div class="epp-switch-warper">
+  <div class="epp-switch">
     <nb-switch
       :value="status"
       class="epp-switch-container__noscoped"
@@ -7,7 +7,7 @@
       :inactive-text="inactiveText"
       @change="switchChange"
       ref="eppSwitchLabel"
-      :class="{'epp-container__noscoped-unchecked': !status}"
+      :class="{ 'epp-container__noscoped-unchecked': !status }"
     ></nb-switch>
   </div>
 </template>
@@ -18,53 +18,52 @@ export default {
   props: {
     activeText: {
       type: String,
-      default: "开启"
+      default: "开启",
     },
     inactiveText: {
       type: String,
-      default: "关闭"
+      default: "关闭",
     },
     status: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   mounted() {
     this.$nextTick(() => {
-      this.changeLabelText(this.status)
-    })
+      this.changeLabelText(this.status);
+    });
   },
   methods: {
     changeLabelText(status) {
       // 设置当前的label值
-      this.activeLabel = status ? this.activeText : this.inactiveText
-      const el = this.$refs.eppSwitchLabel.$el
-      const children = el.children || []
+      this.activeLabel = status ? this.activeText : this.inactiveText;
+      const el = this.$refs.eppSwitchLabel.$el;
+      const children = el.children || [];
       if (children && children.length) {
-        for(let i = 0; i < children.length; i++) {
+        for (let i = 0; i < children.length; i++) {
           if (children[i].className === "nb-switch__core") {
-            children[i].innerText = this.activeLabel
+            children[i].innerText = this.activeLabel;
           }
         }
       }
-
     },
     // 变更事件
     switchChange(val) {
-      this.changeLabelText(val)
+      this.changeLabelText(val);
       this.$emit("update:status", val);
       this.$emit("change", val);
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style lang="scss">
-.epp-switch-warper {
+.epp-switch {
   display: inline-block;
+  height: 28px;
 }
 .epp-switch-container__noscoped {
-
   &.is-checked {
     .nb-switch__core {
       padding: 0 25px 0 10px;
@@ -78,11 +77,11 @@ export default {
     display: none;
   }
   .nb-switch__core {
-    height: 28px !important;
+    height: 28px;
     border-radius: 15px;
-    /* min-width: 68px; */
+    white-space: nowrap;
     box-sizing: border-box;
-      padding: 0 10px 0 25px;
+    padding: 0 10px 0 25px;
     display: flex;
     align-items: center;
     width: unset !important;
