@@ -1,16 +1,14 @@
 <template>
   <div id="App">
     <epp-template></epp-template>
-    <epp-examplate></epp-examplate>
   </div>
 </template>
 
 <script>
 import EppTemplate from "../epp-ui/src/epp-template/epp-template.vue";
-import EppExamplate from "../epp-ui/src/epp-examplate/epp-examplate.vue";
 
 export default {
-  components: { EppTemplate, EppExamplate },
+  components: { EppTemplate },
   provide() {
     return {
       provideSortable: this.edit,
