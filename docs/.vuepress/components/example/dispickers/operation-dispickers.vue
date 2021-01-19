@@ -25,7 +25,7 @@ export default {
   },
   data() {
     return {
-      districts: null,
+      districts: null, // 可传入地址库
       errorHint: false
     };
   },
