@@ -29,3 +29,19 @@
   <example-dispickers-use-case slot="source"></example-dispickers-use-case>
   <<< @/docs/.vuepress/components/example/dispickers/use-case.vue
 </demo-block>
+
+## 参数
+### Form Attributes
+
+| 参数      | 说明          | 类型      | 可选值                           | 默认值  |
+|---------- |-------------- |---------- |--------------------------------  |-------- |
+| province    | 省 | String | — | — |
+| city | 市 | String | — | — |            —                |  — |
+| area | 区 | String | — | — |
+| hideArea    | 是否隐藏区 | Boolean | — | false |
+| onlyProvince    | 只展示省 | Boolean | — | false |
+| disabled    | 省市区都不可点击输入 | Boolean | — | false |
+| provinceDisabled    | 省都不可点击输入 | Boolean | — | false |
+| cityDisabled    | 市都不可点击输入 | Boolean | — | false |
+| areaDisabled    | 区都不可点击输入 | Boolean | — | false |
+| type    | 是否切换移动模式，切换手机模式传入字符串 mobile | String | — | — |
