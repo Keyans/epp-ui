@@ -1,14 +1,16 @@
 <template>
   <div id="App">
     <epp-template></epp-template>
+    <epp-steps :active="active" :steps-list="stepsList"></epp-steps>
   </div>
 </template>
 
 <script>
 import EppTemplate from "../epp-ui/src/epp-template/epp-template.vue";
+import EppSteps from "../epp-ui/src/epp-steps/epp-steps.vue";
 
 export default {
-  components: { EppTemplate },
+  components: { EppTemplate, EppSteps },
   provide() {
     return {
       provideSortable: this.edit,
@@ -16,6 +18,14 @@ export default {
   },
   data() {
     return {
+      active: 1, //补助
+      stepsList: [
+        { title: "步骤一" },
+        { title: "步骤二" },
+        { title: "步骤三" },
+        { title: "步骤四" },
+      ],
+      direction: "vertical",
       loading: false,
       pageSize: 5,
       currentPage: 1,

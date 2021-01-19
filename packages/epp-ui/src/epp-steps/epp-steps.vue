@@ -8,6 +8,7 @@
       :active="active"
       :align-center="alignCenter"
       :space="space"
+      :process-status="processStatus"
     >
       <nb-step
         v-for="(item, index) in stepsList"
