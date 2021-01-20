@@ -60,6 +60,8 @@ export default {
   $main-color: #0352DB;
   $main-color-disabled: #81a9ed;
 
+  min-width: 80px;
+
   &.epp-button--wide {
     width: 240px;
   }
@@ -81,6 +83,7 @@ export default {
 
   &.nb-button--mini {
     padding: 5px 10px;
+    min-width: 70px;
   }
 }
 </style>
