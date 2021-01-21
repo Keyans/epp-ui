@@ -76,7 +76,7 @@ export default {
         buttonShow: true, // 设置查询按钮默认存在
         btn: [
           {
-            type: 'secondary',
+            type: 'primary',
             name: '查询',
             click: () => {
               this.$emit('getFormData', this.config.formData);
