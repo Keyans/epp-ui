@@ -32,16 +32,16 @@
           </nb-col>
         </template>
         <nb-col :span="computedSpan">
-          <div v-if="!!config.btn.length" style="width:100%">
-            <nb-button
-              v-for="(button, index) in config.btn"
-              :key="index"
-              v-bind="button"
-              :size="config.size"
-              @click="handleClick(button)"
-              >{{ button.name }}</nb-button
-            >
-          </div>
+        <slot name="btn"></slot>
+        <div v-if="!!config.btn.length" style="width:100%">
+          <templateButton
+            v-for="(button, index) in config.btn"
+            :key="index"
+            v-bind="button"
+            @click="handleClick(button)"
+            >{{ button.name }}</templateButton
+          >
+        </div>
         </nb-col>
       </nb-row>
     </nb-form>
@@ -50,6 +50,7 @@
 
 <script>
 import eppFormComponent from './epp-form-component';
+import templateButton from "../epp-button/epp-button";
 export default {
   name: 'eppForm',
   props: {
@@ -64,7 +65,7 @@ export default {
       default: () => {},
     },
   },
-  components: { eppFormComponent },
+  components: { eppFormComponent,templateButton },
   data() {
     return {
       defaultConfig: {
@@ -76,14 +77,13 @@ export default {
         buttonShow: true, // 设置查询按钮默认存在
         btn: [
           {
-            type: 'primary',
+            type: 'secondary',
             name: '查询',
             click: () => {
               this.$emit('getFormData', this.config.formData);
             },
           },
           {
-            type: '',
             name: '重置',
             click: () => {
               this.resetForm();

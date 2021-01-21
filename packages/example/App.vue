@@ -1,16 +1,18 @@
 <template>
   <div id="App">
     <epp-template></epp-template>
-    <epp-steps :active="active" :steps-list="stepsList"></epp-steps>
+    <epp-form ref="eppform" :formConfig="formConfig"></epp-form>
+    <!-- <epp-steps :active="active" :steps-list="stepsList"></epp-steps> -->
   </div>
 </template>
 
 <script>
 import EppTemplate from "../epp-ui/src/epp-template/epp-template.vue";
 import EppSteps from "../epp-ui/src/epp-steps/epp-steps.vue";
+import EppForm from "../epp-ui/src/epp-form/epp-form.vue";
 
 export default {
-  components: { EppTemplate, EppSteps },
+  components: { EppTemplate, EppSteps,EppForm },
   provide() {
     return {
       provideSortable: this.edit,
