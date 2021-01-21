@@ -1,6 +1,6 @@
 {
   "name": "@tencent/epp-ui",
-  "version": "1.6.5",
+  "version": "1.6.7",
   "private": false,
   "main": "lib/epp-ui.umd.min.js",
   "author": "abbotwu",
@@ -21,9 +21,12 @@
     "url": "http://git.code.oa.com/demeter_web/npm_epp_ui.git"
   },
   "scripts": {
-    "lib": "vue-cli-service build --target lib --name epp-ui --dest lib ./index.js",
-    "lint": "vue-cli-service lint",
-    "build": "vue-cli-service build"
+    "build:style": "gulp --gulpfile build/gen-style.js",
+    "build:components": "webpack --config build/webpack.component.js",
+    "build:prod": "webpack --config build/webpack.prod.js",
+    "lib": "vue-cli-service build --no-clean --target lib --name epp-ui --dest lib ./index.js",
+    "build": "vue-cli-service build --target lib --name epp-ui --dest lib ./index.js",
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "@tencent/nb-design": "^0.1.1",
@@ -39,6 +42,11 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
     "node-sass": "^4.14.1",
     "sass-loader": "^10.0.2",
     "vue": "^2.6.11",
