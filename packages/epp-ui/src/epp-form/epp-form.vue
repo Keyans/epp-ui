@@ -34,12 +34,12 @@
         <nb-col :span="computedSpan">
         <slot name="btn"></slot>
         <div v-if="!!config.btn.length" style="width:100%">
-          <templateButton
+          <nb-button
             v-for="(button, index) in config.btn"
             :key="index"
             v-bind="button"
             @click="handleClick(button)"
-            >{{ button.name }}</templateButton
+            >{{ button.name }}</nb-button
           >
         </div>
         </nb-col>
@@ -50,7 +50,6 @@
 
 <script>
 import eppFormComponent from './epp-form-component';
-import templateButton from "../epp-button/epp-button";
 export default {
   name: 'eppForm',
   props: {
@@ -65,7 +64,7 @@ export default {
       default: () => {},
     },
   },
-  components: { eppFormComponent,templateButton },
+  components: { eppFormComponent },
   data() {
     return {
       defaultConfig: {
