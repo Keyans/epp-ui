@@ -1,11 +1,13 @@
 {
   "scripts": {
-    "serve": "vue-cli-service serve ./main.js"
+    "serve": "vue-cli-service serve"
   },
   "dependencies": {
-    "@tencent/epp-ui": "^1.5.8",
+    "@tencent/epp-ui": "^1.6.8",
     "@tencent/epp-ui-test": "^1.5.3",
+    "@tencent/nb-tools": "^1.0.4",
     "core-js": "^3.6.5",
+    "js-cookie": "^2.2.1",
     "lerna-demo-test-ui": "^1.0.2",
     "lerna-ui-test": "^0.1.0",
     "vue-router": "^3.4.9"

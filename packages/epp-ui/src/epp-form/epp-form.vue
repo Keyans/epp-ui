@@ -33,11 +33,12 @@
         </template>
         <nb-col :span="computedSpan">
         <slot name="btn"></slot>
-        <div v-if="!!config.btn.length" style="width:100%">
+        <div v-if="!!config.btn.length" style="width:95%;margin-left:5%">
           <nb-button
             v-for="(button, index) in config.btn"
             :key="index"
             v-bind="button"
+            :size="config.size"
             @click="handleClick(button)"
             >{{ button.name }}</nb-button
           >
