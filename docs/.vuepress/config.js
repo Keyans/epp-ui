@@ -96,6 +96,11 @@ module.exports = (ctx) => ({
               path: "img-upload"
             },
             {
+              title: "video-upload 视频上传组件",
+              collapsable: false,
+              path: "video-upload"
+            },
+            {
               title: "search-bank 选择银行/支行组件",
               collapsable: false,
               path: "search-bank"
