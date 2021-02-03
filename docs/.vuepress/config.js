@@ -36,7 +36,7 @@ module.exports = (ctx) => ({
     sidebar: {
       "/pages/": [
         {
-          title: "UI组件",
+          title: "基础组件",
           collapsable: false,
           children: [
             {
@@ -58,11 +58,6 @@ module.exports = (ctx) => ({
               title: "steps步骤条",
               collapsable: false,
               path: "steps",
-            },
-            {
-              title: "breadcrumb面包屑",
-              collapsable: false,
-              path: "bread",
             },
             {
               title: "dispickers省市区三级联动组件",
@@ -91,6 +86,11 @@ module.exports = (ctx) => ({
               path: "business-component-description"
             },
             {
+              title: "breadcrumb面包屑",
+              collapsable: false,
+              path: "bread",
+            },
+            {
               title: "img-upload 图片上传组件",
               collapsable: false,
               path: "img-upload"
@@ -117,6 +117,11 @@ module.exports = (ctx) => ({
               title: "部署",
               collapsable: false,
               path: "step",
+            },
+            {
+              title: "组件开发流程",
+              collapsable: false,
+              path: "dev-process",
             },
             {
               title: "B端常用网站",

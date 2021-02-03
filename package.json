@@ -5,6 +5,7 @@
   },
   "scripts": {
     "bootstrap": "lerna bootstrap",
+    "lib":"vue-cli-service build --target lib --name epp-ui --dest lib ./packages/epp-ui/index.js",
     "publish": "lerna publish --registry http://r.tnpm.oa.com/",
     "serve": "vue-cli-service serve ./packages/example/main.js",
     "build": "vue-cli-service build --target lib --name epp-ui --dest lib ./packages/epp-ui/index.js",
@@ -13,6 +14,7 @@
     "docs:build": "vuepress build docs"
   },
   "dependencies": {
+    "@tencent/nb-tools": "^1.0.3",
     "core-js": "^2.6.11",
     "less": "^3.12.2"
   },

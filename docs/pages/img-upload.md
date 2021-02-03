@@ -40,7 +40,7 @@ export default {
 
 #### 示例：拖拽排序 & 图片限制  
 
-![](https://mvp-web-1300522992.cos.ap-chengdu.myqcloud.com/img/coco_tob/epp_ui_demo/epp-img-upload/big_drag.png)
+<img src="../.vuepress/public/img/big_drag.png">
 
 <code>大版图片上传组件</code> <code>可拖拽排序</code> <code>多图上传</code> <code>最多上传10张图</code> <code>图片大小限制3M</code> <code>最大宽度1125</code> <code>最小宽度640</code> <code>图片宽高比1:1</code>
 ```vue
@@ -98,8 +98,8 @@ export default {
 #### 示例：单张图上传
 
 <br />
-<img src="https://mvp-web-1300522992.cos.ap-chengdu.myqcloud.com/img/coco_tob/epp_ui_demo/epp-img-upload/big_enable.png" width="148" />
-<img src="https://mvp-web-1300522992.cos.ap-chengdu.myqcloud.com/img/coco_tob/epp_ui_demo/epp-img-upload/big_disabled.png" width="148" />
+<img src="../.vuepress/public/img/big_enable.png" width="148" />
+<img src="../.vuepress/public/img/big_disabled.png" width="148" />
 
 <code>大版图片上传组件</code> <code>单张上传</code> <code>最多上传1张图</code> <code>图片大小限制2M</code>
 
@@ -152,8 +152,8 @@ export default {
 #### 示例：小版图片上传组件
   
 <br />
-<img src="https://mvp-web-1300522992.cos.ap-chengdu.myqcloud.com/img/coco_tob/epp_ui_demo/epp-img-upload/mini_enable.png" width="32" />
-<img src="https://mvp-web-1300522992.cos.ap-chengdu.myqcloud.com/img/coco_tob/epp_ui_demo/epp-img-upload/mini_disabled.png" width="32" />
+<img src="../.vuepress/public/img/mini_enable.png" width="32" />
+<img src="../.vuepress/public/img/mini_disabled.png" width="32" />
 
 <code>小版图片上传组件</code> <code>单张上传</code> <code>最多上传1张图</code> <code>图片大小限制2M</code>
 
