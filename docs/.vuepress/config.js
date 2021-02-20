@@ -70,14 +70,19 @@ module.exports = (ctx) => ({
               path: "tags"
             },
             {
-              title: "switch组件",
+              title: "switch开关",
               collapsable: false,
               path: "switch"
             },
             {
-              title: "tabs组件",
+              title: "tabs标签组",
               collapsable: false,
               path: "tabs"
+            },
+            {
+              title: "radioGroup单选组",
+              collapsable: false,
+              path: "radio-group"
             },
           ],
         },
