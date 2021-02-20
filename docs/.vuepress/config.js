@@ -74,6 +74,11 @@ module.exports = (ctx) => ({
               collapsable: false,
               path: "switch"
             },
+            {
+              title: "tabs组件",
+              collapsable: false,
+              path: "tabs"
+            },
           ],
         },
         {
