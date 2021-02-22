@@ -1,9 +1,13 @@
 <template>
-  <nb-button :class="['epp-button', {
-    'epp-button--wide' : wide !== undefined
+  <nb-button
+  :class="['epp-button', {
+    'epp-button--wide' : wide !== undefined ? true : false
   }, {
-    'epp-button--secondary' : type === 'secondary'
-  }]" :type="type" :loading="loading" :disabled="disabled" :icon="icon" :size="size" :circle="circle" :plain="plain" :round="round" :native-type="nativeType" :autofocus="autofocus"><slot></slot></nb-button>
+    'epp-button--secondary' : type === 'secondary' ? true : false
+  }]"
+  :type="type" :loading="loading" :disabled="disabled" :icon="icon" :size="size" :circle="circle" :plain="plain" :round="round" :native-type="nativeType" :autofocus="autofocus"
+  v-on="$listeners"
+  ><slot></slot></nb-button>
 </template>
 
 <script>
