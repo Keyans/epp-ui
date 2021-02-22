@@ -1,0 +1,12 @@
+// 修改radio选中的样式
+.nb-radio-group {
+  .nb-radio-button__orig-radio:checked + .nb-radio-button__inner {
+    background: unset;
+    color: #0052d9;
+    min-width: 102px;
+  }
+  .nb-radio-button__inner {
+    min-width: 102px;
+    font-size: 14px;
+  }
+}
