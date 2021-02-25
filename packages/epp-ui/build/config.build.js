@@ -7,7 +7,7 @@ let buildConfig = {
   //  webpack配置
   configureWebpack: {
     //  入口文件
-    entry: getComponentEntries("src"),
+    entry:getComponentEntries("src"),
     //  输出配置
     output: {
       //  文件名称

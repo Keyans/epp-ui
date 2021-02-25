@@ -21,7 +21,7 @@ import "@/assets/css/common.scss"; //引入公共样式
 // console.log(eppUi, 22222);
 
 Vue.use(NbDesign);
-// Vue.use(eppUi);
+Vue.use(eppUi);
 
 Vue.config.productionTip = false;
 
