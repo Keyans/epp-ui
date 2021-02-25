@@ -1,14 +1,16 @@
 <template>
   <div id="App">
     <epp-template></epp-template>
-    <epp-steps :active="active" :steps-list="stepsList"></epp-steps>
+    <!-- <epp-steps :active="active" :steps-list="stepsList"></epp-steps> -->
+    <div>12312</div>
+    <epp-icon icon="epp-icon-Commoditymanagement"></epp-icon>
   </div>
 </template>
 
 <script>
 import EppTemplate from "../epp-ui/src/epp-template/epp-template.vue";
 import EppSteps from "../epp-ui/src/epp-steps/epp-steps.vue";
-
+// import eppIcon from "./views/epp-icon"
 export default {
   components: { EppTemplate, EppSteps },
   provide() {

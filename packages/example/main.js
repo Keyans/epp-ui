@@ -10,7 +10,8 @@ import Vue from "vue";
 import App from "./App.vue";
 import NbDesign from "@tencent/nb-design";
 import "@tencent/nb-design/lib/theme-chalk/index.css";
-import eppUi from "../epp-ui/lib/epp-ui.umd";
+import eppUi from "../epp-ui/lib/epp-ui.common";
+import "../epp-ui/lib/epp-ui.css"
 // import eppUi from "@tencent/epp-ui";
 import { Button, Link } from "lerna-demo-test-ui";
 // import { examplate } from "../epp-ui/lib/epp-examplate/index.js";
@@ -21,7 +22,7 @@ console.log(eppUi, 1273891273);
 
 // import eppUiTest from "@tencent/epp-ui-test";
 Vue.use(NbDesign);
-// Vue.use(eppUi);
+Vue.use(eppUi);
 
 Vue.config.productionTip = false;
 

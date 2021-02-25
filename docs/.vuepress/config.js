@@ -40,6 +40,11 @@ module.exports = (ctx) => ({
           collapsable: false,
           children: [
             {
+              title: "icon图标",
+              collapsable: false,
+              path: "icon",
+            },
+            {
               title: "button按钮",
               collapsable: false,
               path: "button",

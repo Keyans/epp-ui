@@ -1,4 +1,5 @@
 //配置自动化注入,根据src文件夹下的index进行注入
+const modulesFiles = require.context("./src", true, /\.js$/);
 //获取对应的componets
 const components = modulesFiles.keys().reduce((modules, modulePath) => {
   const moduleName = modulePath.replace(/^\.\/(.*)\.\w+$/, "$1");
