@@ -32,16 +32,17 @@
           </nb-col>
         </template>
         <nb-col :span="computedSpan">
-          <div v-if="!!config.btn.length" style="width:100%">
-            <nb-button
-              v-for="(button, index) in config.btn"
-              :key="index"
-              v-bind="button"
-              :size="config.size"
-              @click="handleClick(button)"
-              >{{ button.name }}</nb-button
-            >
-          </div>
+        <slot name="btn"></slot>
+        <div v-if="!!config.btn.length" style="width:95%;margin-left:5%">
+          <nb-button
+            v-for="(button, index) in config.btn"
+            :key="index"
+            v-bind="button"
+            :size="config.size"
+            @click="handleClick(button)"
+            >{{ button.name }}</nb-button
+          >
+        </div>
         </nb-col>
       </nb-row>
     </nb-form>
@@ -83,7 +84,6 @@ export default {
             },
           },
           {
-            type: '',
             name: '重置',
             click: () => {
               this.resetForm();

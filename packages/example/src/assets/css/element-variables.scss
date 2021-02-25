@@ -1,0 +1,20 @@
+/* 改变主题色变量 */
+$--color-primary: #0352DB;
+
+/* 改变 icon 字体路径变量，必需 */
+$--font-path: '~@tencent/nb-design/lib/theme-chalk/fonts';
+
+@import "~@tencent/nb-design/packages/theme-chalk/src/index";
+
+.nb-dialog__body{
+  padding:15px 20px;
+}
+.nb-dialog__header{
+  border-bottom: 1px solid #d9d9d9;
+}
+.nb-dialog__footer{
+  border-top: 1px solid #d9d9d9;
+}
+.nb-form-item{
+  margin-bottom:10px;
+}

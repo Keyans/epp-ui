@@ -75,9 +75,19 @@ module.exports = (ctx) => ({
               path: "tags"
             },
             {
-              title: "switch组件",
+              title: "switch开关",
               collapsable: false,
               path: "switch"
+            },
+            {
+              title: "tabs标签组",
+              collapsable: false,
+              path: "tabs"
+            },
+            {
+              title: "radioGroup单选组",
+              collapsable: false,
+              path: "radio-group"
             },
           ],
         },
@@ -101,6 +111,11 @@ module.exports = (ctx) => ({
               path: "img-upload"
             },
             {
+              title: "video-upload 视频上传组件",
+              collapsable: false,
+              path: "video-upload"
+            },
+            {
               title: "search-bank 选择银行/支行组件",
               collapsable: false,
               path: "search-bank"
@@ -122,6 +137,11 @@ module.exports = (ctx) => ({
               title: "部署",
               collapsable: false,
               path: "step",
+            },
+            {
+              title: "介绍",
+              collapsable: false,
+              path: "introduce",
             },
             {
               title: "组件开发流程",
