@@ -26,7 +26,22 @@ export const otherRouter = {
 
 // 作为Main组件的子页面展示并且在左侧菜单显示的路由写在appRouter里
 export const appRouter = [
-
+  {
+    path: '/template',
+    name: 'appRouter',
+    component: Main,
+    children:[
+      { path: 'base_render', meta:{title:"基础模版渲染"},name: 'base_render', component: () => import(/* webpackChunkName: "base_render" */ '@/views/template/base-render/index.vue') },
+    ]
+  },
+  {
+    path: '/example',
+    name: 'appRouter',
+    component: Main,
+    children:[
+      { path: 'base_tpl', meta:{title:"基础模版渲染"},name: 'base_tpl', component: () => import(/* webpackChunkName: "base_tpl" */ '@/views/example/base-tpl/index.vue') },
+    ]
+  }
 ];
 
 // 所有上面定义的路由都要写在下面的routers里

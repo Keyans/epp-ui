@@ -7,7 +7,7 @@
  * @FilePath: /qun/src/views/main-component/breadcrumb.vue
 -->
 <template>
-  <div class="flex-center micro-mr20 micro-mb20">
+  <div class="flex-center">
     <span class="pointer-color" @click="handBack" v-show="isHome">
       <i class="nb-icon-arrow-left"></i>
       <span>返回</span>
