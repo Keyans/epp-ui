@@ -1,12 +1,16 @@
 <template>
   <div>
-      test信息
+      <component :is="componentName" :templateConfig="templateConfig"></component>
   </div>
 </template>
 
 <script>
-export default {
+import { template } from "./config"
+import testTemplate from "./epp-template/epp-template";
 
+export default {
+  components: { testTemplate },
+  mixins:[template]
 }
 </script>
 
