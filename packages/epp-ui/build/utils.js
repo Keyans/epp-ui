@@ -27,7 +27,7 @@ module.exports = {
    */
   getComponentEntries(path) {
     let files = fs.readdirSync(resolve(path));
-
+    console.log(files,123123)
     const componentEntries = files.reduce((fileObj, item) => {
       //  文件路径
       const itemPath = join(path, item);

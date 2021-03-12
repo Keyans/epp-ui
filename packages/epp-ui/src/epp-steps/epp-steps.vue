@@ -8,6 +8,7 @@
       :active="active"
       :align-center="alignCenter"
       :space="space"
+      :process-status="processStatus"
     >
       <nb-step
         v-for="(item, index) in stepsList"
@@ -72,7 +73,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .epp-steps {
   $successColor: #0052d9;
   $finishColor: #0052d9;

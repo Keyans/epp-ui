@@ -275,3 +275,10 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+.epp-table{
+  .nb-table {
+    border-top: 1px solid #dedede;
+  }
+}
+</style>

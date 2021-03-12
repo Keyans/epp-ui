@@ -7,7 +7,7 @@ let buildConfig = {
   //  webpack配置
   configureWebpack: {
     //  入口文件
-    entry: getComponentEntries("src"),
+    entry:getComponentEntries("src"),
     //  输出配置
     output: {
       //  文件名称
@@ -18,6 +18,15 @@ let buildConfig = {
       libraryExport: "default",
       //  依赖名称
       library: "epp-ui"
+    },
+    //外部化依赖
+    externals: {
+      vue: {
+        root: 'Vue',
+        commonjs: 'vue',
+        commonjs2: 'vue',
+        amd: 'vue'
+      }
     }
   },
   //  样式输出

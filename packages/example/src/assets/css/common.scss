@@ -1,0 +1,130 @@
+.flex {
+  display: flex;
+}
+.flex-wrap{
+  display: flex;
+  flex-wrap:wrap;
+}
+.micro-text-center{
+  text-align: center;
+}
+.micro-text-right{
+  text-align: right;
+}
+.inline-flex{
+  display: inline-flex;
+}
+.nb-table .cell{
+  align-items:center;
+  display:inline-flex;
+}
+.flex-center{
+  display: flex;
+  align-items: center;
+}
+.flex-center-between{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.pageTitle{
+  font-size: 20px;
+  font-weight: 700;
+  font-family:PingFangSC-Medium;
+  color:rgba(0,0,0,0.88) !important
+}
+.pageSearch{
+  margin-top: 20px;
+}
+.pageTable{
+  margin-top: 20px;
+}
+.micro-wd300{
+  width: 300px;
+}
+.micro-wd200{
+  width: 200px;
+}
+.micro-mt10{
+  margin-top:10px;
+}
+.micro-ml10{
+  margin-left:10px;
+}
+.micro-mr10{
+  margin-right:10px;
+}
+.micro-ml20{
+  margin-left:20px;
+}
+.micro-mt20{
+  margin-top:20px;
+}
+.micro-mr20{
+  margin-right:20px;
+}
+.micro-mb20{
+  margin-bottom:20px;
+}
+.micro-mb40{
+  margin-bottom:40px;
+}
+.micro-mb10{
+  margin-bottom:10px;
+}
+.micro-ml5{
+  margin-left:5px;
+}
+.micro-mr5{
+  margin-right: 5px;
+}
+.micro-wdr100{
+  width:100%;
+}
+.micro-title-background{
+  background: #F8F8F8;
+  padding: 20px;
+  margin-bottom: 20px;
+  .micro-title-span{
+    opacity: 0.65;
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #000000;
+    margin-right: 10px;
+    line-height: 22px;
+  }
+  .micro-title-detail{
+    margin-left: 10px;
+    font-family: PingFangSC-Medium;
+    font-size: 14px;
+    color: rgba(0,0,0,0.88);
+    line-height: 22px;
+  }
+}
+.nb-table .micro-stripeLine{
+  background: rgba(0,0,0,0.06);
+}
+
+/* icon */
+.micro-icon-nodata {
+  display: inline-block;
+  vertical-align: middle;
+  width: 66px;
+  height: 65px;
+  background: url("https://mvp-web-1300522992.cos.ap-chengdu.myqcloud.com/img/coco_tob/groupshop/icon_nodata.png") no-repeat;
+}
+
+/* nb-table empty 模版 */
+/*
+  <template #empty>
+    <div class="micro-table--nodata">
+      <i class="micro-icon-nodata"></i>
+      <p>您目前尚未创建群小店，可点击左上角的“创建群小店”创建您的群小店</p>
+    </div>
+  </template>
+*/
+.micro-table--nodata {
+  text-align: center;
+  line-height: 1.5;
+  padding: 50px 0;
+}

@@ -1,0 +1,177 @@
+{
+  "id": "2293238",
+  "name": "yz-epp",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "19047846",
+      "name": "epp-icon-Announcement management",
+      "font_class": "epp-icon-Announcementmanagement",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "19047847",
+      "name": "epp-icon-Account center",
+      "font_class": "epp-icon-Accountcenter",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "19047848",
+      "name": "epp-icon-After sales",
+      "font_class": "epp-icon-Aftersales",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "19047849",
+      "name": "epp-icon-complete",
+      "font_class": "epp-icon-complete",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    },
+    {
+      "icon_id": "19047850",
+      "name": "epp-icon-Commodity management",
+      "font_class": "epp-icon-Commoditymanagement",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "19047851",
+      "name": "epp-icon-Batch payment",
+      "font_class": "epp-icon-Batchpayment",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "19047852",
+      "name": "epp-icon-home page",
+      "font_class": "epp-icon-homepage",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "19047853",
+      "name": "epp-icon-Business management",
+      "font_class": "epp-icon-Businessmanagement",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "19047854",
+      "name": "epp-icon-Error/failure",
+      "font_class": "epp-icon-Errorfailure",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "19047855",
+      "name": "epp-icon-Contact customer service",
+      "font_class": "epp-icon-Contactcustomerservice",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    },
+    {
+      "icon_id": "19047856",
+      "name": "epp-icon-Hide description",
+      "font_class": "epp-icon-Hidedescription",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "19047857",
+      "name": "epp-icon-Marketing Center",
+      "font_class": "epp-icon-MarketingCenter",
+      "unicode": "e61a",
+      "unicode_decimal": 58906
+    },
+    {
+      "icon_id": "19047858",
+      "name": "epp-icon-Order management:adjudication",
+      "font_class": "epp-icon-Ordermanagementadjudication",
+      "unicode": "e61b",
+      "unicode_decimal": 58907
+    },
+    {
+      "icon_id": "19047859",
+      "name": "epp-icon-Rule Center",
+      "font_class": "epp-icon-RuleCenter",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "19047860",
+      "name": "epp-icon-Notification Center",
+      "font_class": "epp-icon-NotificationCenter",
+      "unicode": "e61d",
+      "unicode_decimal": 58909
+    },
+    {
+      "icon_id": "19047861",
+      "name": "epp-icon-Platform customer service",
+      "font_class": "epp-icon-Platformcustomerservice",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    },
+    {
+      "icon_id": "19047862",
+      "name": "epp-icon-Logistics Centre",
+      "font_class": "epp-icon-LogisticsCentre",
+      "unicode": "e61f",
+      "unicode_decimal": 58911
+    },
+    {
+      "icon_id": "19047863",
+      "name": "epp-icon-Selection management",
+      "font_class": "epp-icon-Selectionmanagement",
+      "unicode": "e620",
+      "unicode_decimal": 58912
+    },
+    {
+      "icon_id": "19047864",
+      "name": "epp-icon-Penalty Center",
+      "font_class": "epp-icon-PenaltyCenter",
+      "unicode": "e621",
+      "unicode_decimal": 58913
+    },
+    {
+      "icon_id": "19047865",
+      "name": "epp-icon-Store management",
+      "font_class": "epp-icon-Storemanagement",
+      "unicode": "e622",
+      "unicode_decimal": 58914
+    },
+    {
+      "icon_id": "19048120",
+      "name": "epp-icon-shop management",
+      "font_class": "epp-icon-shopmanagement",
+      "unicode": "e623",
+      "unicode_decimal": 58915
+    },
+    {
+      "icon_id": "19062074",
+      "name": "epp-icon-delivery",
+      "font_class": "epp-icon-delivery",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    },
+    {
+      "icon_id": "19062075",
+      "name": "epp-icon- Import",
+      "font_class": "epp-icon-Import",
+      "unicode": "e625",
+      "unicode_decimal": 58917
+    },
+    {
+      "icon_id": "19062280",
+      "name": "epp-icon-24",
+      "font_class": "epp-icon-241",
+      "unicode": "e626",
+      "unicode_decimal": 58918
+    }
+  ]
+}

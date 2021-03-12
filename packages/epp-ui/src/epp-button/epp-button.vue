@@ -1,13 +1,17 @@
 <template>
-  <nb-button :class="['epp-button', {
+  <nb-button
+  :class="['epp-button', {
     'epp-button--wide' : wide !== undefined ? true : false
   }, {
     'epp-button--secondary' : type === 'secondary' ? true : false
-  }]" :type="type" :loading="loading" :disabled="disabled" :icon="icon" :size="size" :circle="circle" :plain="plain" :round="round" :native-type="nativeType" :autofocus="autofocus"><slot></slot></nb-button>
+  }]"
+  :type="type" :loading="loading" :disabled="disabled" :icon="icon" :size="size" :circle="circle" :plain="plain" :round="round" :native-type="nativeType" :autofocus="autofocus"
+  v-on="$listeners"
+  ><slot></slot></nb-button>
 </template>
 
 <script>
-export default {
+export default { 
   name: "EppButton",
   props: {
     type: {
@@ -60,6 +64,8 @@ export default {
   $main-color: #0352DB;
   $main-color-disabled: #81a9ed;
 
+  min-width: 80px;
+
   &.epp-button--wide {
     width: 240px;
   }
@@ -81,6 +87,7 @@ export default {
 
   &.nb-button--mini {
     padding: 5px 10px;
+    min-width: 70px;
   }
 }
 </style>
