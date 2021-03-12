@@ -5,7 +5,7 @@
   },
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "lib":"vue-cli-service build --target lib --name epp-ui --dest lib ./packages/epp-ui/index.js",
+    "lib": "vue-cli-service build --target lib --name epp-ui --dest lib ./packages/epp-ui/index.js",
     "publish": "lerna publish --registry http://r.tnpm.oa.com/",
     "serve": "vue-cli-service serve ./packages/example/main.js",
     "build": "vue-cli-service build --target lib --name epp-ui --dest lib ./packages/epp-ui/index.js",
@@ -14,13 +14,13 @@
     "docs:build": "vuepress build docs"
   },
   "dependencies": {
+    "@tencent/epp-ui-test": "^1.3.0",
     "@tencent/nb-tools": "^1.0.3",
     "core-js": "^2.6.11",
     "less": "^3.12.2"
   },
   "devDependencies": {
-    "sortablejs": "^1.12.0",
-    "@tencent/epp-ui": "^1.2.1",
+    "@tencent/epp-ui": "^1.7.0",
     "@tencent/nb-design": "^0.1.1",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
@@ -31,6 +31,7 @@
     "lerna": "^3.22.1",
     "node-sass": "^4.14.1",
     "sass-loader": "^10.0.2",
+    "sortablejs": "^1.12.0",
     "vue": "^2.6.11",
     "vue-template-compiler": "^2.6.11",
     "vuepress": "^1.7.1"
