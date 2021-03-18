@@ -4,6 +4,7 @@
       v-bind="config"
       :ref="config.ref"
       :formConfig="config.formConfig"
+      @getFormData="getFormData"
     ></epp-form>
     <slot></slot>
     <epp-table
@@ -19,7 +20,6 @@
 
 <script>
 import commonMix from "./mixin"
-
 export default {
   mixins:[commonMix]
 };

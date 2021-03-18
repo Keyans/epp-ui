@@ -1,16 +1,14 @@
 <template>
   <div>
-      <component :is="componentName" :templateConfig="templateConfig"></component>
+      <component is="componentName" ></component>
   </div>
 </template>
 
 <script>
-import { template } from "./config"
-import testTemplate from "./epp-template/epp-template";
-
+import config from "./config";
+import {inherit} from "../../../../../epp-ui/lib/epp-ui.common"
 export default {
-  components: { testTemplate },
-  mixins:[template]
+  mixins:[inherit(config)] 
 }
 </script>
 

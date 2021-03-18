@@ -1,12 +1,5 @@
 export default {
-  name: "eppTemplate",
-  props:{
-    templateConfig: {
-      type: Object,
-      required: false,
-      default: () => {},
-    },
-  },
+  name: "eppTestTemplate",
   data() {
     return {
       //默认的Template配置
@@ -24,11 +17,6 @@ export default {
             {
               label: "测试",
               model: "switchValue",
-              componentType: "input",
-            },
-            {
-              label: "违规单号",
-              model: "number",
               componentType: "input",
             },
             {
@@ -126,16 +114,20 @@ export default {
     };
   },
   created(){
-    console.log(this.templateConfig)
-  },
+    console.log(1111)
+ },
   computed: {
     // 为props增加默认配置
     config() {
-      return Object.assign(this.defaultTemplate, this.templateConfig);
+      return this.defaultTemplate;
     },
   },
   methods: {
+    getFormData(){
+      console.log(212)
+    },
     handleSizeChange(val) {
+      console.log(val,7676)
       if (this.config.handleSizeChange) {
         this.config.handleSizeChange(val);
       } else {
@@ -145,7 +137,7 @@ export default {
       }
     },
     handleCurrentChange(){
-      
+        console.log(771263716237)
     },
     createData() {
       if (this.config.createData) {
