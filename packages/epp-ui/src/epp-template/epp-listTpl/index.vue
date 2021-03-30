@@ -6,7 +6,7 @@
     ></epp-form>
     <slot></slot>
     <epp-table
-      v-loading="config.loading"
+      v-loading="config.tableConfig.loading"
       @size-change="handleSizeChange"
       @p-current-change="handleCurrentChange"
       v-bind="config.tableConfig"
@@ -18,8 +18,8 @@
       :before-close="handleClose">
       <span>这是一段信息</span>
       <span slot="footer" class="dialog-footer">
-        <el-button @click="dialogVisible = false">取 消</el-button>
-        <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+        <nb-button @click="dialogVisible = false">取 消</nb-button>
+        <nb-button type="primary" @click="dialogVisible = false">确 定</nb-button>
       </span>
     </nb-dialog>
   </div>

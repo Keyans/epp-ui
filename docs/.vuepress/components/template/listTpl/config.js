@@ -1,11 +1,55 @@
+
+
+import ApiConfigTrigger from './api_config_trigger';
+
 export default {
+  templateName: 'eppListTpl',
   data() {
     return {
       //默认的Template配置
-      defaultTemplate: {
+      defaultTemplate: {        
+        queryFormApi: {
+        apiPath: 'platformrule/queryrule',
+        reqData: {
+          ModuleID: 2,
+          Offset: 0,
+          Limit: 10,
+          PlatformRuleCategoryID: 0,
+          Keyword: '',
+        },
+        vueDataPath: 'defaultTemplate.tableConfig',
+        apiDataPath: 'Data',
+        // api响应配置
+        responseConfig: {
+          fieldMapping: [
+            {
+              oldFieldName: 'Rules',
+              newFieldName: 'data',
+            },
+          ],
+          // 响应数据字段全局处理（data 参数是映射好的数据），需要返回一个对象
+          transformResponse: (newData, vueData, resData) => {
+            console.log('newData: ', newData);
+            console.log('vueData: ', vueData);
+            console.log('resData: ', resData);
+            vueData.testTitle = '配置化完成';
+            // test
+            const newTestField = 'testField';
+            return {
+              ...newData,
+              newTestField,
+            };
+          },
+        },
+        onResSuccess: (resData, vueData) => {},
+        onResError: (errInfo, vueData) => {},
+        onResFinally: (vueData) => {},
+        },
         //表格
-        ref: "eppForm",
         formConfig: {
+          ref: "eppForm",
+          col:4,
+          size:"small",
           formData: {
             number: "",
             id: "",
@@ -17,6 +61,10 @@ export default {
               label: "测试",
               model: "switchValue",
               componentType: "input",
+              styleObject: {
+                //设置自定义的样式
+                width: "230px",
+              },
             },
             {
               label: "时间",
@@ -24,6 +72,10 @@ export default {
               componentType: "date-picker",
               type: "datetimerange",
               rangeSeparator: "至",
+              styleObject: {
+                //设置自定义的样式
+                width: "220px",
+              },
               startPlaceholder: "开始日期",
               endPlaceholder: "结束日期",
               placeholder: "选择时间",
@@ -50,12 +102,12 @@ export default {
           ],
         },
         //表单
-        currentPage: 1,
-        pageSize: 5,
-        pagination: true,
-        loading: false,
-        layout: "total, sizes, prev, pager, next, jumper",
-        tableData: {
+        tableConfig: {
+          currentPage: 1,
+          pageSize: 5,
+          pagination: true,
+          loading: false,
+          layout: "total, sizes, prev, pager, next, jumper",
           column: [
             {
               prop: "date",
@@ -121,37 +173,34 @@ export default {
     },
   },
   methods: {
-    getFormData(){
+    getFormData() {
+      if (this.defaultTemplate.queryFormApi) {
+        const queryFormApiTrigger = new ApiConfigTrigger(this.defaultTemplate.queryFormApi, this);
+        // 页面loading
+        const loading = this.$loading({
+          lock: true,
+          text: '加载中...',
+          background: 'rgba(255, 255, 255, 0.6)',
+        });
+        queryFormApiTrigger.sendApi()
+          .finally(() => {
+            // 关闭loading
+            loading.close();
+          });
+      }
     },
     handleSizeChange(val) {
-      if (this.config.handleSizeChange) {
-        this.config.handleSizeChange(val);
+      const tableConfig = this.config.tableConfig
+      if (tableConfig.handleSizeChange) {
+        tableConfig.handleSizeChange(val);
       } else {
-        this.config.currentPage = 1;
-        this.config.pageSize = val;
-        this.createData();
+        tableConfig.currentPage = 1;
+        tableConfig.pageSize = val;
+        this.getFormData();
       }
     },
     handleCurrentChange(){
-    },
-    createData() {
-      if (this.config.createData) {
-        this.config.createData();
-      } else {
-        this.config.loading = true;
-        let data = [];
-        for (let i = 0; i < length; i++) {
-          data.push({
-            date: "2016-05-02",
-            name: `王小虎-${this.config.currentPage}-${i + 1}`,
-            address: `上海市普陀区金沙江路 -${this.config.currentPage}-${i + 1} 弄`,
-          });
-        }
-        setTimeout(() => {
-          this.config.tableData.data = data;
-          this.config.loading = false;
-        }, 1000);
-      }
+
     },
   },
 }

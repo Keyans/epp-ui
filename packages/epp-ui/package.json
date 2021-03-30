@@ -1,6 +1,6 @@
 {
   "name": "@tencent/epp-ui",
-  "version": "1.6.7",
+  "version": "1.7.6",
   "private": false,
   "main": "lib/epp-ui.umd.min.js",
   "author": "abbotwu",
@@ -31,6 +31,7 @@
   "dependencies": {
     "@tencent/nb-design": "^0.1.1",
     "@tencent/nb-tools": "^1.0.3",
+    "@tencent/nb-trpc": "^0.3.2",
     "core-js": "^3.6.5",
     "lodash": "^4.17.20",
     "sortablejs": "^1.12.0"

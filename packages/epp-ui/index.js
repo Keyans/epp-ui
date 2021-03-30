@@ -1,3 +1,6 @@
+import { BreadInterceptors } from "./utils/breadUtil"//导出路由面包屑方法
+import apiTrigger from "./utils/apiConfigTrigger"//导出路由面包屑方法
+
 //配置自动化注入,根据src文件夹下的index进行注入
 const modulesFiles = require.context("./src", true, /\.js$/);
 //设置vue的作用域
@@ -30,7 +33,8 @@ const inherit = (config)=>{
   return {
     components:{
       componentName:config
-    }
+    },
+    mixins: [config],
   }
 }
 /* istanbul ignore if */
@@ -38,4 +42,4 @@ if (typeof window !== "undefined" && window.Vue) {
   install(window.Vue);
 }
 
-export default Object.assign(components, { install, version: "1.1.0",inherit });
+export default Object.assign(components, { install, version: "1.1.0",inherit,BreadInterceptors,apiTrigger});

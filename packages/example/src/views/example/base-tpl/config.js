@@ -1,17 +1,17 @@
 export default{
-  templateName:"eppTemplate",
   data(){
     return{
      defaultTemplate: {
        //表格
        formConfig: {
+         size:"small",
          formData: {
            number: "",
            id: "",
          },
          formItem: [
            {
-             label: "测试12313",
+             label: "测试",
              model: "switchValue",
              componentType: "input",
            },
@@ -43,48 +43,36 @@ export default{
         pagination: true,
         loading: false,
         layout: "total, sizes, prev, pager, next, jumper",
-        tableData:{
-          column: [
-            {
-              prop: "date",
-              label: "日期",
-            },
-            {
-              prop: "name",
-              label: "姓名",
-            },
-            {
-              prop: "address",
-              label: "地址",
-            },
-          ],
-          data: [
+        column: [
           {
-            cc: 1,
-            date: "2016-05-02",
-            name: "王小虎1",
-            address: "上海市普陀区金沙江路 1518 弄",
+            prop: "date",
+            label: "日期",
           },
           {
-            cc: 2,
-            date: "2016-05-02",
-            name: "王小虎2",
-            address: "上海市普陀区金沙江路 1518 弄",
+            prop: "name",
+            label: "姓名",
           },
-          {
-            cc: 3,
-            date: "2016-05-02",
-            name: "王小虎3",
-            address: "上海市普陀区金沙江路 1518 弄",
-          },
-          {
-            cc: 4,
-            date: "2016-05-02",
-            name: "王小虎4",
-            address: "上海市普陀区金沙江路 1518 弄",
-          }
-          ],
-        }
+        ],
+        data: [
+        {
+          cc: 1,
+          date: "2016-05-02",
+          name: "234213",
+          address: "上海市普陀区金沙江路 1518 弄",
+        },
+        {
+          cc: 2,
+          date: "2016-05-02",
+          name: "王小虎2",
+          address: "上海市普陀区金沙江路 1518 弄",
+        },
+        {
+          cc: 3,
+          date: "2016-05-02",
+          name: "王小虎3",
+          address: "上海市普陀区金沙江路 1518 弄",
+        },
+        ],
        },
      },
     }

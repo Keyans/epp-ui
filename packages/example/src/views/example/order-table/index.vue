@@ -6,6 +6,13 @@
       :data="tableData.data"
     >
     </testTable>
+    <test-steps
+      :active="active"
+      :steps-list="stepsList"
+      :align-center="false"
+      finish-status="error"
+      direction="vertical"
+    ></test-steps>
     <!-- <nb-table
       :data="tableData1"
       :span-method="arraySpanMethod"
@@ -22,10 +29,14 @@
 
 <script>
 import testTable from "../../../../../epp-ui/src/epp-table/epp-table";
+import testSteps from "./epp-steps";
+
 export default {
-  components: { testTable },
+  components: { testTable,testSteps },
   data() {
     return {
+      active: 4, //补助
+      stepsList: [{ title: "步骤一" }, { title: "步骤二" },{ title: "步骤三" }, { title: "步骤四" }],
       tableData1: [],
       tableData: {
         column: [

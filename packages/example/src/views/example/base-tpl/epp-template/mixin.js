@@ -1,62 +1,47 @@
+
+import ApiTrigger from '../../../utils/apiConfigTrigger';
+
 export default {
-  name: "eppTestTemplate",
   data() {
     return {
       //默认的Template配置
-      defaultTemplate: {
-        //表格
-        ref: "eppForm",
-        formConfig: {
-          formData: {
-            number: "",
-            id: "",
-            date: "",
-            switchValue: "",
+      defaultTemplate: {        
+        queryFormApi: {
+        reqData: {
+          Offset: 0, Limit: 5
+        },
+        // api响应配置
+        responseConfig: {
+          // 响应数据字段全局处理（data 参数是映射好的数据），需要返回一个对象
+          transformResponse: (newData, vueData, resData) => {
+            vueData.testTitle = '配置化完成';
+            // test
+            const newTestField = 'testField';
+            return {
+              ...newData,
+              newTestField,
+            };
           },
-          formItem: [
-            {
-              label: "测试",
-              model: "switchValue",
-              componentType: "input",
-            },
-            {
-              label: "时间",
-              model: "date",
-              componentType: "date-picker",
-              type: "datetimerange",
-              rangeSeparator: "至",
-              startPlaceholder: "开始日期",
-              endPlaceholder: "结束日期",
-              placeholder: "选择时间",
-            },
-            {
-              label: "店铺id",
-              model: "id",
-              componentType: "select",
-              children: {
-                label: "label",
-                value: "value",
-                options: [
-                  {
-                    label: "区域一",
-                    value: "shanghai",
-                  },
-                  {
-                    label: "区域二",
-                    value: "beijing",
-                  },
-                ],
-              },
-            },
-          ],
+        },
+        onResSuccess: (resData, vueData) => {          
+        },
+        onResError: (errInfo, vueData) => {},
+        onResFinally: (vueData) => {},
+        },
+        //表格
+        formConfig: {
+          ref: "eppForm",
+          formData: {},
+          formItem: []
         },
         //表单
-        currentPage: 1,
-        pageSize: 5,
-        pagination: true,
-        loading: false,
-        layout: "total, sizes, prev, pager, next, jumper",
-        tableData: {
+        tableConfig: {
+          currentPage: 1,
+          pageSize: 5,
+          pagination: true,
+          loading: false,
+          total:0,
+          layout: "total, sizes, prev, pager, next, jumper",
           column: [
             {
               prop: "date",
@@ -114,7 +99,7 @@ export default {
     };
   },
   created(){
-    console.log(1111)
+    this.getFormData()
  },
   computed: {
     // 为props增加默认配置
@@ -123,40 +108,36 @@ export default {
     },
   },
   methods: {
-    getFormData(){
-      console.log(212)
+    handleClose(){
+      
+    },
+    getFormData(data) {
+      if (this.defaultTemplate.queryFormApi) {
+        Object.assign(this.defaultTemplate.queryFormApi.reqData, data);
+        const queryFormApiTrigger = new ApiTrigger(this.defaultTemplate.queryFormApi, this);
+        // 页面loading
+        const loading = this.$loading({
+          lock: true,
+          text: '加载中...',
+          background: 'rgba(255, 255, 255, 0.6)',
+        });
+        queryFormApiTrigger.sendApi()
+          .finally(() => {
+            // 关闭loading
+            loading.close();
+          });
+      }
     },
     handleSizeChange(val) {
-      console.log(val,7676)
-      if (this.config.handleSizeChange) {
-        this.config.handleSizeChange(val);
-      } else {
-        this.config.currentPage = 1;
-        this.config.pageSize = val;
-        this.createData();
-      }
+      this.defaultTemplate.tableConfig.currentPage = 1;
+      this.defaultTemplate.queryFormApi.reqData.Offset =  0;
+      this.defaultTemplate.queryFormApi.reqData.Limit = this.defaultTemplate.tableConfig.pageSize = val;
+      this.getFormData();
     },
-    handleCurrentChange(){
-        console.log(771263716237)
-    },
-    createData() {
-      if (this.config.createData) {
-        this.config.createData();
-      } else {
-        this.config.loading = true;
-        let data = [];
-        for (let i = 0; i < length; i++) {
-          data.push({
-            date: "2016-05-02",
-            name: `王小虎-${this.config.currentPage}-${i + 1}`,
-            address: `上海市普陀区金沙江路 -${this.config.currentPage}-${i + 1} 弄`,
-          });
-        }
-        setTimeout(() => {
-          this.config.tableData.data = data;
-          this.config.loading = false;
-        }, 1000);
-      }
+    handleCurrentChange(val) {
+      this.defaultTemplate.tableConfig.currentPage  = val;
+      this.defaultTemplate.queryFormApi.reqData.Offset = (val - 1) * this.defaultTemplate.queryFormApi.reqData.Limit;
+      this.getFormData();
     },
   },
 }

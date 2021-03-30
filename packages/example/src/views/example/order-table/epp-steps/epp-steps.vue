@@ -33,13 +33,13 @@ export default {
       type: String,
       default: "auto",
     },
-    active: {
-      type: Number,
-      default: 0,
-    },
     direction: {
       type: String,
       default: "horizontal",
+    },
+    active: {
+      type: Number,
+      default: 0,
     },
     space: {
       type: Number,

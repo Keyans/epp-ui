@@ -7,18 +7,8 @@
  * @FilePath: /npm_epp_ui/Users/abbotwu/project/npmTest/src/package/eppDemo/index.js
  */
 // 这里import 的 btn和btnDemo.vue的name属性名相同 ！
-import template from "./epp-template.vue";
-import Vue from "vue"
+import template from "./epp-steps.vue";
 // 给组件配置install方法
 template.install = (Vue) => Vue.component(template.name, template);
-
-template.inherit = (config)=>{
-  config.extends = config.extends || Vue.options.components[config.templateName]
-  return {
-     components:{
-       componentName:config
-     }
-   }
-}
 
 export default template;

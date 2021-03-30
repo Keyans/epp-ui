@@ -20,6 +20,7 @@ import Vue from "vue";
 import App from "./App.vue";
 
 import eppUi from "@tencent/epp-ui";
+import '@tencent/epp-ui/lib/epp-ui.css';
 
 Vue.use(eppUi);
 

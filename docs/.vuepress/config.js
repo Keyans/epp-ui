@@ -1,15 +1,11 @@
-/*
- * @Author: your name
- * @Date: 2020-10-22 17:47:42
- * @LastEditTime: 2020-10-28 14:53:11
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: /npm_epp_ui/Users/abbotwu/project/epp-ui/docs/.vuepress/config.js
- */
+const path =require('path');
 module.exports = (ctx) => ({
   title: "epp-ui",
   description: "一款基于管理后台的运用",
   base: "/epp-ui/",
+  alias: {
+    'styles': path.resolve(__dirname, './styles')
+  },
   head: [
     [
       "link",
@@ -27,6 +23,7 @@ module.exports = (ctx) => ({
     nav: [
       { text: "指南", link: "/guide/step" },
       { text: "组件", link: "/pages/table" },
+      { text: "模版", link: "/tpl/api" },
       { text: "工具库", link: "https://ares.nb.qq.com/jsdocs/index.html" },
       {
         text: "Github",
@@ -144,6 +141,11 @@ module.exports = (ctx) => ({
               path: "introduce",
             },
             {
+              title: "更新日志",
+              collapsable: false,
+              path: "update-log",
+            },
+            {
               title: "组件开发流程",
               collapsable: false,
               path: "dev-process",
@@ -156,6 +158,24 @@ module.exports = (ctx) => ({
           ],
         },
       ],
+      "/tpl/":[
+        {
+          title: "模版",
+          collapsable: false,
+          children: [
+            {
+              title: "API接入",
+              collapsable: false,
+              path: "api",
+            },
+            {
+              title: "模版",
+              collapsable: false,
+              path: "template",
+            },
+          ],
+        },
+      ]
     },
   },
 });
