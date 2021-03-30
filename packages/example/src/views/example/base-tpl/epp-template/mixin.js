@@ -1,5 +1,5 @@
 
-import ApiTrigger from '../../../utils/apiConfigTrigger';
+import ApiTrigger from '../../../../../../epp-ui/utils/apiConfigTrigger';
 
 export default {
   data() {
