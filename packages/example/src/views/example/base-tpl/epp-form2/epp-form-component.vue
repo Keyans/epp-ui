@@ -16,15 +16,11 @@
     >
       <component
         v-for="(op, index) in componentConfig.children.options"
-        :label="op[componentConfig.children.label] || op.label"
-        :value="op[componentConfig.children.value] || op.value"
+        :label="op.label || op[componentConfig.children.label]"
+        :value="op.value || op[componentConfig.children.value]"
         :is="componentType(componentConfig.children.type || 'option')"
         :key="index"
-      >
-        <template v-if="componentConfig.children.type === 'radio'">
-          {{ op[componentConfig.children.value] || op.value }}
-        </template>
-      </component>
+      ></component>
     </template>
   </component>
 </template>
@@ -91,14 +87,12 @@ export default {
     },
     //清除事件
     clear(event) {
-      this.valifyHandler("clear");
+      this.valifyHandler('clear');
     },
     //keyup事件
     keyup(event) {
-      let firstUpperCase = event.code
-        .toLowerCase()
-        .replace(/( |^)[a-z]/g, (L) => L.toUpperCase());
-      this.valifyHandler(`${event.type}${firstUpperCase}`);
+      let firstUpperCase = event.code.toLowerCase().replace(/( |^)[a-z]/g,(L)=>L.toUpperCase())
+      this.valifyHandler(`${event.type}${firstUpperCase}`)
     },
     //处理事件
     valifyHandler(type) {

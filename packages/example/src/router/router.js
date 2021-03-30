@@ -39,9 +39,10 @@ export const appRouter = [
     name: 'appRouter',
     component: Main,
     children:[
-      { path: 'base_tpl', meta:{title:"基础模版渲染"},name: 'base_tpl', component: () => import(/* webpackChunkName: "base_tpl" */ '@/views/example/base-tpl/index.vue') },
+      { path: 'base_tpls', meta:{title:"基础模版渲染"},name: 'base_tpls', component: () => import(/* webpackChunkName: "base_tpls" */ '@/views/example/base-tpl/index.vue') },
+      { path: 'order_table', meta:{title:"基础模版渲染"},name: 'order_table', component: () => import(/* webpackChunkName: "order_table" */ '@/views/example/order-table/index.vue') },
     ]
-  }
+  },
 ];
 
 // 所有上面定义的路由都要写在下面的routers里
