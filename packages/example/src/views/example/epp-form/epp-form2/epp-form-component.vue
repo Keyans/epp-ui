@@ -12,13 +12,12 @@
   >
     <!-- 判断是否有对应的children、并且是否有对应的options -->
     <template
-      v-if="componentConfig.children && componentConfig.children.options"
+      v-if="componentConfig.options"
     >
       <component
-        v-for="(op, index) in componentConfig.children.options"
-        :label="op.label || op[componentConfig.children.label]"
-        :value="op.value || op[componentConfig.children.value]"
-        :is="componentType(componentConfig.children.type || 'option')"
+        v-for="(op, index) in componentConfig.options"
+        v-bind="op"
+        :is="componentType(componentConfig.type || 'option')"
         :key="index"
       ></component>
     </template>
