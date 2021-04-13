@@ -9,10 +9,11 @@
           @submit.native.prevent
         >
           <nb-row :gutter="config.gutter">
-            <template v-for="(formItem, field) of config.formDesc">
+            <template v-for="(formItem, field) of formDescData">
               <nb-col
                 :key="field"
                 :span="computedSpan"
+                v-if="formItem._vif"
                 style="min-height: 51px"
               >
                 <nb-form-item v-bind="formItem" :prop="field" class="epp-width">
@@ -130,22 +131,21 @@ export default {
           oldFormDescData,
           cloneDeep(formDesc)
         );
-        console.log(this.formDescData, 12312);
+        this.checkLinkage()
       },
       immediate: true,
       deep: true,
     },
-    formDescData: {},
   },
   methods: {
     // 处理表单数据
     handleUpdateFormComponent({ key, value }) {
-      this.handleChange(key,value)
+      this.handleChange(key, value);
       this.checkLinkage();
     },
     //改变数据
     handleChange(field, val) {
-      this.formConfig.formData[field] = val;
+      this.formConfig.formData[field] = val
       this.formConfig.onUpdateData &&
         this.formConfig.onUpdateData(...arguments);
     },
@@ -164,7 +164,7 @@ export default {
         vif = Boolean(this.getFunctionAttr(formItem.vif, field));
         if (!vif) {
           // 如果隐藏, 则使用其默认值
-          this.handleChange(field, formItem._defaultValue);
+          this.handleChange(field, formItem.defaultValue);
         }
       } else if (typeof formItem.vif === "boolean") {
         vif = formItem.vif;

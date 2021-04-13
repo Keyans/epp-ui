@@ -82,7 +82,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .epp-steps {
   $successColor: #0052d9;
   $finishColor: #0052d9;

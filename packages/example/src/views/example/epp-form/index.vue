@@ -40,6 +40,7 @@ export default {
         col: 1,
         inline: false, // 默认为横向展示
         onUpdateData: (...data) => {},
+        labelPosition: "left",
         formData: {
           title: "",
           valueType: "",
@@ -66,6 +67,7 @@ export default {
             label: "女朋友名字",
             labelWidth: "100px",
             vif(data) {
+              console.log(data)
               return data.girlfriend === true;
             },
           },

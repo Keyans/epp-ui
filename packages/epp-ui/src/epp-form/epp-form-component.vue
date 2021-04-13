@@ -2,7 +2,11 @@
   <component
     v-bind="componentConfig"
     :is="componentType(componentConfig.componentType)"
+    :options="
+      componentConfig.componentType === 'cascader' ? componentConfig.options : null
+    "
     v-model="controlModel"
+    :type="filterType"
     @input="handleInput(controlModel)"
     @click.native="click"
     @blur="blur"
@@ -45,6 +49,7 @@ export default {
   data() {
     return {
       controlModel: this.value,
+      filterType:undefined,
     };
   },
   watch: {
@@ -54,11 +59,6 @@ export default {
     controlModel(newValue) {
       const key = this.$props.componentConfig.model;
       this.$emit("update", { key, value: newValue });
-    },
-  },
-  computed: {
-    formData() {
-      console.log(this.$parent.$props);
     },
   },
   methods: {
@@ -75,7 +75,12 @@ export default {
       }
     },
     componentType(type) {
-      return `nb-${type}`;
+      let typeName = type
+      if(type === "textarea"){
+        typeName = "input"
+        this.filterType="textarea"
+      }
+      return `nb-${typeName}`;
     },
     //点击事件
     click(event) {
