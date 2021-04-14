@@ -10,8 +10,8 @@ import Vue from "vue";
 import App from "./App.vue";
 import store from "./store";
 
-import eppUi from "@tencent/epp-ui-test"
-import '@tencent/epp-ui-test/lib/epp-ui.css';
+import eppUi from "@tencent/epp-ui"
+import '@tencent/epp-ui/lib/epp-ui.css';
 // import eppUi from "../../epp-ui/lib/epp-ui.common"
 
 import { router } from "./router";

@@ -1,11 +1,20 @@
 <template>
   <div>
     <test-form :formConfig="formConfig" @getFormData="getFormData"></test-form>
+    <epp-button type="secondary">次按钮</epp-button>
+    <epp-steps
+      :active="active"
+      :steps-list="stepsList"
+      :align-center="true"
+      finish-status="success"
+    ></epp-steps>
   </div>
 </template>
 
 <script>
 import testForm from "./epp-form3/epp-form";
+// import testSteps from "./epp-steps/epp-steps";
+
 const pickerOptions = {
   shortcuts: [
     {
@@ -33,9 +42,16 @@ const pickerOptions = {
   ],
 };
 export default {
-  components: { testForm },
+  components: { testForm, testSteps },
   data() {
     return {
+      active: 3, //补助
+      stepsList: [
+        { title: "步骤一" },
+        { title: "步骤二" },
+        { title: "步骤三" },
+        { title: "步骤四" },
+      ],
       formConfig: {
         col: 1,
         inline: false, // 默认为横向展示
@@ -67,7 +83,6 @@ export default {
             label: "女朋友名字",
             labelWidth: "100px",
             vif(data) {
-              console.log(data)
               return data.girlfriend === true;
             },
           },
