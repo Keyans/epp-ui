@@ -23,7 +23,7 @@ module.exports = (ctx) => ({
     nav: [
       { text: "指南", link: "/guide/step" },
       { text: "组件", link: "/pages/table" },
-      { text: "模版", link: "/tpl/api" },
+      { text: "模版", link: "/tpl/template" },
       { text: "工具库", link: "https://ares.nb.qq.com/jsdocs/index.html" },
       {
         text: "Github",
@@ -164,15 +164,15 @@ module.exports = (ctx) => ({
           collapsable: false,
           children: [
             {
-              title: "API接入",
-              collapsable: false,
-              path: "api",
-            },
-            {
-              title: "模版",
+              title: "使用",
               collapsable: false,
               path: "template",
             },
+            {
+              title: "API接入",
+              collapsable: false,
+              path: "api",
+            }
           ],
         },
       ]
