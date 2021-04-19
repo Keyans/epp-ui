@@ -1,6 +1,7 @@
 import Vue from "vue"
 import VueRouter from "vue-router"
-import { BreadInterceptors } from "@tencent/nb-tools"; // 倒入面包屑方法
+import { BreadInterceptors } from "@tencent/epp-ui-test"; // 倒入面包屑方法
+// import { BreadInterceptors } from "../../../epp-ui/lib/epp-ui.common"
 import { routers } from './router';
 Vue.use(VueRouter);
 
@@ -11,16 +12,13 @@ const RouterConfig = {
 
 export const router = new VueRouter(RouterConfig);
 
-
-console.log(BreadInterceptors)
-
 //before
 router.beforeEach((to, from, next) => {
   next();
 });
 //after
 router.afterEach((to,from) => {
-  // BreadInterceptors(to,from)
+  BreadInterceptors(to,from)
 });
 
 //重写router push方法

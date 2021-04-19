@@ -37,7 +37,6 @@
     :filter-multiple="column.filterMultiple"
     :filter-method="column.filterMethod"
     :filtered-value="column.filteredValue">
-
     <template slot="header"
       slot-scope="scope">
       <epp-render v-if="column.renderHeader"

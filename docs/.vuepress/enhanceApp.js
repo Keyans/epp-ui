@@ -1,4 +1,4 @@
-import '@tencent/epp-ui-test/lib/epp-ui.css';
+import '@tencent/epp-ui/lib/epp-ui.css';
 import NbDesign from "@tencent/nb-design";
 import '@tencent/nb-design/lib/theme-chalk/index.css';
 

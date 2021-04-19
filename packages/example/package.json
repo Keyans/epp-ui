@@ -3,12 +3,13 @@
     "serve": "vue-cli-service serve"
   },
   "dependencies": {
-    "@tencent/epp-ui": "^1.6.8",
-    "@tencent/epp-ui-test": "^1.5.3",
+    "@tencent/epp-ui": "^1.7.3",
+    "@tencent/epp-ui-test": "^1.5.11",
     "@tencent/nb-tools": "^1.0.4",
     "@tencent/nb-trpc": "^0.3.2",
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
+    "element-ui": "^2.15.1",
     "js-cookie": "^2.2.1",
     "lerna-demo-test-ui": "^1.0.2",
     "lerna-ui-test": "^0.1.0",
