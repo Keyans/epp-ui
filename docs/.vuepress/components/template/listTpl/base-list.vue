@@ -1,6 +1,6 @@
 <template>
   <div>
-    <component :is="`componentName`">
+    <component :is="componentName">
       <div class="mb-20">
         <nb-button type="primary" size="small"> 创建预售</nb-button>
         <span class="font-color"
@@ -18,13 +18,19 @@ import inherit from "./transform";
 // import { inherit }  from "@tencent/epp-ui" 正式环境使用这个
 export default {
   extends: inherit(config),
+  data() {
+    return {
+      // componentName: "componentName",//正式时候使用
+      componentName: "eppListTpl",//打包时候
+    };
+  },
 };
 </script>
 <style scoped>
-.mb-20{
+.mb-20 {
   margin-bottom: 20px;
 }
-.font-color{
-  color: #FD9116;
+.font-color {
+  color: #fd9116;
 }
 </style>
