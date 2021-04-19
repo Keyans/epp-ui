@@ -41,6 +41,7 @@ export const appRouter = [
     children:[
       { path: 'base_tpls', meta:{title:"基础模版渲染"},name: 'base_tpls', component: () => import(/* webpackChunkName: "base_tpls" */ '@/views/example/base-tpl/index.vue') },
       { path: 'order_table', meta:{title:"基础模版渲染"},name: 'order_table', component: () => import(/* webpackChunkName: "order_table" */ '@/views/example/order-table/index.vue') },
+      { path: 'epp_form', meta:{title:"基础模版渲染"},name: 'epp_form', component: () => import(/* webpackChunkName: "epp_form" */ '@/views/example/epp-form/index.vue') },
     ]
   },
 ];

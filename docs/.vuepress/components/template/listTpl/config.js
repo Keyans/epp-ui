@@ -164,43 +164,10 @@ export default {
       },
     };
   },
-  created(){
- },
   computed: {
     // 为props增加默认配置
     config() {
       return this.defaultTemplate;
-    },
-  },
-  methods: {
-    getFormData() {
-      if (this.defaultTemplate.queryFormApi) {
-        const queryFormApiTrigger = new ApiConfigTrigger(this.defaultTemplate.queryFormApi, this);
-        // 页面loading
-        const loading = this.$loading({
-          lock: true,
-          text: '加载中...',
-          background: 'rgba(255, 255, 255, 0.6)',
-        });
-        queryFormApiTrigger.sendApi()
-          .finally(() => {
-            // 关闭loading
-            loading.close();
-          });
-      }
-    },
-    handleSizeChange(val) {
-      const tableConfig = this.config.tableConfig
-      if (tableConfig.handleSizeChange) {
-        tableConfig.handleSizeChange(val);
-      } else {
-        tableConfig.currentPage = 1;
-        tableConfig.pageSize = val;
-        this.getFormData();
-      }
-    },
-    handleCurrentChange(){
-
     },
   },
 }

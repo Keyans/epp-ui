@@ -1,6 +1,6 @@
 {
   "name": "@tencent/epp-ui",
-  "version": "1.7.6",
+  "version": "1.7.14",
   "private": false,
   "main": "lib/epp-ui.umd.min.js",
   "author": "abbotwu",

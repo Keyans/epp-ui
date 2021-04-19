@@ -2,7 +2,7 @@
   <div>
     <test-tpl></test-tpl>
     <component is="componentName"></component>
-      <!-- <epp-form ref="eppForm" :formConfig="formConfig"></epp-form> -->    <!-- <epp-steps
+     <!-- <epp-steps
     :active="active"
     :steps-list="stepsList"
     direction="vertical"
@@ -22,7 +22,6 @@
 <script>
 import config from "./config";
 import inherit  from "./transform"
-console.log(inherit(config),123123)
 import testTpl from "./epp-template/epp-template"
 // import { inherit } from "../../../../../epp-ui/lib/epp-ui.common";
 // import { inherit } from "@tencent/epp-ui-test"

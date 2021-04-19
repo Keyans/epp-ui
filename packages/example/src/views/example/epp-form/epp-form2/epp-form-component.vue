@@ -2,11 +2,7 @@
   <component
     v-bind="componentConfig"
     :is="componentType(componentConfig.componentType)"
-    :options="
-      componentConfig.componentType === 'cascader' ? componentConfig.options : null
-    "
     v-model="controlModel"
-    :type="filterType"
     @input="handleInput(controlModel)"
     @click.native="click"
     @blur="blur"
@@ -16,19 +12,14 @@
   >
     <!-- 判断是否有对应的children、并且是否有对应的options -->
     <template
-      v-if="componentConfig.children && componentConfig.children.options"
+      v-if="componentConfig.options"
     >
       <component
-        v-for="(op, index) in componentConfig.children.options"
-        :label="op[componentConfig.children.label] || op.label"
-        :value="op[componentConfig.children.value] || op.value"
-        :is="componentType(componentConfig.children.type || 'option')"
+        v-for="(op, index) in componentConfig.options"
+        v-bind="op"
+        :is="componentType(componentConfig.type || 'option')"
         :key="index"
-      >
-        <template v-if="componentConfig.children.type === 'radio'">
-          {{ op[componentConfig.children.value] || op.value }}
-        </template>
-      </component>
+      ></component>
     </template>
   </component>
 </template>
@@ -49,7 +40,6 @@ export default {
   data() {
     return {
       controlModel: this.value,
-      filterType:undefined,
     };
   },
   watch: {
@@ -59,6 +49,11 @@ export default {
     controlModel(newValue) {
       const key = this.$props.componentConfig.model;
       this.$emit("update", { key, value: newValue });
+    },
+  },
+  computed: {
+    formData() {
+      console.log(this.$parent.$props);
     },
   },
   methods: {
@@ -75,12 +70,7 @@ export default {
       }
     },
     componentType(type) {
-      let typeName = type
-      if(type === "textarea"){
-        typeName = "input"
-        this.filterType="textarea"
-      }
-      return `nb-${typeName}`;
+      return `nb-${type}`;
     },
     //点击事件
     click(event) {
@@ -96,14 +86,12 @@ export default {
     },
     //清除事件
     clear(event) {
-      this.valifyHandler("clear");
+      this.valifyHandler('clear');
     },
     //keyup事件
     keyup(event) {
-      let firstUpperCase = event.code
-        .toLowerCase()
-        .replace(/( |^)[a-z]/g, (L) => L.toUpperCase());
-      this.valifyHandler(`${event.type}${firstUpperCase}`);
+      let firstUpperCase = event.code.toLowerCase().replace(/( |^)[a-z]/g,(L)=>L.toUpperCase())
+      this.valifyHandler(`${event.type}${firstUpperCase}`)
     },
     //处理事件
     valifyHandler(type) {

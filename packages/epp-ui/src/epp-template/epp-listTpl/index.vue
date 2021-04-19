@@ -3,6 +3,7 @@
     <epp-form
       v-bind="config"
       @getFormData="getFormData"
+      :ref="config.formConfig.ref"
     ></epp-form>
     <slot></slot>
     <epp-table

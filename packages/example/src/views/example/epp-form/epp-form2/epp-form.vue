@@ -8,15 +8,13 @@
     >
       <nb-row :gutter="config.gutter">
         <template v-for="(item, index) in config.formItem">
-          <nb-col :key="index" :span="computedSpan" style="min-height: 51px">
-            <nb-form-item v-bind="item" :prop="item.model" class="epp-width">
-              <item-render
-                :data="config.formData"
-                :render="item.render"
-                v-if="item.render"
-              ></item-render>
+          <nb-col :key="index" :span="computedSpan" style="min-height:51px;">
+            <nb-form-item
+              v-bind="item"
+              :prop="item.model"
+              class="epp-width"
+            >
               <eppFormComponent
-                v-else
                 :value="config.formData[item.model]"
                 :componentConfig="item"
                 @update="handleUpdateFormComponent"
@@ -34,17 +32,17 @@
           </nb-col>
         </template>
         <nb-col :span="computedSpan">
-          <slot name="btn"></slot>
-          <div v-if="!!config.btn.length" style="width: 95%; margin-left: 5%">
-            <nb-button
-              v-for="(button, index) in config.btn"
-              :key="index"
-              v-bind="button"
-              :size="config.size"
-              @click="handleClick(button)"
-              >{{ button.name }}</nb-button
-            >
-          </div>
+        <slot name="btn"></slot>
+        <div v-if="!!config.btn.length" style="width:95%;margin-left:5%">
+          <nb-button
+            v-for="(button, index) in config.btn"
+            :key="index"
+            v-bind="button"
+            :size="config.size"
+            @click="handleClick(button)"
+            >{{ button.name }}</nb-button
+          >
+        </div>
         </nb-col>
       </nb-row>
     </nb-form>
@@ -52,11 +50,9 @@
 </template>
 
 <script>
-import eppFormComponent from "./epp-form-component";
-import itemRender from "./item-render";
-
+import eppFormComponent from './epp-form-component';
 export default {
-  name: "eppForm",
+  name: 'eppForm',
   props: {
     formConfig: {
       type: Object,
@@ -69,26 +65,26 @@ export default {
       default: () => {},
     },
   },
-  components: { eppFormComponent,itemRender },
+  components: { eppFormComponent },
   data() {
     return {
       defaultConfig: {
-        ref: "eppForm",
-        labelPosition: "right", // 默认为右对齐
+        ref: 'eppForm',
+        labelPosition: 'right', // 默认为右对齐
         inline: false, // 默认为横向展示
-        size: "small",
-        labelWidth: "80px", // 默认label为80
+        size: '',
+        labelWidth: '80px', // 默认label为80
         buttonShow: true, // 设置查询按钮默认存在
         btn: [
           {
-            type: "primary",
-            name: "查询",
+            type: 'primary',
+            name: '查询',
             click: () => {
-              this.$emit("getFormData", this.config.formData);
+              this.$emit('getFormData', this.config.formData);
             },
           },
           {
-            name: "重置",
+            name: '重置',
             click: () => {
               this.resetForm();
             },
@@ -97,9 +93,8 @@ export default {
         gutter: 0, // 属性来指定每一栏之间的间隔，默认间隔为 0
         col: 3, // 设置默认一列展示的行数
         mainspan: 24, // 设置总栅格数、默认为24
-        styleObject: {
-          // 设置默认的绑定样式
-          width: "100%",
+        styleObject: { // 设置默认的绑定样式
+          width: '100%',
         },
       },
     };
@@ -125,8 +120,8 @@ export default {
     // 处理表单数据
     handleUpdateFormComponent({ key, value }) {
       this.formConfig.formData[key] = value;
-      this.formConfig.onUpdateData &&
-        this.formConfig.onUpdateData(...arguments);
+      this.formConfig.onUpdateData
+        && this.formConfig.onUpdateData(...arguments);
     },
     getFormData() {
       return this.$props.formConfig.formData || {};

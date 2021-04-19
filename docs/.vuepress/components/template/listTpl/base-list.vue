@@ -2,7 +2,7 @@
   <div>
     <component :is="`componentName`">
       <div class="mb-20">
-        <nb-button type="primary" size="small">创建预售</nb-button>
+        <nb-button type="primary" size="small"> 创建预售</nb-button>
         <span class="font-color"
           ><epp-icon icon="epp-icon-Announcementmanagement"></epp-icon
           >可设置定金预售活动，提前锁定大量意向用户，精准营销</span
@@ -15,9 +15,9 @@
 <script>
 import config from "./config";
 import inherit from "./transform";
-// import { inherit }  from "@tencent/epp-ui" //正式开发使用
+// import { inherit }  from "@tencent/epp-ui" 正式环境使用这个
 export default {
-  mixins: [inherit(config)],
+  extends: inherit(config),
 };
 </script>
 <style scoped>
