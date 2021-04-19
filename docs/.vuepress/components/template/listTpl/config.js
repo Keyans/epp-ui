@@ -1,7 +1,5 @@
 
 
-import ApiConfigTrigger from './api_config_trigger';
-
 export default {
   templateName: 'eppListTpl',
   data() {
@@ -45,6 +43,7 @@ export default {
         onResError: (errInfo, vueData) => {},
         onResFinally: (vueData) => {},
         },
+        rules:[{a:1}],
         //表格
         formConfig: {
           ref: "eppForm",

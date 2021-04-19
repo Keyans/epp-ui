@@ -14,7 +14,7 @@
     "docs:build": "vuepress build docs"
   },
   "dependencies": {
-    "@tencent/epp-ui": "^1.7.15",
+    "@tencent/epp-ui": "^1.7.16",
     "@tencent/epp-ui-test": "^1.5.13",
     "@tencent/nb-tools": "^1.0.3",
     "core-js": "^2.6.11",
