@@ -13,7 +13,7 @@
 
 <script>
 import testForm from "./epp-form3/epp-form";
-// import testSteps from "./epp-steps/epp-steps";
+import testSteps from "./epp-steps/epp-steps";
 
 const pickerOptions = {
   shortcuts: [
