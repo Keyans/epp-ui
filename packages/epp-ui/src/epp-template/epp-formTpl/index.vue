@@ -1,5 +1,7 @@
 <template>
-  <div></div>
+  <div>
+    <eppForm2></eppForm2>
+  </div>
 </template>
 
 <script>

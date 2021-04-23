@@ -75,10 +75,12 @@ export default {
       }
     },
     componentType(type) {
-      let typeName = type
-      if(type === "textarea"){
-        typeName = "input"
-        this.filterType="textarea"
+      let typeName = type;
+      if (type === 'textarea') {
+        typeName = 'input';
+        this.filterType = 'textarea';
+      } else {
+        this.filterType = this.componentConfig.type || undefined;
       }
       return `nb-${typeName}`;
     },
