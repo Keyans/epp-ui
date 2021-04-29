@@ -16,24 +16,12 @@
         v-bind="op"
         :is="componentType(op.type)"
       ></component>
-      <!-- <component
-        v-for="(op, index) in componentConfig.children.options"
-        :label="op[componentConfig.children.label] || op.label"
-        :value="op[componentConfig.children.value] || op.value "
-        :is="componentType(componentConfig.children.type || 'option')"
-        v-bind="op"
-        :key="index"
-      >
-      <template v-if="componentConfig.children.type === 'radio'">
-        {{op[componentConfig.children.value] || op.value}}
-      </template>
-      </component> -->
     </template>
   </component>
 </template>
 
 <script>
-import nbtools from '@tencent/nb-tools';
+// import nbtools from '@tencent/nb-tools';
 export default {
   name: 'eppFormComponent',
   props: {
