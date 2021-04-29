@@ -52,11 +52,11 @@
 </template>
 
 <script>
-import eppFormComponent from "./epp-form-component";
-import itemRender from "./item-render";
+import eppFormComponent from './epp-form-component';
+import itemRender from './item-render';
 
 export default {
-  name: "eppForm",
+  name: 'eppForm',
   props: {
     formConfig: {
       type: Object,
@@ -69,26 +69,26 @@ export default {
       default: () => {},
     },
   },
-  components: { eppFormComponent,itemRender },
+  components: { eppFormComponent, itemRender },
   data() {
     return {
       defaultConfig: {
-        ref: "eppForm",
-        labelPosition: "right", // 默认为右对齐
+        ref: 'eppForm',
+        labelPosition: 'right', // 默认为右对齐
         inline: false, // 默认为横向展示
-        size: "small",
-        labelWidth: "80px", // 默认label为80
+        size: 'small',
+        labelWidth: '80px', // 默认label为80
         buttonShow: true, // 设置查询按钮默认存在
         btn: [
           {
-            type: "primary",
-            name: "查询",
+            type: 'primary',
+            name: '查询',
             click: () => {
-              this.$emit("getFormData", this.config.formData);
+              this.$emit('getFormData', this.config.formData);
             },
           },
           {
-            name: "重置",
+            name: '重置',
             click: () => {
               this.resetForm();
             },
@@ -99,7 +99,7 @@ export default {
         mainspan: 24, // 设置总栅格数、默认为24
         styleObject: {
           // 设置默认的绑定样式
-          width: "100%",
+          width: '100%',
         },
       },
     };
@@ -125,8 +125,8 @@ export default {
     // 处理表单数据
     handleUpdateFormComponent({ key, value }) {
       this.formConfig.formData[key] = value;
-      this.formConfig.onUpdateData &&
-        this.formConfig.onUpdateData(...arguments);
+      this.formConfig.onUpdateData
+        && this.formConfig.onUpdateData(...arguments);
     },
     getFormData() {
       return this.$props.formConfig.formData || {};

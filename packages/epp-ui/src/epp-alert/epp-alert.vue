@@ -5,7 +5,7 @@
     :visible.sync="isShow"
     :width="width">
     <div class="tips">
-      <i 
+      <i
         :class="icon"
       ></i>
       <span class="tip-context">
@@ -17,34 +17,34 @@
 </template>
 
 <script>
-export default { 
-  name: "EppAlert",
+export default {
+  name: 'EppAlert',
   data() {
     return {
       isShow: this.dialogVisible,
       icon: this.handleTypeValue(this.type),
-    }
+    };
   },
   props: {
     title: {
       type: String,
-      default: ""
+      default: '',
     },
     subTitle: {
       type: String,
-      default: "确认吗？"
+      default: '确认吗？',
     },
     desc: {
       type: String,
-      default: ""
+      default: '',
     },
     dialogVisible: {
       type: Boolean,
-      default: false
+      default: false,
     },
     width: {
       type: String,
-      default: "30%"
+      default: '30%',
     },
     /**
      * @enum type
@@ -55,27 +55,27 @@ export default {
      */
     type: {
       type: String,
-      default: "normal"
-    }
+      default: 'normal',
+    },
   },
   methods: {
     handleTypeValue(type = 'normal') {
       const valueIconMap = {
-        'normal': 'nb-icon-warning-outline tip-icon',
-        'warning': 'nb-icon-warning tip-icon',
-        'error': 'nb-icon-error tip-icon',
-        'success': 'nb-icon-success tip-icon'
-      }
+        normal: 'nb-icon-warning-outline tip-icon',
+        warning: 'nb-icon-warning tip-icon',
+        error: 'nb-icon-error tip-icon',
+        success: 'nb-icon-success tip-icon',
+      };
 
-      let iconClassString = valueIconMap[this.type]
+      let iconClassString = valueIconMap[this.type];
 
       if (!iconClassString) {
-        iconClassString = this.type + ' tip-icon'
+        iconClassString = `${this.type} tip-icon`;
       }
 
-      return iconClassString
-    }
-  }
+      return iconClassString;
+    },
+  },
 };
 </script>
 

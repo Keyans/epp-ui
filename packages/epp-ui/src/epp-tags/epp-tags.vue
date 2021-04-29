@@ -9,15 +9,15 @@
 
 <script>
 export default {
-  name: "eppTags",
+  name: 'eppTags',
   props: {
     text: {
       type: String,
-      default: "",
+      default: '',
     },
     type: {
       type: String,
-      default: "primary", // primary、success、danger、warning、disabled
+      default: 'primary', // primary、success、danger、warning、disabled
     },
   },
 };

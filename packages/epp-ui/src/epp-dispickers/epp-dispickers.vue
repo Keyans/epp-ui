@@ -120,12 +120,12 @@
 const DEFAULT_CODE = 1;
 
 export default {
-  name: "eppDispickers",
+  name: 'eppDispickers',
   props: {
-    province: { type: [String, Number], default: "" },
-    city: { type: [String, Number], default: "" },
-    area: { type: [String, Number], default: "" },
-    type: { type: String, default: "" },
+    province: { type: [String, Number], default: '' },
+    city: { type: [String, Number], default: '' },
+    area: { type: [String, Number], default: '' },
+    type: { type: String, default: '' },
     hideArea: { type: Boolean, default: false },
     onlyProvince: { type: Boolean, default: false },
     staticPlaceholder: { type: Boolean, default: false },
@@ -133,25 +133,25 @@ export default {
       type: Object,
       default() {
         return {
-          province: "省",
-          city: "市",
-          area: "区"
+          province: '省',
+          city: '市',
+          area: '区',
         };
-      }
+      },
     },
     districts: {
       type: [Array, Object],
       default() {
         return {};
-      }
+      },
     },
     disabled: { type: Boolean, default: false },
     provinceDisabled: { type: Boolean, default: false },
     cityDisabled: { type: Boolean, default: false },
     areaDisabled: { type: Boolean, default: false },
-    addressHeader: { type: String, default: "address-header" },
-    addressContainer: { type: String, default: "address-container" },
-    wrapper: { type: String, default: "distpicker-address-wrapper" }
+    addressHeader: { type: String, default: 'address-header' },
+    addressContainer: { type: String, default: 'address-container' },
+    wrapper: { type: String, default: 'distpicker-address-wrapper' },
   },
   data() {
     return {
@@ -164,87 +164,80 @@ export default {
       currentProvince:
         this.determineType(this.province) || this.placeholders.province,
       currentCity: this.determineType(this.city) || this.placeholders.city,
-      currentArea: this.determineType(this.area) || this.placeholders.area
+      currentArea: this.determineType(this.area) || this.placeholders.area,
     };
   },
   watch: {
     currentProvince(vaule) {
-      this.$emit("province", this.setData(vaule, "province"));
-      if (this.onlyProvince) this.emit("selected");
+      this.$emit('province', this.setData(vaule, 'province'));
+      if (this.onlyProvince) this.emit('selected');
     },
     currentCity(value) {
-      this.$emit("city", this.setData(value, "city", this.currentProvince));
-      if (value != this.placeholders.city && this.hideArea)
-        this.emit("selected");
+      this.$emit('city', this.setData(value, 'city', this.currentProvince));
+      if (value != this.placeholders.city && this.hideArea) this.emit('selected');
     },
     currentArea(value) {
       this.$emit(
-        "area",
-        this.setData(value, "area", this.currentProvince, true)
+        'area',
+        this.setData(value, 'area', this.currentProvince, true),
       );
-      this.emit("selected");
+      this.emit('selected');
     },
     province(value) {
       this.currentProvince = this.province || this.placeholders.province;
       this.cities = this.determineValue(
-        "province",
+        'province',
         this.currentProvince,
-        this.placeholders.province
+        this.placeholders.province,
       );
     },
     city(value) {
       this.currentCity = this.city || this.placeholders.city;
       this.areas = this.determineValue(
-        "city",
+        'city',
         this.currentCity,
         this.placeholders.city,
-        this.currentProvince
+        this.currentProvince,
       );
     },
     area(value) {
       this.currentArea = this.area || this.placeholders.area;
-    }
+    },
   },
   created() {
-    if (this.type !== "mobile") {
+    if (this.type !== 'mobile') {
       this.provinces = this.getDistricts();
       this.cities = this.province
         ? this.getDistricts(this.getAreaCode(this.determineType(this.province)))
         : [];
-      let directCity = this.isDirectCity(this.province, this.city);
+      const directCity = this.isDirectCity(this.province, this.city);
       this.areas = this.city
-        ? this.getDistricts(
-            this.getAreaCode(
-              this.determineType(this.city),
-              directCity ? this.determineType(this.city) : this.area
-            )
-          )
+        ? this.getDistricts(this.getAreaCode(
+          this.determineType(this.city),
+          directCity ? this.determineType(this.city) : this.area,
+        ))
         : [];
     } else {
       if (this.area && !this.hideArea && !this.onlyProvince) {
         this.tab = 3;
         this.showCityTab = true;
         this.showAreaTab = true;
-        let directCity = this.isDirectCity(this.province, this.city);
-        this.areas = this.getDistricts(
-          this.getAreaCode(
-            this.determineType(this.city),
-            directCity ? this.determineType(this.city) : this.area
-          )
-        );
+        const directCity = this.isDirectCity(this.province, this.city);
+        this.areas = this.getDistricts(this.getAreaCode(
+          this.determineType(this.city),
+          directCity ? this.determineType(this.city) : this.area,
+        ));
       } else if (this.city && this.hideArea && !this.onlyProvince) {
         this.tab = 2;
         this.showCityTab = true;
-        this.cities = this.getDistricts(
-          this.getAreaCode(this.determineType(this.province))
-        );
+        this.cities = this.getDistricts(this.getAreaCode(this.determineType(this.province)));
       } else {
         this.provinces = this.getDistricts();
       }
     }
   },
   methods: {
-    setData(value, type, check = "", isArea = false) {
+    setData(value, type, check = '', isArea = false) {
       let code;
 
       if (isArea) {
@@ -253,8 +246,8 @@ export default {
         code = this.getAreaCode(value, check, type);
       }
       return {
-        code: code,
-        value: value
+        code,
+        value,
       };
     },
     getCodeByArea(value) {
@@ -267,19 +260,19 @@ export default {
       return code;
     },
     emit(name) {
-      let data = {
-        province: this.setData(this.currentProvince, "province")
+      const data = {
+        province: this.setData(this.currentProvince, 'province'),
       };
 
       if (!this.onlyProvince) {
-        this.$set(data, "city", this.setData(this.currentCity, "city"));
+        this.$set(data, 'city', this.setData(this.currentCity, 'city'));
       }
 
       if (!this.onlyProvince || this.hideArea) {
         this.$set(
           data,
-          "area",
-          this.setData(this.currentArea, "area", this.currentCity)
+          'area',
+          this.setData(this.currentArea, 'area', this.currentCity),
         );
       }
 
@@ -289,13 +282,13 @@ export default {
       this.currentCity = this.placeholders.city;
       this.currentArea = this.placeholders.area;
       this.cities = this.determineValue(
-        "province",
+        'province',
         this.currentProvince,
-        this.placeholders.province
+        this.placeholders.province,
       );
-      this.cleanList("areas");
+      this.cleanList('areas');
       if (this.cities.length === 0) {
-        this.emit("selected");
+        this.emit('selected');
         this.tab = 1;
         this.showCityTab = false;
       }
@@ -303,13 +296,13 @@ export default {
     getAreas() {
       this.currentArea = this.placeholders.area;
       this.areas = this.determineValue(
-        "city",
+        'city',
         this.currentCity,
         this.placeholders.city,
-        this.currentProvince
+        this.currentProvince,
       );
       if (this.areas.length === 0) {
-        this.emit("selected");
+        this.emit('selected');
         this.tab = 2;
         this.showAreaTab = false;
       }
@@ -346,10 +339,10 @@ export default {
       this.currentArea = name;
     },
     getAreaCodeByPreCode(name, preCode) {
-      let codes = [];
+      const codes = [];
 
-      for (let x in this.districts) {
-        for (let y in this.districts[x]) {
+      for (const x in this.districts) {
+        for (const y in this.districts[x]) {
           if (name === this.districts[x][y]) {
             codes.push(y);
           }
@@ -360,27 +353,26 @@ export default {
         let index;
         codes.forEach((item, i) => {
           if (
-            (preCode.length === 2 && item.slice(0, 2) === preCode) ||
-            (preCode.length === 4 && item.slice(0, 4) !== preCode)
+            (preCode.length === 2 && item.slice(0, 2) === preCode)
+            || (preCode.length === 4 && item.slice(0, 4) !== preCode)
           ) {
             index = i;
           }
         });
 
         return codes[index];
-      } else {
-        return codes[0];
       }
+      return codes[0];
     },
-    getAreaCode(name, check = "", type = "") {
-      for (let x in this.districts) {
-        for (let y in this.districts[x]) {
+    getAreaCode(name, check = '', type = '') {
+      for (const x in this.districts) {
+        for (const y in this.districts[x]) {
           if (name === this.districts[x][y]) {
             if (check.length > 0) {
               let code = y;
 
               if (name === check) {
-                let preCode = type === "city" ? y.slice(0, 4) : y.slice(0, 2);
+                const preCode = type === 'city' ? y.slice(0, 4) : y.slice(0, 2);
                 code = this.getAreaCodeByPreCode(check, preCode);
               }
 
@@ -397,8 +389,8 @@ export default {
       }
     },
     getCodeValue(code) {
-      for (let x in this.districts) {
-        for (let y in this.districts[x]) {
+      for (const x in this.districts) {
+        for (const y in this.districts[x]) {
           if (code === parseInt(y)) {
             return this.districts[x][y];
           }
@@ -406,19 +398,18 @@ export default {
       }
     },
     getDistricts(code = DEFAULT_CODE) {
-      if(this.districts) {
-       return this.districts[code] || [];
-      } 
-    },
-    determineValue(type, currentValue, placeholderValue, check = "") {
-      if (currentValue === placeholderValue) {
-        return [];
-      } else {
-        return this.getDistricts(this.getAreaCode(currentValue, check, type));
+      if (this.districts) {
+        return this.districts[code] || [];
       }
     },
+    determineValue(type, currentValue, placeholderValue, check = '') {
+      if (currentValue === placeholderValue) {
+        return [];
+      }
+      return this.getDistricts(this.getAreaCode(currentValue, check, type));
+    },
     determineType(value) {
-      if (typeof value === "number") {
+      if (typeof value === 'number') {
         return this.getCodeValue(value);
       }
 
@@ -434,8 +425,8 @@ export default {
         );
       }
       return false;
-    }
-  }
+    },
+  },
 };
 </script>
 
