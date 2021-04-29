@@ -1,14 +1,14 @@
 <template>
   <component
     :is="componentType(componentConfig.componentType)"
-   
+
     v-on="inputListeners"
     v-bind="componentConfig"
     v-bind:value="value"
   >
     <!-- 判断是否有对应的children、并且是否有对应的options -->
     <template
-      v-if="componentConfig.children && componentConfig.children.length > 0"
+     v-if="componentConfig.children && componentConfig.children.length > 0"
     >
       <component
         v-for="(op, index) in componentConfig.children"
@@ -33,9 +33,9 @@
 </template>
 
 <script>
-import nbtools from "@tencent/nb-tools";
+import nbtools from '@tencent/nb-tools';
 export default {
-  name: "eppFormComponent",
+  name: 'eppFormComponent',
   props: {
     componentConfig: {
       type: Object,
@@ -48,8 +48,8 @@ export default {
     formData() {
       console.log(this.$parent.$props);
     },
-    inputListeners: function () {
-      var vm = this;
+    inputListeners() {
+      const vm = this;
       // `Object.assign` 将所有的对象合并为一个新对象
       return Object.assign(
         {},
@@ -59,23 +59,23 @@ export default {
         // 或覆写一些监听器的行为
         {
           // 这里确保组件配合 `v-model` 的工作
-          input: function (event) {
+          input(event) {
             console.log(event, 456);
             // const val = vm.controlModel;
             // const type = event.target.value
             // vm.$emit("updateEvent", { val, type });
-            vm.$emit('update:value', event)
+            vm.$emit('update:value', event);
           },
-          blur: function (event) {
+          blur(event) {
             console.log(event.target.value, 456);
-            vm.$emit('update:value', event.target.value)
+            vm.$emit('update:value', event.target.value);
 
             // const val = vm.controlModel;
             // const type = event.target.value
             // vm.$emit("updateEvent", { val, type });
             // vm.$emit('input', event.target.value)
           },
-        }
+        },
       );
     },
   },
@@ -114,7 +114,7 @@ export default {
     // clear(event) {
     //   this.valifyHandler("clear");
     // },
-    //keyup事件
+    // keyup事件
     // keyup(event) {
     //   let firstUpperCase = event.code
     //     .toLowerCase()

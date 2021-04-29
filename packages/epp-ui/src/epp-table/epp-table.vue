@@ -40,19 +40,17 @@
 </template>
 
 <script>
-import eppColumn from "./epp-column";
-import Sortable from "sortablejs";
-import { clonedeep } from "lodash";
+import eppColumn from './epp-column';
+import Sortable from 'sortablejs';
+import { clonedeep } from 'lodash';
 export default {
-  name: "eppTable",
+  name: 'eppTable',
   props: {
     sortable: Boolean,
     sortOptions: {
       type: Object,
       required: false,
-      default: () => {
-        return {};
-      },
+      default: () => ({}),
     },
     column: Array,
     data: Array,
@@ -75,15 +73,15 @@ export default {
     },
     layout: {
       type: String,
-      default: "total, sizes, prev, pager, next, jumper",
+      default: 'total, sizes, prev, pager, next, jumper',
     },
     paginationTop: {
       type: String,
-      default: "15px",
+      default: '15px',
     },
     paginationAlign: {
       type: String,
-      default: "right",
+      default: 'right',
     },
     merge: Array,
   },
@@ -92,56 +90,56 @@ export default {
   },
   data() {
     return {
-      isSortablejs: null, //判断是否有sortablejs
+      isSortablejs: null, // 判断是否有sortablejs
       tableKey: new Date().getTime(),
       mergeLine: {},
       mergeIndex: {},
       defaultSortOptions: {
-        //设置表格可拖拽
+        // 设置表格可拖拽
         sort: true, // boolean 定义是否列表单元是否可以在列表容器内进行拖拽排序
         delay: 100, // number 定义鼠标选中列表单元可以开始拖动的延迟时间；
         animation: 150, // ms, number 单位：ms，定义排序动画的时间
-        draggable: ".nb-table__row", // 允许拖拽的项目类名
+        draggable: '.nb-table__row', // 允许拖拽的项目类名
         // 开始拖拽的时候
-        onStart: function(/**Event*/ evt) {
+        onStart(/** Event*/ evt) {
           evt.oldIndex; // element index within parent
         },
-        onChoose: function(/**Event*/ evt) {
+        onChoose(/** Event*/ evt) {
           evt.oldIndex; // element index within parent
         },
         // 元素未被选中的时候（从选中到未选中）
-        onUnchoose: function(/**Event*/ evt) {
+        onUnchoose(/** Event*/ evt) {
           // same properties as onEnd
         },
         // 结束拖拽
-        onEnd: (/**Event*/ evt) => {
-          let data = JSON.parse(JSON.stringify(this.tableData));
+        onEnd: (/** Event*/ evt) => {
+          const data = JSON.parse(JSON.stringify(this.tableData));
           const currRow = data.splice(evt.oldIndex, 1)[0];
           data.splice(evt.newIndex, 0, currRow);
-          this.$emit("update:data", data);
+          this.$emit('update:data', data);
         },
         // 元素从一个列表拖拽到另一个列表
-        onAdd: function(/**Event*/ evt) {
+        onAdd(/** Event*/ evt) {
           // same properties as onEnd
         },
         // 列表内元素顺序更新的时候触发
-        onUpdate: function(/**Event*/ evt) {
+        onUpdate(/** Event*/ evt) {
           // same properties as onEnd
         },
         // 列表的任何更改都会触发
-        onSort: function(/**Event*/ evt) {
+        onSort(/** Event*/ evt) {
           // same properties as onEnd
         },
         // 元素从列表中移除进入另一个列表
-        onRemove: function(/**Event*/ evt) {
+        onRemove(/** Event*/ evt) {
           // same properties as onEnd
         },
         // 试图拖拽一个filtered的元素
-        onFilter: function(/**Event*/ evt) {
-          var itemEl = evt.item; // HTMLElement receiving the `mousedown|tapstart` event.
+        onFilter(/** Event*/ evt) {
+          const itemEl = evt.item; // HTMLElement receiving the `mousedown|tapstart` event.
         },
         // 拖拽移动的时候
-        onMove: function(/**Event*/ evt, /**Event*/ originalEvent) {
+        onMove(/** Event*/ evt, /** Event*/ originalEvent) {
           // Example: https://jsbin.com/nawahef/edit?js,output
           evt.dragged; // dragged HTMLElement
           evt.draggedRect; // DOMRect {left, top, right, bottom}
@@ -154,12 +152,12 @@ export default {
           // return 1; — insert after target
         },
         // clone一个元素的时候触发
-        onClone: function(/**Event*/ evt) {
-          var origEl = evt.item;
-          var cloneEl = evt.clone;
+        onClone(/** Event*/ evt) {
+          const origEl = evt.item;
+          const cloneEl = evt.clone;
         },
         // 拖拽元素改变位置的时候
-        onChange: function(/**Event*/ evt) {
+        onChange(/** Event*/ evt) {
           evt.newIndex; // most likely why this event is used is to get the dragging element's current index
           // same properties as onEnd
         },
@@ -186,7 +184,7 @@ export default {
   methods: {
     initSort(type, val) {
       const tbody = this.$refs.elTable.$el.children[2].firstElementChild
-        .children[1]; //获取element-table中的tbody
+        .children[1]; // 获取element-table中的tbody
       this.isSortablejs = new Sortable(tbody, this.sortableOptions);
     },
 
@@ -218,7 +216,7 @@ export default {
       this.$refs.elTable.sort(prop, order);
     },
     paginationCurrentChange(val) {
-      this.$emit("p-current-change", val);
+      this.$emit('p-current-change', val);
     },
     getMergeArr(tableData, merge) {
       if (!merge) return;
@@ -266,9 +264,9 @@ export default {
         if (val && this.isSortablejs === null) {
           this.initSort();
         }
-        //根据传入的sortable判断是否启用
+        // 根据传入的sortable判断是否启用
         if (this.isSortablejs) {
-          this.isSortablejs.option("disabled", !val);
+          this.isSortablejs.option('disabled', !val);
         }
       },
     },

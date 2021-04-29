@@ -29,6 +29,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@tencent/eslint-config-tencent": "^0.13.0",
     "@tencent/nb-design": "^0.1.1",
     "@tencent/nb-tools": "^1.0.3",
     "@tencent/nb-trpc": "^0.3.2",

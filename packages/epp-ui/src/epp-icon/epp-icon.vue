@@ -5,13 +5,13 @@
 </template>
 
 <script>
-import "./icon/iconfont.js";
+import './icon/iconfont.js';
 export default {
-  name:"eppIcon",
+  name: 'eppIcon',
   props: {
     icon: {
       type: String,
-      default: "",
+      default: '',
     },
     size: {
       type: Number,
