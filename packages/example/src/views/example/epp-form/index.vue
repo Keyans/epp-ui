@@ -35,7 +35,7 @@ const pickerOptions = {
   ],
 };
 export default {
-  components: { testForm, testSteps },
+  components: { testForm },
   data() {
     return {
       active: 3, // 补助
