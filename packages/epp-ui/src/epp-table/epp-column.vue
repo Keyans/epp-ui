@@ -62,43 +62,39 @@
 </template>
 
 <script>
-import eppRender from './epp-render'
-import forced from './forced.js'
+import eppRender from './epp-render';
+import forced from './forced.js';
 export default {
   name: 'eppColumn',
   props: {
     column: Object,
     headerAlign: String,
-    align: String
+    align: String,
   },
   components: {
-    eppRender
+    eppRender,
   },
   methods: {
-    setColumn () {
+    setColumn() {
       if (this.column.type) {
-        this.column.renderHeader = forced[this.column.type].renderHeader
-        this.column.render = this.column.render || forced[this.column.type].renderCell
+        this.column.renderHeader = forced[this.column.type].renderHeader;
+        this.column.render = this.column.render || forced[this.column.type].renderCell;
       }
       if (this.column.formatter) {
-        this.column.render = (h, scope) => {
-          return <span>{ scope.column.formatter(scope.row, scope.column, scope.row, scope.$index) }</span>
-        }
+        this.column.render = (h, scope) => <span>{ scope.column.formatter(scope.row, scope.column, scope.row, scope.$index) }</span>;
       }
       if (!this.column.render) {
-        this.column.render = (h, scope) => {
-          return <span>{ scope.row[scope.column.property] }</span>
-        }
+        this.column.render = (h, scope) => <span>{ scope.row[scope.column.property] }</span>;
       }
-    }
+    },
   },
   watch: {
     column: {
-      handler () {
-        this.setColumn()
+      handler() {
+        this.setColumn();
       },
-      immediate: true
-    }
-  }
-}
+      immediate: true,
+    },
+  },
+};
 </script>

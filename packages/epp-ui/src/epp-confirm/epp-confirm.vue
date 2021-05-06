@@ -19,33 +19,33 @@
 </template>
 
 <script>
-export default { 
-  name: "EppConfirm",
+export default {
+  name: 'EppConfirm',
   data() {
     return {
-      isShow: this.dialogVisible
-    }
+      isShow: this.dialogVisible,
+    };
   },
   props: {
     title: {
       type: String,
-      default: ""
+      default: '',
     },
     subTitle: {
       type: String,
-      default: "请确认"
+      default: '请确认',
     },
     desc: {
       type: String,
-      default: ""
+      default: '',
     },
     dialogVisible: {
       type: Boolean,
-      default: false
+      default: false,
     },
     width: {
       type: String,
-      default: "30%"
+      default: '30%',
     },
     onCancel: {
       type: Function,
@@ -54,7 +54,7 @@ export default {
     onSuccess: {
       type: Function,
       default: () => {},
-    }
+    },
   },
   methods: {
     clickOK() {
@@ -70,8 +70,8 @@ export default {
       } else {
         this.isShow = false;
       }
-    }
-  }
+    },
+  },
 };
 </script>
 

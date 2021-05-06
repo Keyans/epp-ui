@@ -34,10 +34,10 @@
 </template>
 
 <script>
-import nbtools from "@tencent/nb-tools";
+import nbtools from '@tencent/nb-tools';
 
 export default {
-  name: "eppFormComponent",
+  name: 'eppFormComponent',
   props: {
     componentConfig: {
       type: Object,
@@ -49,7 +49,7 @@ export default {
   data() {
     return {
       controlModel: this.value,
-      filterType:undefined,
+      filterType: undefined,
     };
   },
   watch: {
@@ -58,7 +58,7 @@ export default {
     },
     controlModel(newValue) {
       const key = this.$props.componentConfig.model;
-      this.$emit("update", { key, value: newValue });
+      this.$emit('update', { key, value: newValue });
     },
   },
   methods: {
@@ -79,38 +79,41 @@ export default {
       if (type === 'textarea') {
         typeName = 'input';
         this.filterType = 'textarea';
+<<<<<<< HEAD
       } else {
         this.filterType = this.componentConfig.type || undefined;
+=======
+>>>>>>> 7169bc1b494770c4615353cdb69a37773129cf17
       }
       return `nb-${typeName}`;
     },
-    //点击事件
+    // 点击事件
     click(event) {
       this.valifyHandler(event.type);
     },
-    //失焦事件
+    // 失焦事件
     blur(event) {
       this.valifyHandler(event.type);
     },
-    //聚焦事件
+    // 聚焦事件
     focus(event) {
       this.valifyHandler(event.type);
     },
-    //清除事件
+    // 清除事件
     clear(event) {
-      this.valifyHandler("clear");
+      this.valifyHandler('clear');
     },
-    //keyup事件
+    // keyup事件
     keyup(event) {
-      let firstUpperCase = event.code
+      const firstUpperCase = event.code
         .toLowerCase()
-        .replace(/( |^)[a-z]/g, (L) => L.toUpperCase());
+        .replace(/( |^)[a-z]/g, L => L.toUpperCase());
       this.valifyHandler(`${event.type}${firstUpperCase}`);
     },
-    //处理事件
+    // 处理事件
     valifyHandler(type) {
       const val = this.controlModel;
-      this.$emit("updateEvent", { val, type });
+      this.$emit('updateEvent', { val, type });
     },
   },
 };

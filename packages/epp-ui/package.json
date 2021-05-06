@@ -1,6 +1,10 @@
 {
   "name": "@tencent/epp-ui",
+<<<<<<< HEAD
   "version": "1.7.17",
+=======
+  "version": "1.7.19",
+>>>>>>> 7169bc1b494770c4615353cdb69a37773129cf17
   "private": false,
   "main": "lib/epp-ui.umd.min.js",
   "author": "abbotwu",
@@ -29,6 +33,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@tencent/eslint-config-tencent": "^0.13.0",
     "@tencent/nb-design": "^0.1.1",
     "@tencent/nb-tools": "^1.0.3",
     "@tencent/nb-trpc": "^0.3.2",

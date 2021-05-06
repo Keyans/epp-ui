@@ -27,9 +27,9 @@
 </template>
 
 <script>
-import commonMix from "./mixin";
+import commonMix from './mixin';
 export default {
-  name: "eppListTpl",
+  name: 'eppListTpl',
   mixins: [commonMix],
 };
 </script>
