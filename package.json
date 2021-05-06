@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@tencent/epp-ui-test": "^1.5.13",
+    "@tencent/eslint-config-tencent": "^0.13.0",
     "@tencent/nb-tools": "^1.0.3",
     "core-js": "^2.6.11",
     "less": "^3.12.2",

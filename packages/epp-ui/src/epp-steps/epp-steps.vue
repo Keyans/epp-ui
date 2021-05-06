@@ -11,7 +11,7 @@
 </template>
 <script>
 export default {
-  name: "eppSteps",
+  name: 'eppSteps',
   props: {
     stepsList: {
       type: Array,
@@ -27,7 +27,7 @@ export default {
     },
     width: {
       type: String,
-      default: "auto",
+      default: 'auto',
     },
     active: {
       type: Number,
@@ -35,7 +35,7 @@ export default {
     },
     direction: {
       type: String,
-      default: "horizontal",
+      default: 'horizontal',
     },
     space: {
       type: Number,
@@ -47,11 +47,11 @@ export default {
     },
     finishStatus: {
       type: String,
-      default: "finish",
+      default: 'finish',
     },
     processStatus: {
       type: String,
-      default: "process",
+      default: 'process',
     },
     simple: {
       type: Boolean,
@@ -59,13 +59,13 @@ export default {
     },
   },
   computed: {
-    widthUnit: function () {
-      let val = "auto";
+    widthUnit() {
+      let val = 'auto';
 
       try {
-        let strWidth = String(this.width);
+        const strWidth = String(this.width);
 
-        if (strWidth.indexOf("%") !== -1) {
+        if (strWidth.indexOf('%') !== -1) {
           val = strWidth;
         } else {
           val = `${strWidth}px`;
