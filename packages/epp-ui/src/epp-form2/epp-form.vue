@@ -57,13 +57,13 @@
 </template>
 
 <script>
-import eppFormComponent from "./epp-form-component";
-import itemRender from "./item-render";
-import { throttle } from "loadsh";
-const cloneDeep = require("clone");
+import eppFormComponent from './epp-form-component';
+import itemRender from './item-render';
+import { throttle } from 'loadsh';
+const cloneDeep = require('clone');
 
 export default {
-  name: "eppForm2",
+  name: 'eppForm2',
   props: {
     formConfig: {
       type: Object,
@@ -81,22 +81,22 @@ export default {
     return {
       formDescData: {},
       defaultConfig: {
-        ref: "eppform",
+        ref: 'eppform',
         inline: false, // 默认为横向展示
         mainspan: 24, // 设置总栅格数、默认为24
-        labelWidth: "80px", // 默认label为80
+        labelWidth: '80px', // 默认label为80
         gutter: 0, // 属性来指定每一栏之间的间隔，默认间隔为 0
         col: 3, // 设置默认一列展示的行数
         btn: [
           {
-            type: "primary",
-            name: "查询",
+            type: 'primary',
+            name: '查询',
             click: () => {
               this.getFormData();
             },
           },
           {
-            name: "重置",
+            name: '重置',
             click: () => {
               this.resetForm();
             },
@@ -117,21 +117,21 @@ export default {
   },
   watch: {
     // 同步数据
-    "config.formDesc": {
+    'config.formDesc': {
       handler(formDesc) {
         const oldFormDescData = {};
         // 去除被删除字段
         Object.keys(this.formDescData)
-          .filter((key) => formDesc[key])
+          .filter(key => formDesc[key])
           .forEach((key) => {
             oldFormDescData[key] = this.formDescData[key];
           });
         this.formDescData = Object.assign(
           {},
           oldFormDescData,
-          cloneDeep(formDesc)
+          cloneDeep(formDesc),
         );
-        this.checkLinkage()
+        this.checkLinkage();
       },
       immediate: true,
       deep: true,
@@ -143,50 +143,50 @@ export default {
       this.handleChange(key, value);
       this.checkLinkage();
     },
-    //改变数据
+    // 改变数据
     handleChange(field, val) {
-      this.formConfig.formData[field] = val
-      this.formConfig.onUpdateData &&
-        this.formConfig.onUpdateData(...arguments);
+      this.formConfig.formData[field] = val;
+      this.formConfig.onUpdateData
+        && this.formConfig.onUpdateData(...arguments);
     },
     // 当类型为函数时的请求
     getFunctionAttr(fn, field) {
       return fn(
         this.config.formData,
         this.formDescData[field],
-        this.formDescData
+        this.formDescData,
       );
     },
-    //设置隐藏和显示
+    // 设置隐藏和显示
     setVif(formItem, field) {
       let vif = true;
-      if (typeof formItem.vif === "function") {
+      if (typeof formItem.vif === 'function') {
         vif = Boolean(this.getFunctionAttr(formItem.vif, field));
         if (!vif) {
           // 如果隐藏, 则使用其默认值
           this.handleChange(field, formItem.defaultValue);
         }
-      } else if (typeof formItem.vif === "boolean") {
+      } else if (typeof formItem.vif === 'boolean') {
         vif = formItem.vif;
       }
-      this.$set(formItem, "_vif", vif);
+      this.$set(formItem, '_vif', vif);
     },
     // 检测联动
     checkLinkage() {
       this.checkLinkageFn = throttle(() => {
-        const formDescData = this.formDescData;
+        const { formDescData } = this;
         Object.keys(formDescData).forEach((field) => {
           const formItem = formDescData[field];
           // 1.设置 vif
           this.setVif(formItem, field);
           // 2.设置 disabled
           let disabled = null;
-          if (typeof formItem.disabled === "function") {
+          if (typeof formItem.disabled === 'function') {
             disabled = this.getFunctionAttr(formItem.disabled, field);
-          } else if (typeof formItem.disabled === "boolean") {
+          } else if (typeof formItem.disabled === 'boolean') {
             disabled = formItem.disabled;
           }
-          this.$set(formItem, "_disabled", disabled);
+          this.$set(formItem, '_disabled', disabled);
         });
       }, 300);
       this.checkLinkageFn();
@@ -199,7 +199,7 @@ export default {
       this.$refs[ref].resetFields();
     },
     getFormData() {
-      this.$emit("getFormData", this.config.formData);
+      this.$emit('getFormData', this.config.formData);
     },
   },
 };

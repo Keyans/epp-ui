@@ -11,50 +11,50 @@
 </template>
 
 <script>
-export default { 
-  name: "EppButton",
+export default {
+  name: 'EppButton',
   props: {
     type: {
       type: String,
-      default: ""
+      default: '',
     },
     loading: {
       type: Boolean,
-      default: false
+      default: false,
     },
     disabled: {
       type: Boolean,
-      default: false
+      default: false,
     },
     icon: {
       type: String,
-      default: ""
+      default: '',
     },
     size: {
       type: String,
-      default: "small"
+      default: 'small',
     },
     wide: {
-      type: String
+      type: String,
     },
     circle: {
-      type: String
+      type: String,
     },
     round: {
-      type: String
+      type: String,
     },
     plain: {
-      type: String
+      type: String,
     },
     nativeType: {
       type: String,
-      default: "button"
+      default: 'button',
     },
     autofocus: {
       type: Boolean,
-      default: false
-    }
-  }
+      default: false,
+    },
+  },
 };
 </script>
 

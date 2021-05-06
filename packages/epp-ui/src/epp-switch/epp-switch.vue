@@ -14,15 +14,15 @@
 
 <script>
 export default {
-  name: "eppSwitch",
+  name: 'eppSwitch',
   props: {
     activeText: {
       type: String,
-      default: "开启",
+      default: '开启',
     },
     inactiveText: {
       type: String,
-      default: "关闭",
+      default: '关闭',
     },
     status: {
       type: Boolean,
@@ -42,7 +42,7 @@ export default {
       const children = el.children || [];
       if (children && children.length) {
         for (let i = 0; i < children.length; i++) {
-          if (children[i].className === "nb-switch__core") {
+          if (children[i].className === 'nb-switch__core') {
             children[i].innerText = this.activeLabel;
           }
         }
@@ -51,8 +51,8 @@ export default {
     // 变更事件
     switchChange(val) {
       this.changeLabelText(val);
-      this.$emit("update:status", val);
-      this.$emit("change", val);
+      this.$emit('update:status', val);
+      this.$emit('change', val);
     },
   },
 };

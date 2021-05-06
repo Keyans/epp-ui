@@ -38,17 +38,17 @@
 <script>
 
 export default {
-  name: "eppBreadcrumb",
+  name: 'eppBreadcrumb',
   data() {
     return {
       isHome: false,
-      breadList: [] // 路由集合
+      breadList: [], // 路由集合
     };
   },
   watch: {
     $route() {
       this.getBreadcrumb();
-    }
+    },
   },
   created() {
     this.getBreadcrumb();
@@ -56,20 +56,20 @@ export default {
   methods: {
     getBreadcrumb() {
       this.isHome = this.$route.meta.menu || false;
-      this.breadList = JSON.parse(window.sessionStorage.getItem("breadList"));
+      this.breadList = JSON.parse(window.sessionStorage.getItem('breadList'));
     },
     handBack() {
-      let list = JSON.parse(window.sessionStorage.getItem("breadList"));
-      if(!list) return;
-      list.pop(); //第一次删除面包屑的最后一个
-      let obj = list.pop(); //第二次拿到最后的obj对象用来返回上一级
+      const list = JSON.parse(window.sessionStorage.getItem('breadList'));
+      if (!list) return;
+      list.pop(); // 第一次删除面包屑的最后一个
+      const obj = list.pop(); // 第二次拿到最后的obj对象用来返回上一级
       this.$router.push({
         name: obj.name,
         query: obj.query,
-        params: obj.params
+        params: obj.params,
       });
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped>

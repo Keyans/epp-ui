@@ -1,5 +1,5 @@
 import lodash from 'lodash';
-import TRPC from "./trpc"
+import TRPC from './trpc';
 /**
  * api配置触发器
  * @param {object} apiConfig - api配置

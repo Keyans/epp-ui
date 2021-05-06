@@ -54,7 +54,7 @@
 </template>
 
 <script>
-import nbtools from "@tencent/nb-tools";
+import nbtools from '@tencent/nb-tools';
 
 export default {
   props: {
@@ -63,9 +63,9 @@ export default {
       required: true,
       default: () => {},
     },
-    field:{
-      type:String,
-      require:true,
+    field: {
+      type: String,
+      require: true,
     },
     value: [Array, String, Number, Object, Boolean, Date],
   },
@@ -82,7 +82,7 @@ export default {
     },
     controlModel(newValue) {
       const key = this.field;
-      this.$emit("update", { key, value: newValue });
+      this.$emit('update', { key, value: newValue });
     },
   },
   methods: {
@@ -97,42 +97,42 @@ export default {
         this.controlModel = nbtools[this.componentConfig.valueType](val);
       }
     },
-    //处理子类型select、radio、checkbox
+    // 处理子类型select、radio、checkbox
     handleChildType(type) {
       const reg = /.*(?<!-group)$/;
       reg.test(type);
-      return reg.test(type) ? `nb-option` : type.substring(0, type.length - 6);
+      return reg.test(type) ? 'nb-option' : type.substring(0, type.length - 6);
     },
-    //处理组件类型
+    // 处理组件类型
     componentType(type) {
       let typeName = this.handleTimePicker(type);
-      //判断是否具有radio、或则checkbox,则成为一个数组
-      if (typeName.includes("-radio") || typeName.includes("-checkbox")) {
-        typeName = typeName + "-group";
+      // 判断是否具有radio、或则checkbox,则成为一个数组
+      if (typeName.includes('-radio') || typeName.includes('-checkbox')) {
+        typeName = `${typeName}-group`;
       }
-      //判断是否为epp-前缀开头的
+      // 判断是否为epp-前缀开头的
       const eppReg = /^(epp-).*/;
       if (eppReg.test(type)) {
         typeName = type;
       }
       return typeName;
     },
-    //处理时间选择器
+    // 处理时间选择器
     handleTimePicker(type) {
       const typeList = [
-        "year",
-        "month",
-        "date",
-        "week",
-        "datetime",
-        "datetimerange",
-        "daterange",
+        'year',
+        'month',
+        'date',
+        'week',
+        'datetime',
+        'datetimerange',
+        'daterange',
       ];
-      const filterType = typeList.filter((item) => item === type)[0]//做类型判断
-      const typeName = type === "textarea"?'input':type //是否为textarea类型
-      const text = filterType ? "nb-date-picker" : `nb-${typeName}`//选择是否为时间
-      this.filterType = type === "textarea"?type:filterType; //如果是textarea做判断
-      //默认加上nb开头
+      const filterType = typeList.filter(item => item === type)[0];// 做类型判断
+      const typeName = type === 'textarea' ? 'input' : type; // 是否为textarea类型
+      const text = filterType ? 'nb-date-picker' : `nb-${typeName}`;// 选择是否为时间
+      this.filterType = type === 'textarea' ? type : filterType; // 如果是textarea做判断
+      // 默认加上nb开头
       return text;
     },
   },

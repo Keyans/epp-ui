@@ -5,12 +5,12 @@
 </template>
 
 <script>
-import "../assets/icon/iconfont.js";
+import  '../assets/icon/iconfont.js';
 export default {
   props: {
     icon: {
       type: String,
-      default: "",
+      default: '',
     },
     size: {
       type: Number,

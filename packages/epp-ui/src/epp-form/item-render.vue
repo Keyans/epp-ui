@@ -4,10 +4,8 @@ export default {
   functional: true,
   props: {
     data: Object,
-    render: Function
+    render: Function,
   },
-  render: (h, ctx) => {
-    return ctx.props.render(h, ctx.props.data)
-  }
-}
+  render: (h, ctx) => ctx.props.render(h, ctx.props.data),
+};
 </script>
