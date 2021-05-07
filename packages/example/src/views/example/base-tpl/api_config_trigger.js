@@ -7,7 +7,7 @@ import lodash from 'lodash';
  * @example
  *
  */
-class ApiConfigTrigger {
+class ApiTrigger {
   constructor(apiConfig, vueContext) {
     this.apiConfig = apiConfig;
     this.vueContext = vueContext;
@@ -268,4 +268,4 @@ class ApiConfigTrigger {
   }
 };
 
-export default ApiConfigTrigger;
+export default ApiTrigger;
