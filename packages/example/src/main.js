@@ -15,19 +15,13 @@ import { router } from "./router";
 import NbDesign from "@tencent/nb-design";
 import "@tencent/nb-design/lib/theme-chalk/index.css";
 
-<<<<<<< HEAD
 import "@/assets/css/element-variables.scss"; //引入自定义主题
 import "@/assets/css/common.scss"; //引入公共样式
-console.log(eppUi,123123)
-=======
-// import "@/assets/css/element-variables.scss"; //引入自定义主题
-// import "@/assets/css/common.scss"; //引入公共样式
->>>>>>> 7169bc1b494770c4615353cdb69a37773129cf17
 
-// import eppUi from "@tencent/epp-ui"
-// import '@tencent/epp-ui/lib/epp-ui.css';
-import eppUi from "../../epp-ui/lib/epp-ui.common"
-import "../../epp-ui/lib/epp-ui.css"
+import eppUi from "@tencent/epp-ui"
+import '@tencent/epp-ui/lib/epp-ui.css';
+// import eppUi from "../../epp-ui/lib/epp-ui.common"
+// import "../../epp-ui/lib/epp-ui.css"
 Vue.use(NbDesign);
 Vue.use(eppUi);
 // Vue.prototype.inherit =(options)=>eppUi.eppTemplate.inherit(options)
