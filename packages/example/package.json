@@ -3,7 +3,7 @@
     "serve": "vue-cli-service serve"
   },
   "dependencies": {
-    "@tencent/epp-ui": "^1.3.0",
+    "@tencent/epp-ui": "^1.7.19",
     "@tencent/epp-ui-test": "^1.5.11",
     "@tencent/eslint-config-tencent": "^0.13.0",
     "@tencent/nb-tools": "^1.0.4",

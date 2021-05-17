@@ -1,11 +1,5 @@
 <template>
   <div>
-    <testTable
-      :span-method="arraySpanMethod"
-      :column="tableData.column"
-      :data="tableData.data"
-    >
-    </testTable>
     <test-steps
       :active="active"
       :steps-list="stepsList"
@@ -28,11 +22,10 @@
 </template>
 
 <script>
-import testTable from "../../../../../epp-ui/src/epp-table/epp-table";
 import testSteps from "./epp-steps";
 
 export default {
-  components: { testTable,testSteps },
+  components: { testSteps },
   data() {
     return {
       active: 4, //补助

@@ -15,8 +15,8 @@ import { router } from './router';
 import NbDesign from '@tencent/nb-design';
 import '@tencent/nb-design/lib/theme-chalk/index.css';
 
-// import "@/assets/css/element-variables.scss"; //引入自定义主题
-// import "@/assets/css/common.scss"; //引入公共样式
+import '@/assets/css/element-variables.scss'; // 引入自定义主题
+import '@/assets/css/common.scss'; // 引入公共样式
 
 // import eppUi from "@tencent/epp-ui"
 // import '@tencent/epp-ui/lib/epp-ui.css';

@@ -1,6 +1,7 @@
 <template>
-    <epp-form2 :formConfig="formConfig" @getFormData="getFormData"></epp-form2>
-</template>
+    <!-- <epp-form2 :formConfig="formConfig" @getFormData="getFormData"></epp-form2> -->
+    <div></div>
+</template> 
 
 <script>
 import config from "./config";

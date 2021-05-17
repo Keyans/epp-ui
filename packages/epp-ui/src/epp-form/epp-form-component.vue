@@ -97,7 +97,7 @@ export default {
       this.valifyHandler(event.type);
     },
     // 清除事件
-    clear(event) {
+    clear() {
       this.valifyHandler('clear');
     },
     // keyup事件
