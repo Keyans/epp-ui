@@ -31,8 +31,7 @@ export default {
 响应数据：
 {
 	"FileName": "30820_1610164002457584032.jpg",
-	"CosUrl": "https://mvp-1300522992.cos.ap-chengdu.myqcloud.com/product%2Ftest%2F30820_1610164002457584032.jpg?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKID7F7k7DJHYZKo1yc5HOFpAE2Zrwr7Bmrg%26q-sign-time%3D1610164002%3B1610165802%26q-key-time%3D1610164002%3B1610165802%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3D9f1b95f90620e353fb81f9ad14c59dc0efc4adcf",
-	"CdnUrl": "https://mvp-1300522992.image.myqcloud.com/product/test/30820_1610164002457584032.jpg"
+	"CdnUrl": "xxx.jpg"
 }
 ```
 3. 该组件会取 <code>CdnUrl</code> 字段为上传成功的图片URL地址

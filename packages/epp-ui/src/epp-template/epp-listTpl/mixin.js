@@ -1,4 +1,4 @@
-
+/* eslint-disable no-multi-assign */
 import ApiTrigger from '../../../utils/apiConfigTrigger';
 import { cloneDeep, omit } from 'lodash';
 
@@ -18,7 +18,7 @@ export default {
           // api响应配置
           responseConfig: {
           // 响应数据字段全局处理（data 参数是映射好的数据），需要返回一个对象
-            transformResponse: (newData, vueData, resData) => {
+            transformResponse: (newData) => {
               // test
               const newTestField = 'testField';
               return {
@@ -27,11 +27,6 @@ export default {
               };
             },
           },
-          onResSuccess: (resData, vueData) => {
-
-          },
-          onResError: (errInfo, vueData) => {},
-          onResFinally: (vueData) => {},
         },
         // 表格
         formConfig: {

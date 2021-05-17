@@ -2,28 +2,28 @@ module.exports = {
   env: {
     browser: true,
     commonjs: true,
-    es6: true
+    es6: true,
   },
   extends: [
     '@tencent/eslint-config-tencent',
-    'plugin:vue/essential'
+    'plugin:vue/essential',
   ],
   globals: {
     Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly'
+    SharedArrayBuffer: 'readonly',
   },
   parserOptions: {
-    ecmaVersion: 2018
+    ecmaVersion: 2018,
   },
   plugins: [
 
   ],
   rules: {
-    indent: ["error", 2],
-    radix: ["error", "as-needed"],
+    indent: ['error', 2],
+    radix: ['error', 'as-needed'],
     semi: [2, 'always'],
     quotes: [1, 'single'],
     'no-new': 0,
-    'no-console': "error"
-  }
-}
+    'no-console': 'error',
+  },
+};
