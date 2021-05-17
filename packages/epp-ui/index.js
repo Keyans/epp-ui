@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import { BreadInterceptors } from './utils/breadUtil';// 导出路由面包屑方法
 import apiTrigger from './utils/apiConfigTrigger';// 导出路由面包屑方法
 

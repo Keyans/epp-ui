@@ -1,15 +1,15 @@
 module.exports = {
-  presets: ["@vue/cli-plugin-babel/preset"],
+  presets: ['@vue/cli-plugin-babel/preset'],
   plugins: [
     [
-      "component",
+      'component',
       {
-        libraryName: "lerna-demo-test-ui",
-        libDir: "lib",
+        libraryName: 'lerna-demo-test-ui',
+        libDir: 'lib',
         styleLibrary: {
-          name: "styles",
+          name: 'styles',
           base: false,
-          path: "[module].css",
+          path: '[module].css',
         },
       },
     ],

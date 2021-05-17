@@ -1,13 +1,13 @@
-import NBTrpc from "@tencent/nb-trpc";
+import NBTrpc from '@tencent/nb-trpc';
 
-let TRPC = {}
-let config = {
+const TRPC = {};
+const config = {
   version: 1,
-  serverUrl: "/fcgi",
-  biz: "YZ",
+  serverUrl: '/fcgi',
+  biz: 'YZ',
   header: {
-    Utype: 2
-  }
+    Utype: 2,
+  },
 };
 TRPC.generateDUA = function () {
   return `DV=${this.version}&PL=Web`;
@@ -40,29 +40,29 @@ TRPC.getRequestID = function () {
   }
   return uuid.join('');
 };
-//设置请求
-TRPC.newRequest = function(path, data, context) {
+// 设置请求
+TRPC.newRequest = function (path, data, context) {
   return new Promise((resolve, reject) => {
     NBTrpc.newRequest(path, data, config)
-      .then(res => {
-        let result = JSON.parse(res.data);
+      .then((res) => {
+        const result = JSON.parse(res.data);
         resolve(result);
       })
-      .catch(errTrpc => {
+      .catch((errTrpc) => {
         if (
-          errTrpc.code === 9999 ||
-          errTrpc.code === 10000 ||
-          errTrpc.code === 10005
+          errTrpc.code === 9999
+          || errTrpc.code === 10000
+          || errTrpc.code === 10005
         ) {
           if (context && context.$router) {
-            context.$router.push("/login");
+            context.$router.push('/login');
           } else {
-            window.location.hash = "/login";
+            window.location.hash = '/login';
           }
         }
         let errorTips = errTrpc.errInfo;
         if (!errorTips) {
-          errorTips = "请求失败: " + path;
+          errorTips = `请求失败: ${path}`;
         }
         if (context && context.$message) {
           context.$message.error(errorTips);
@@ -71,4 +71,4 @@ TRPC.newRequest = function(path, data, context) {
       });
   });
 };
-export default TRPC
+export default TRPC;

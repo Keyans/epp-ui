@@ -1,11 +1,13 @@
-export default {
-    mutations: {
-        addEvent({ curComponent }, { event, param }) {
-            curComponent.events[event] = param
-        },
+/* eslint-disable */
 
-        removeEvent({ curComponent }, event) {
-            delete curComponent.events[event]
-        },
+export default {
+  mutations: {
+    addEvent({ curComponent }, { event, param }) {
+      curComponent.events[event] = param;
     },
-}
+
+    removeEvent({ curComponent }, event) {
+      delete curComponent.events[event];
+    },
+  },
+};
