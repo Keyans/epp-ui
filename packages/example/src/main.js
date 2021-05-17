@@ -6,22 +6,22 @@
  * @Description: In User Settings Edit
  * @FilePath: /npm_epp_ui/Users/abbotwu/project/epp-ui/src/main.js
  */
-import Vue from "vue";
-import App from "./App.vue";
-import store from "./store";
+import Vue from 'vue';
+import App from './App.vue';
+import store from './store';
 
 
-import { router } from "./router";
-import NbDesign from "@tencent/nb-design";
-import "@tencent/nb-design/lib/theme-chalk/index.css";
+import { router } from './router';
+import NbDesign from '@tencent/nb-design';
+import '@tencent/nb-design/lib/theme-chalk/index.css';
 
-import "@/assets/css/element-variables.scss"; //引入自定义主题
-import "@/assets/css/common.scss"; //引入公共样式
+import '@/assets/css/element-variables.scss'; // 引入自定义主题
+import '@/assets/css/common.scss'; // 引入公共样式
 
-import eppUi from "@tencent/epp-ui"
-import '@tencent/epp-ui/lib/epp-ui.css';
-// import eppUi from "../../epp-ui/lib/epp-ui.common"
-// import "../../epp-ui/lib/epp-ui.css"
+// import eppUi from "@tencent/epp-ui"
+// import '@tencent/epp-ui/lib/epp-ui.css';
+import eppUi from '../../epp-ui/lib/epp-ui.common';
+import '../../epp-ui/lib/epp-ui.css';
 Vue.use(NbDesign);
 Vue.use(eppUi);
 // Vue.prototype.inherit =(options)=>eppUi.eppTemplate.inherit(options)
@@ -30,5 +30,5 @@ Vue.config.productionTip = false;
 new Vue({
   router,
   store,
-  render: (h) => h(App),
-}).$mount("#app");
+  render: h => h(App),
+}).$mount('#app');

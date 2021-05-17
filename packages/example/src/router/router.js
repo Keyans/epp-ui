@@ -1,11 +1,3 @@
-/*
- * @Author: your name
- * @Date: 2020-09-11 17:29:13
- * @LastEditTime: 2020-10-15 18:14:52
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: /qun/src/router/router.js
- */
 import Main from "@/views/Main.vue";
 // 不作为Main组件的子页面展示的页面单独写，如下
 export const loginRouter = {

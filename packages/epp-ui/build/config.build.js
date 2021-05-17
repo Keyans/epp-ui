@@ -1,50 +1,50 @@
-const { resolve, getComponentEntries } = require("./utils");
+const { resolve, getComponentEntries } = require('./utils');
 
-let buildConfig = {
+const buildConfig = {
   lintOnSave: false,
   //  输出文件目录
-  outputDir: resolve("lib"),
+  outputDir: resolve('lib'),
   //  webpack配置
   configureWebpack: {
     //  入口文件
-    entry:getComponentEntries("src"),
+    entry: getComponentEntries('src'),
     //  输出配置
     output: {
       //  文件名称
-      filename: "[name]/index.js",
+      filename: '[name]/index.js',
       //  构建依赖类型
-      libraryTarget: "umd",
+      libraryTarget: 'umd',
       //  依赖输出
-      libraryExport: "default",
+      libraryExport: 'default',
       //  依赖名称
-      library: "epp-ui"
+      library: 'epp-ui',
     },
-    //外部化依赖
+    // 外部化依赖
     externals: {
       vue: {
         root: 'Vue',
         commonjs: 'vue',
         commonjs2: 'vue',
-        amd: 'vue'
-      }
-    }
+        amd: 'vue',
+      },
+    },
   },
   //  样式输出
   css: {
     sourceMap: true,
     extract: {
-      filename: "[name]/style.css"
-    }
+      filename: '[name]/style.css',
+    },
   },
-  chainWebpack: config => {
-    config.optimization.delete("splitChunks");
-    config.plugins.delete("copy");
-    config.plugins.delete("preload");
-    config.plugins.delete("prefetch");
-    config.plugins.delete("html");
-    config.plugins.delete("hmr");
-    config.entryPoints.delete("app");
-  }
+  chainWebpack: (config) => {
+    config.optimization.delete('splitChunks');
+    config.plugins.delete('copy');
+    config.plugins.delete('preload');
+    config.plugins.delete('prefetch');
+    config.plugins.delete('html');
+    config.plugins.delete('hmr');
+    config.entryPoints.delete('app');
+  },
 };
 
 module.exports = buildConfig;

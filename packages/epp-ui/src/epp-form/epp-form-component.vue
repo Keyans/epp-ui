@@ -79,11 +79,8 @@ export default {
       if (type === 'textarea') {
         typeName = 'input';
         this.filterType = 'textarea';
-<<<<<<< HEAD
       } else {
         this.filterType = this.componentConfig.type || undefined;
-=======
->>>>>>> 7169bc1b494770c4615353cdb69a37773129cf17
       }
       return `nb-${typeName}`;
     },
@@ -100,7 +97,7 @@ export default {
       this.valifyHandler(event.type);
     },
     // 清除事件
-    clear(event) {
+    clear() {
       this.valifyHandler('clear');
     },
     // keyup事件

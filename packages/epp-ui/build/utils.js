@@ -1,23 +1,22 @@
-const fs = require('fs')
-const path = require('path')
-const join = path.join
+/* eslint-disable */
 
-const resolve = (dir) => path.join(__dirname, '../', dir);
+const fs = require('fs');
+const path = require('path');
+const { join } = path;
+
+const resolve = dir => path.join(__dirname, '../', dir);
 
 /**
  * @desc 大写转横杠
  * @param {*} str
  */
 function upperCasetoLine(str) {
-  let temp = str.replace(/[A-Z]/g, function (match) {
-    return "-" + match.toLowerCase();
-  });
+  let temp = str.replace(/[A-Z]/g, match => `-${match.toLowerCase()}`);
   if (temp.slice(0, 1) === '-') {
     temp = temp.slice(1);
   }
   return temp;
 }
-
 module.exports = {
   resolve,
   upperCasetoLine,
@@ -26,8 +25,7 @@ module.exports = {
    * @param {*} path
    */
   getComponentEntries(path) {
-    let files = fs.readdirSync(resolve(path));
-    console.log(files,123123)
+    const files = fs.readdirSync(resolve(path));
     const componentEntries = files.reduce((fileObj, item) => {
       //  文件路径
       const itemPath = join(path, item);
@@ -37,15 +35,15 @@ module.exports = {
 
       //  文件中的入口文件
       if (isDir) {
-        fileObj[`${upperCasetoLine(item)}`] = resolve(join(itemPath, 'index.js'))
+        fileObj[`${upperCasetoLine(item)}`] = resolve(join(itemPath, 'index.js'));
       }
       //  文件夹外的入口文件
-      else if (suffix === "js") {
+      else if (suffix === 'js') {
         fileObj[name] = resolve(`${itemPath}`);
       }
-      return fileObj
+      return fileObj;
     }, {});
 
     return componentEntries;
-  }
-}
+  },
+};
