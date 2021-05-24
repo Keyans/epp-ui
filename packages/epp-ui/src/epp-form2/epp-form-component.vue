@@ -99,9 +99,9 @@ export default {
     },
     // 处理子类型select、radio、checkbox
     handleChildType(type) {
-      const reg = /.*(?<!-group)$/;
-      reg.test(type);
-      return reg.test(type) ? 'nb-option' : type.substring(0, type.length - 6);
+      // const reg = /.*(?<!-group)$/;
+      // reg.test(type);
+      // return reg.test(type) ? 'nb-option' : type.substring(0, type.length - 6);
     },
     // 处理组件类型
     componentType(type) {
@@ -111,10 +111,10 @@ export default {
         typeName = `${typeName}-group`;
       }
       // 判断是否为epp-前缀开头的
-      const eppReg = /^(epp-).*/;
-      if (eppReg.test(type)) {
-        typeName = type;
-      }
+      // const eppReg = /^(epp-).*/;
+      // if (eppReg.test(type)) {
+      //   typeName = type;
+      // }
       return typeName;
     },
     // 处理时间选择器

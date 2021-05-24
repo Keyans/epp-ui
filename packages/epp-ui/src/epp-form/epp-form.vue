@@ -1,15 +1,15 @@
 <template>
   <div class="eppForm">
-    <nb-form
+    <el-form
       v-bind="config"
       :rules="rules"
       :model="config.formData"
       @submit.native.prevent
     >
-      <nb-row :gutter="config.gutter">
+      <el-row :gutter="config.gutter">
         <template v-for="(item, index) in config.formItem">
-          <nb-col :key="index" :span="computedSpan" style="min-height: 51px">
-            <nb-form-item v-bind="item" :prop="item.model" class="epp-width">
+          <el-col :key="index" :span="computedSpan" style="min-height: 51px">
+            <el-form-item v-bind="item" :prop="item.model" class="epp-width">
               <item-render
                 :data="config.formData"
                 :render="item.render"
@@ -30,24 +30,24 @@
                 "
               >
               </eppFormComponent>
-            </nb-form-item>
-          </nb-col>
+            </el-form-item>
+          </el-col>
         </template>
-        <nb-col :span="computedSpan">
+        <el-col :span="computedSpan">
           <slot name="btn"></slot>
           <div v-if="!!config.btn.length" style="width: 95%; margin-left: 5%">
-            <nb-button
+            <el-button
               v-for="(button, index) in config.btn"
               :key="index"
               v-bind="button"
               :size="config.size"
               @click="handleClick(button)"
-              >{{ button.name }}</nb-button
+              >{{ button.name }}</el-button
             >
           </div>
-        </nb-col>
-      </nb-row>
-    </nb-form>
+        </el-col>
+      </el-row>
+    </el-form>
   </div>
 </template>
 
@@ -148,10 +148,10 @@ export default {
 .epp-width {
   width: 100%;
 }
-.epp-width .nb-form-item__content {
+.epp-width .el-form-item__content {
   font-size: 20px;
 }
-/deep/ .nb-form-item__content {
+/deep/ .el-form-item__content {
   width: calc(100% - 110px);
   line-height: 50px;
 }
