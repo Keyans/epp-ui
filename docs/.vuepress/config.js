@@ -86,6 +86,11 @@ module.exports = (ctx) => ({
               collapsable: false,
               path: "radio-group"
             },
+            {
+              title: "env-switch 泳道环境切换组件",
+              collapsable: false,
+              path: "env-switch"
+            },
           ],
         },
         {
