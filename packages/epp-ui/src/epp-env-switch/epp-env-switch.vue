@@ -57,12 +57,12 @@ export default {
     // 无极泳道环境接口
     featureEnvApi: {
       type: String,
-      default: 'https://node.video.qq.com/x/api/wuji_public/object?appid=nbase_devops&schemaid=feature_env&schemakey=bae6294ecab6464ebf233a91c74424b0',
+      default: 'https://node.video.qq.com/x/api/wuji_public/object?appid=nbase_devops&schemaid=feature_env_boss&schemakey=bae6294ecab6464ebf233a91c74424b0',
     },
     // 网关地址
     gateway: {
       type: String,
-      default: 'yztest.html5.qq.com',
+      default: 'yztestboss.html5.qq.com',
     },
     // 被代理域名，默认当前域名
     interceptDomain: {
@@ -166,6 +166,7 @@ export default {
         oOpen.call(this, method, interceptUrl, ...restArgs);
 
         if (interceptUrl.includes(self.gateway)) {
+          this.withCredentials = true;
           this.setRequestHeader(self.featureEnvHeader, self.envForm.featureEnv);
         }
       };
