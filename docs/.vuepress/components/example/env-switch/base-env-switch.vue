@@ -13,9 +13,9 @@ export default {
   data() {
     return {
       // 网关地址
-      gateway: 'yztest.html5.qq.com',
+      gateway: 'yztestboss.html5.qq.com',
       // 无极泳道环境接口
-      featureEnvApi: 'https://node.video.qq.com/x/api/wuji_public/object?appid=nbase_devops&schemaid=feature_env&schemakey=bae6294ecab6464ebf233a91c74424b0',
+      featureEnvApi: 'https://node.video.qq.com/x/api/wuji_public/object?appid=nbase_devops&schemaid=feature_env_boss&schemakey=bae6294ecab6464ebf233a91c74424b0',
       // 泳道环境 header
       featureEnvHeader: 'polaris-env',
       // 被代理域名，根据实际使用场景设置
