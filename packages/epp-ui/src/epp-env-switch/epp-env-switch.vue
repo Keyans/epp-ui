@@ -1,8 +1,8 @@
 <template>
   <section class="env-switch-container">
     <div class="env-switch__entry">
-      <nb-tooltip effect="dark" :content="tooltipContent">
-        <i @click="onActivateConfig" class="nb-icon-s-tools" />
+      <nb-tooltip :content="tooltipContent" effect="dark" placement="left">
+        <i @click="onActivateConfig" class="nb-icon-set-up" />
       </nb-tooltip>
     </div>
     <nb-drawer
@@ -135,10 +135,12 @@ export default {
 
     resetXHROpen() {
       window.XMLHttpRequest.prototype.open = this.originXHROpen;
+      window.XMLHttpRequest.prototype.send = this.originXHRSend;
     },
 
     storeXHROpen() {
       this.originXHROpen = window.XMLHttpRequest.prototype.open;
+      this.originXHRSend = window.XMLHttpRequest.prototype.send;
     },
 
     interceptXHR() {
@@ -166,9 +168,17 @@ export default {
         oOpen.call(this, method, interceptUrl, ...restArgs);
 
         if (interceptUrl.includes(self.gateway)) {
-          this.withCredentials = true;
           this.setRequestHeader(self.featureEnvHeader, self.envForm.featureEnv);
+          this.needWithCredentials = true;
         }
+      };
+
+      const oSend = XHR.prototype.send;
+
+      XHR.prototype.send = function (...args) {
+        if (this.needWithCredentials) this.withCredentials = true;
+
+        return oSend.call(this, ...args);
       };
     },
 
@@ -197,15 +207,22 @@ export default {
 
   &__entry {
     position: fixed;
-    right: 5%;
-    bottom: 5%;
-    transition: all 300ms ease-in-out;
+    right: 0;
+    bottom: 20px;
+    height: 40px;
+    width: 40px;
     opacity: 0.5;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    transition: all 300ms ease-in-out;
+    text-align: center;
+    font-size: 24px;
+    line-height: 40px;
     cursor: pointer;
 
     &:hover {
       opacity: 1;
-      transform: scale(1.5);
     }
   }
 
