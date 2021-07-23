@@ -16,7 +16,7 @@
           :closable="false"
           type="warning"
           title="环境设置提示"
-          description="网关默认关闭，不启用泳道环境；若需要启用泳道环境，请先开启网关再配置泳道信息！"
+          description="网关默认开启，启用环境列表中第一个泳道环境；若网关关闭，则不启用泳道环境。"
         />
         <nb-form :model="controlForm" label-width="100px">
           <nb-form-item label="启用环境">
@@ -120,13 +120,17 @@ export default {
     onConfirm() {
       this.$refs.envForm.validate((valid) => {
         if (!valid) return false;
-        this.currentEnvName = this.envMap[this.envForm.featureEnv] || '';
-        // 先判断是否备份 XMLHttpRequest.prototype.open 方法
-        // 如果备份过，需把劫持修改过的 open 方法重置，避免多次设置 setRequestHeader
-        if (this.originXHROpen) this.resetXHROpen();
-        // 劫持 XHR
-        this.interceptXHR();
+        this.startXHRIntercept();
       });
+    },
+
+    startXHRIntercept() {
+      this.currentEnvName = this.envMap[this.envForm.featureEnv] || '';
+      // 先判断是否备份 XMLHttpRequest.prototype.open 方法
+      // 如果备份过，需把劫持修改过的 open 方法重置，避免多次设置 setRequestHeader
+      if (this.originXHROpen) this.resetXHROpen();
+      // 劫持 XHR
+      this.interceptXHR();
     },
 
     isAbsoluteUrl(url = '') {
@@ -193,6 +197,10 @@ export default {
           ...acc,
           [curr.env_id]: curr.env_name,
         }), {});
+        const [defaultEnvConfig = {}] = this.envOptions;
+        this.controlForm.switch = true;
+        this.envForm.featureEnv = defaultEnvConfig.env_id || '';
+        this.startXHRIntercept();
       } catch (error) {}
     },
   },
