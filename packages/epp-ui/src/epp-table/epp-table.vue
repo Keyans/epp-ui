@@ -42,7 +42,6 @@
 <script>
 import eppColumn from './epp-column';
 import Sortable from 'sortablejs';
-import { clonedeep } from 'lodash';
 export default {
   name: 'eppTable',
   props: {
@@ -169,7 +168,7 @@ export default {
   },
   computed: {
     dataLength() {
-      return this.data.length;
+      return this.data && this.data.length;
     },
     sortableOptions() {
       return Object.assign(this.sortOptions, this.defaultSortOptions);
